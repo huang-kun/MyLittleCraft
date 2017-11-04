@@ -15,6 +15,7 @@
 		1A7CD8F31FADB394002F3DB3 /* MyLittleCraftTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8F21FADB394002F3DB3 /* MyLittleCraftTests.m */; };
 		1A7CD8FE1FADB394002F3DB3 /* MyLittleCraftUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8FD1FADB394002F3DB3 /* MyLittleCraftUITests.m */; };
 		1A7CD90E1FADB3D3002F3DB3 /* BelowHeaderRefreshing.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD90D1FADB3D3002F3DB3 /* BelowHeaderRefreshing.m */; };
+		1A7CD9101FADB803002F3DB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD90F1FADB803002F3DB3 /* README.md */; };
 		439201AF65F1BE1B9101A858 /* Pods_MyLittleCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7C7788819C07E13FC06325 /* Pods_MyLittleCraft.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		1A7CD8FF1FADB394002F3DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A7CD90C1FADB3D3002F3DB3 /* BelowHeaderRefreshing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BelowHeaderRefreshing.h; sourceTree = "<group>"; };
 		1A7CD90D1FADB3D3002F3DB3 /* BelowHeaderRefreshing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BelowHeaderRefreshing.m; sourceTree = "<group>"; };
+		1A7CD90F1FADB803002F3DB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1C7C7788819C07E13FC06325 /* Pods_MyLittleCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLittleCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A0FC391E89B7576C1E4EFF /* Pods-MyLittleCraft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleCraft.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyLittleCraft/Pods-MyLittleCraft.release.xcconfig"; sourceTree = "<group>"; };
 		FA94C94548872F443342CBE7 /* Pods-MyLittleCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleCraft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLittleCraft/Pods-MyLittleCraft.debug.xcconfig"; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		1A7CD8CD1FADB394002F3DB3 = {
 			isa = PBXGroup;
 			children = (
+				1A7CD90F1FADB803002F3DB3 /* README.md */,
 				1A7CD8D81FADB394002F3DB3 /* MyLittleCraft */,
 				1A7CD8F11FADB394002F3DB3 /* MyLittleCraftTests */,
 				1A7CD8FC1FADB394002F3DB3 /* MyLittleCraftUITests */,
@@ -275,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A7CD9101FADB803002F3DB3 /* README.md in Resources */,
 				1A7CD8E61FADB394002F3DB3 /* LaunchScreen.storyboard in Resources */,
 				1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */,
 			);

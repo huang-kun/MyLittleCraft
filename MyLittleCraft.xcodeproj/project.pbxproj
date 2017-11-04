@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A7CD8DB1FADB394002F3DB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */; };
+		1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DD1FADB394002F3DB3 /* ViewController.m */; };
+		1A7CD8E11FADB394002F3DB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DF1FADB394002F3DB3 /* Main.storyboard */; };
+		1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD8E21FADB394002F3DB3 /* Assets.xcassets */; };
+		1A7CD8E61FADB394002F3DB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD8E41FADB394002F3DB3 /* LaunchScreen.storyboard */; };
+		1A7CD8E91FADB394002F3DB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8E81FADB394002F3DB3 /* main.m */; };
+		1A7CD8F31FADB394002F3DB3 /* MyLittleCraftTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8F21FADB394002F3DB3 /* MyLittleCraftTests.m */; };
+		1A7CD8FE1FADB394002F3DB3 /* MyLittleCraftUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8FD1FADB394002F3DB3 /* MyLittleCraftUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A7CD8EF1FADB394002F3DB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7CD8CE1FADB394002F3DB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7CD8D51FADB394002F3DB3;
+			remoteInfo = MyLittleCraft;
+		};
+		1A7CD8FA1FADB394002F3DB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7CD8CE1FADB394002F3DB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7CD8D51FADB394002F3DB3;
+			remoteInfo = MyLittleCraft;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A7CD8D61FADB394002F3DB3 /* MyLittleCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7CD8D91FADB394002F3DB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1A7CD8DC1FADB394002F3DB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1A7CD8DD1FADB394002F3DB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1A7CD8E01FADB394002F3DB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1A7CD8E21FADB394002F3DB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A7CD8E51FADB394002F3DB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1A7CD8E71FADB394002F3DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7CD8E81FADB394002F3DB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1A7CD8EE1FADB394002F3DB3 /* MyLittleCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLittleCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7CD8F21FADB394002F3DB3 /* MyLittleCraftTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLittleCraftTests.m; sourceTree = "<group>"; };
+		1A7CD8F41FADB394002F3DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A7CD8F91FADB394002F3DB3 /* MyLittleCraftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLittleCraftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7CD8FD1FADB394002F3DB3 /* MyLittleCraftUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyLittleCraftUITests.m; sourceTree = "<group>"; };
+		1A7CD8FF1FADB394002F3DB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A7CD8D31FADB394002F3DB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7CD8EB1FADB394002F3DB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7CD8F61FADB394002F3DB3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A7CD8CD1FADB394002F3DB3 = {
+			isa = PBXGroup;
+			children = (
+				1A7CD8D81FADB394002F3DB3 /* MyLittleCraft */,
+				1A7CD8F11FADB394002F3DB3 /* MyLittleCraftTests */,
+				1A7CD8FC1FADB394002F3DB3 /* MyLittleCraftUITests */,
+				1A7CD8D71FADB394002F3DB3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A7CD8D71FADB394002F3DB3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7CD8D61FADB394002F3DB3 /* MyLittleCraft.app */,
+				1A7CD8EE1FADB394002F3DB3 /* MyLittleCraftTests.xctest */,
+				1A7CD8F91FADB394002F3DB3 /* MyLittleCraftUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1A7CD8D81FADB394002F3DB3 /* MyLittleCraft */ = {
+			isa = PBXGroup;
+			children = (
+				1A7CD8D91FADB394002F3DB3 /* AppDelegate.h */,
+				1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */,
+				1A7CD8DC1FADB394002F3DB3 /* ViewController.h */,
+				1A7CD8DD1FADB394002F3DB3 /* ViewController.m */,
+				1A7CD8DF1FADB394002F3DB3 /* Main.storyboard */,
+				1A7CD8E21FADB394002F3DB3 /* Assets.xcassets */,
+				1A7CD8E41FADB394002F3DB3 /* LaunchScreen.storyboard */,
+				1A7CD8E71FADB394002F3DB3 /* Info.plist */,
+				1A7CD8E81FADB394002F3DB3 /* main.m */,
+			);
+			path = MyLittleCraft;
+			sourceTree = "<group>";
+		};
+		1A7CD8F11FADB394002F3DB3 /* MyLittleCraftTests */ = {
+			isa = PBXGroup;
+			children = (
+				1A7CD8F21FADB394002F3DB3 /* MyLittleCraftTests.m */,
+				1A7CD8F41FADB394002F3DB3 /* Info.plist */,
+			);
+			path = MyLittleCraftTests;
+			sourceTree = "<group>";
+		};
+		1A7CD8FC1FADB394002F3DB3 /* MyLittleCraftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1A7CD8FD1FADB394002F3DB3 /* MyLittleCraftUITests.m */,
+				1A7CD8FF1FADB394002F3DB3 /* Info.plist */,
+			);
+			path = MyLittleCraftUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A7CD8D51FADB394002F3DB3 /* MyLittleCraft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7CD9021FADB394002F3DB3 /* Build configuration list for PBXNativeTarget "MyLittleCraft" */;
+			buildPhases = (
+				1A7CD8D21FADB394002F3DB3 /* Sources */,
+				1A7CD8D31FADB394002F3DB3 /* Frameworks */,
+				1A7CD8D41FADB394002F3DB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyLittleCraft;
+			productName = MyLittleCraft;
+			productReference = 1A7CD8D61FADB394002F3DB3 /* MyLittleCraft.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A7CD8ED1FADB394002F3DB3 /* MyLittleCraftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7CD9051FADB394002F3DB3 /* Build configuration list for PBXNativeTarget "MyLittleCraftTests" */;
+			buildPhases = (
+				1A7CD8EA1FADB394002F3DB3 /* Sources */,
+				1A7CD8EB1FADB394002F3DB3 /* Frameworks */,
+				1A7CD8EC1FADB394002F3DB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7CD8F01FADB394002F3DB3 /* PBXTargetDependency */,
+			);
+			name = MyLittleCraftTests;
+			productName = MyLittleCraftTests;
+			productReference = 1A7CD8EE1FADB394002F3DB3 /* MyLittleCraftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A7CD8F81FADB394002F3DB3 /* MyLittleCraftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7CD9081FADB394002F3DB3 /* Build configuration list for PBXNativeTarget "MyLittleCraftUITests" */;
+			buildPhases = (
+				1A7CD8F51FADB394002F3DB3 /* Sources */,
+				1A7CD8F61FADB394002F3DB3 /* Frameworks */,
+				1A7CD8F71FADB394002F3DB3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7CD8FB1FADB394002F3DB3 /* PBXTargetDependency */,
+			);
+			name = MyLittleCraftUITests;
+			productName = MyLittleCraftUITests;
+			productReference = 1A7CD8F91FADB394002F3DB3 /* MyLittleCraftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A7CD8CE1FADB394002F3DB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = huangkun;
+				TargetAttributes = {
+					1A7CD8D51FADB394002F3DB3 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					1A7CD8ED1FADB394002F3DB3 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1A7CD8D51FADB394002F3DB3;
+					};
+					1A7CD8F81FADB394002F3DB3 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1A7CD8D51FADB394002F3DB3;
+					};
+				};
+			};
+			buildConfigurationList = 1A7CD8D11FADB394002F3DB3 /* Build configuration list for PBXProject "MyLittleCraft" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A7CD8CD1FADB394002F3DB3;
+			productRefGroup = 1A7CD8D71FADB394002F3DB3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A7CD8D51FADB394002F3DB3 /* MyLittleCraft */,
+				1A7CD8ED1FADB394002F3DB3 /* MyLittleCraftTests */,
+				1A7CD8F81FADB394002F3DB3 /* MyLittleCraftUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A7CD8D41FADB394002F3DB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7CD8E61FADB394002F3DB3 /* LaunchScreen.storyboard in Resources */,
+				1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */,
+				1A7CD8E11FADB394002F3DB3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7CD8EC1FADB394002F3DB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7CD8F71FADB394002F3DB3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A7CD8D21FADB394002F3DB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */,
+				1A7CD8E91FADB394002F3DB3 /* main.m in Sources */,
+				1A7CD8DB1FADB394002F3DB3 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7CD8EA1FADB394002F3DB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7CD8F31FADB394002F3DB3 /* MyLittleCraftTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7CD8F51FADB394002F3DB3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7CD8FE1FADB394002F3DB3 /* MyLittleCraftUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A7CD8F01FADB394002F3DB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7CD8D51FADB394002F3DB3 /* MyLittleCraft */;
+			targetProxy = 1A7CD8EF1FADB394002F3DB3 /* PBXContainerItemProxy */;
+		};
+		1A7CD8FB1FADB394002F3DB3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7CD8D51FADB394002F3DB3 /* MyLittleCraft */;
+			targetProxy = 1A7CD8FA1FADB394002F3DB3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1A7CD8DF1FADB394002F3DB3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A7CD8E01FADB394002F3DB3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1A7CD8E41FADB394002F3DB3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1A7CD8E51FADB394002F3DB3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1A7CD9001FADB394002F3DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1A7CD9011FADB394002F3DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A7CD9031FADB394002F3DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CD76TM5QAC;
+				INFOPLIST_FILE = MyLittleCraft/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1A7CD9041FADB394002F3DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CD76TM5QAC;
+				INFOPLIST_FILE = MyLittleCraft/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1A7CD9061FADB394002F3DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CD76TM5QAC;
+				INFOPLIST_FILE = MyLittleCraftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyLittleCraft.app/MyLittleCraft";
+			};
+			name = Debug;
+		};
+		1A7CD9071FADB394002F3DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CD76TM5QAC;
+				INFOPLIST_FILE = MyLittleCraftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyLittleCraft.app/MyLittleCraft";
+			};
+			name = Release;
+		};
+		1A7CD9091FADB394002F3DB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CD76TM5QAC;
+				INFOPLIST_FILE = MyLittleCraftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyLittleCraft;
+			};
+			name = Debug;
+		};
+		1A7CD90A1FADB394002F3DB3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CD76TM5QAC;
+				INFOPLIST_FILE = MyLittleCraftUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraftUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MyLittleCraft;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A7CD8D11FADB394002F3DB3 /* Build configuration list for PBXProject "MyLittleCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7CD9001FADB394002F3DB3 /* Debug */,
+				1A7CD9011FADB394002F3DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7CD9021FADB394002F3DB3 /* Build configuration list for PBXNativeTarget "MyLittleCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7CD9031FADB394002F3DB3 /* Debug */,
+				1A7CD9041FADB394002F3DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7CD9051FADB394002F3DB3 /* Build configuration list for PBXNativeTarget "MyLittleCraftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7CD9061FADB394002F3DB3 /* Debug */,
+				1A7CD9071FADB394002F3DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7CD9081FADB394002F3DB3 /* Build configuration list for PBXNativeTarget "MyLittleCraftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7CD9091FADB394002F3DB3 /* Debug */,
+				1A7CD90A1FADB394002F3DB3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A7CD8CE1FADB394002F3DB3 /* Project object */;
+}

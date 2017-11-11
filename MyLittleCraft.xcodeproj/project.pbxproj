@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */; };
+		1A44AC921FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC771FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m */; };
+		1A44AC931FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC781FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m */; };
+		1A44AC941FB6E3D100B5DAC6 /* MyWebBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC811FB6E3D100B5DAC6 /* MyWebBaseViewController.m */; };
+		1A44AC951FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC821FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m */; };
+		1A44AC961FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC831FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m */; };
+		1A44AC971FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC841FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.m */; };
+		1A44AC981FB6E3D100B5DAC6 /* UIViewController+ShowAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC861FB6E3D100B5DAC6 /* UIViewController+ShowAlert.m */; };
+		1A44AC991FB6E3D100B5DAC6 /* UIView+Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC881FB6E3D100B5DAC6 /* UIView+Pin.m */; };
+		1A44AC9A1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC8B1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m */; };
+		1A44AC9B1FB6E3D100B5DAC6 /* js_function_demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A44AC8D1FB6E3D100B5DAC6 /* js_function_demo.js */; };
+		1A44AC9C1FB6E3D100B5DAC6 /* js_href_demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A44AC8E1FB6E3D100B5DAC6 /* js_href_demo.js */; };
+		1A44AC9D1FB6E3D100B5DAC6 /* js_message_demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A44AC8F1FB6E3D100B5DAC6 /* js_message_demo.js */; };
+		1A44AC9E1FB6E3D100B5DAC6 /* js_injection_demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A44AC901FB6E3D100B5DAC6 /* js_injection_demo.js */; };
+		1A44ACA11FB6E41E00B5DAC6 /* WebAndScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44ACA01FB6E41E00B5DAC6 /* WebAndScript.m */; };
+		1A44ACA41FB6E49700B5DAC6 /* WebDemoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44ACA31FB6E49700B5DAC6 /* WebDemoItem.m */; };
 		1A7CD8DB1FADB394002F3DB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */; };
 		1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DD1FADB394002F3DB3 /* ViewController.m */; };
 		1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD8E21FADB394002F3DB3 /* Assets.xcassets */; };
@@ -40,6 +56,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJSInjectionDemoViewController.m; sourceTree = "<group>"; };
+		1A44AC771FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJSHrefDemoViewController.m; sourceTree = "<group>"; };
+		1A44AC781FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDynamicScriptDemoViewController.m; sourceTree = "<group>"; };
+		1A44AC791FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJSInjectionTimeDemoViewController.h; sourceTree = "<group>"; };
+		1A44AC7A1FB6E3D100B5DAC6 /* MyWebBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebBaseViewController.h; sourceTree = "<group>"; };
+		1A44AC7B1FB6E3D100B5DAC6 /* WebViewControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewControllerProtocol.h; sourceTree = "<group>"; };
+		1A44AC7C1FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJSMessageDemoViewController.h; sourceTree = "<group>"; };
+		1A44AC7D1FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJSFunctionDemoViewController.h; sourceTree = "<group>"; };
+		1A44AC7E1FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJSHrefDemoViewController.h; sourceTree = "<group>"; };
+		1A44AC7F1FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyJSInjectionDemoViewController.h; sourceTree = "<group>"; };
+		1A44AC801FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDynamicScriptDemoViewController.h; sourceTree = "<group>"; };
+		1A44AC811FB6E3D100B5DAC6 /* MyWebBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebBaseViewController.m; sourceTree = "<group>"; };
+		1A44AC821FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJSInjectionTimeDemoViewController.m; sourceTree = "<group>"; };
+		1A44AC831FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJSFunctionDemoViewController.m; sourceTree = "<group>"; };
+		1A44AC841FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJSMessageDemoViewController.m; sourceTree = "<group>"; };
+		1A44AC861FB6E3D100B5DAC6 /* UIViewController+ShowAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ShowAlert.m"; sourceTree = "<group>"; };
+		1A44AC871FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WKUserScript+ScriptURL.h"; sourceTree = "<group>"; };
+		1A44AC881FB6E3D100B5DAC6 /* UIView+Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Pin.m"; sourceTree = "<group>"; };
+		1A44AC891FB6E3D100B5DAC6 /* UIViewController+ShowAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ShowAlert.h"; sourceTree = "<group>"; };
+		1A44AC8A1FB6E3D100B5DAC6 /* UIView+Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Pin.h"; sourceTree = "<group>"; };
+		1A44AC8B1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WKUserScript+ScriptURL.m"; sourceTree = "<group>"; };
+		1A44AC8D1FB6E3D100B5DAC6 /* js_function_demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js_function_demo.js; sourceTree = "<group>"; };
+		1A44AC8E1FB6E3D100B5DAC6 /* js_href_demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js_href_demo.js; sourceTree = "<group>"; };
+		1A44AC8F1FB6E3D100B5DAC6 /* js_message_demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js_message_demo.js; sourceTree = "<group>"; };
+		1A44AC901FB6E3D100B5DAC6 /* js_injection_demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js_injection_demo.js; sourceTree = "<group>"; };
+		1A44AC9F1FB6E41E00B5DAC6 /* WebAndScript.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebAndScript.h; sourceTree = "<group>"; };
+		1A44ACA01FB6E41E00B5DAC6 /* WebAndScript.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebAndScript.m; sourceTree = "<group>"; };
+		1A44ACA21FB6E49700B5DAC6 /* WebDemoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDemoItem.h; sourceTree = "<group>"; };
+		1A44ACA31FB6E49700B5DAC6 /* WebDemoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDemoItem.m; sourceTree = "<group>"; };
 		1A7CD8D61FADB394002F3DB3 /* MyLittleCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7CD8D91FADB394002F3DB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +140,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A44AC741FB6E3D100B5DAC6 /* WebAndScript */ = {
+			isa = PBXGroup;
+			children = (
+				1A44AC9F1FB6E41E00B5DAC6 /* WebAndScript.h */,
+				1A44ACA01FB6E41E00B5DAC6 /* WebAndScript.m */,
+				1A44ACA21FB6E49700B5DAC6 /* WebDemoItem.h */,
+				1A44ACA31FB6E49700B5DAC6 /* WebDemoItem.m */,
+				1A44AC751FB6E3D100B5DAC6 /* WebViewController */,
+				1A44AC851FB6E3D100B5DAC6 /* Extensions */,
+				1A44AC8C1FB6E3D100B5DAC6 /* ScriptResources */,
+			);
+			path = WebAndScript;
+			sourceTree = "<group>";
+		};
+		1A44AC751FB6E3D100B5DAC6 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1A44AC7B1FB6E3D100B5DAC6 /* WebViewControllerProtocol.h */,
+				1A44AC7A1FB6E3D100B5DAC6 /* MyWebBaseViewController.h */,
+				1A44AC811FB6E3D100B5DAC6 /* MyWebBaseViewController.m */,
+				1A44AC7E1FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.h */,
+				1A44AC771FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m */,
+				1A44AC7D1FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.h */,
+				1A44AC831FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m */,
+				1A44AC7C1FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.h */,
+				1A44AC841FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.m */,
+				1A44AC7F1FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.h */,
+				1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */,
+				1A44AC791FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.h */,
+				1A44AC821FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m */,
+				1A44AC801FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.h */,
+				1A44AC781FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		1A44AC851FB6E3D100B5DAC6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1A44AC871FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.h */,
+				1A44AC8B1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m */,
+				1A44AC8A1FB6E3D100B5DAC6 /* UIView+Pin.h */,
+				1A44AC881FB6E3D100B5DAC6 /* UIView+Pin.m */,
+				1A44AC891FB6E3D100B5DAC6 /* UIViewController+ShowAlert.h */,
+				1A44AC861FB6E3D100B5DAC6 /* UIViewController+ShowAlert.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1A44AC8C1FB6E3D100B5DAC6 /* ScriptResources */ = {
+			isa = PBXGroup;
+			children = (
+				1A44AC8D1FB6E3D100B5DAC6 /* js_function_demo.js */,
+				1A44AC8E1FB6E3D100B5DAC6 /* js_href_demo.js */,
+				1A44AC8F1FB6E3D100B5DAC6 /* js_message_demo.js */,
+				1A44AC901FB6E3D100B5DAC6 /* js_injection_demo.js */,
+			);
+			path = ScriptResources;
+			sourceTree = "<group>";
+		};
 		1A7CD8CD1FADB394002F3DB3 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +232,7 @@
 				1A7CD8DD1FADB394002F3DB3 /* ViewController.m */,
 				1A7CD90B1FADB3D3002F3DB3 /* BelowHeaderRefreshing */,
 				1AB782E81FB33CDF005F915E /* MultiTouchBox */,
+				1A44AC741FB6E3D100B5DAC6 /* WebAndScript */,
 				1A7CD8E21FADB394002F3DB3 /* Assets.xcassets */,
 				1A7CD8E41FADB394002F3DB3 /* LaunchScreen.storyboard */,
 				1A7CD8E71FADB394002F3DB3 /* Info.plist */,
@@ -301,7 +407,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A44AC9B1FB6E3D100B5DAC6 /* js_function_demo.js in Resources */,
 				1A7CD9101FADB803002F3DB3 /* README.md in Resources */,
+				1A44AC9E1FB6E3D100B5DAC6 /* js_injection_demo.js in Resources */,
+				1A44AC9D1FB6E3D100B5DAC6 /* js_message_demo.js in Resources */,
+				1A44AC9C1FB6E3D100B5DAC6 /* js_href_demo.js in Resources */,
 				1A7CD8E61FADB394002F3DB3 /* LaunchScreen.storyboard in Resources */,
 				1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */,
 			);
@@ -384,9 +494,21 @@
 			files = (
 				1AB782EB1FB33D08005F915E /* MultiTouchBox.m in Sources */,
 				1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */,
+				1A44AC991FB6E3D100B5DAC6 /* UIView+Pin.m in Sources */,
+				1A44AC961FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m in Sources */,
+				1A44ACA41FB6E49700B5DAC6 /* WebDemoItem.m in Sources */,
+				1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */,
+				1A44AC941FB6E3D100B5DAC6 /* MyWebBaseViewController.m in Sources */,
 				1A7CD90E1FADB3D3002F3DB3 /* BelowHeaderRefreshing.m in Sources */,
 				1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */,
+				1A44AC9A1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m in Sources */,
 				1A7CD8E91FADB394002F3DB3 /* main.m in Sources */,
+				1A44AC931FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m in Sources */,
+				1A44AC981FB6E3D100B5DAC6 /* UIViewController+ShowAlert.m in Sources */,
+				1A44AC921FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m in Sources */,
+				1A44AC971FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.m in Sources */,
+				1A44AC951FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m in Sources */,
+				1A44ACA11FB6E41E00B5DAC6 /* WebAndScript.m in Sources */,
 				1AE086A51FB54E12005ACF58 /* MYBoxExt.m in Sources */,
 				1A7CD8DB1FADB394002F3DB3 /* AppDelegate.m in Sources */,
 			);
@@ -547,6 +669,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CD76TM5QAC;
 				INFOPLIST_FILE = MyLittleCraft/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -562,6 +685,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CD76TM5QAC;
 				INFOPLIST_FILE = MyLittleCraft/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangkun.MyLittleCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";

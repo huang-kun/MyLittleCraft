@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Demo";
-    _demo = @[ @"BelowHeaderRefreshing", @"MultiTouchBox" ];
+    self.title = @"My little Craft";
+    _demo = @[ @"BelowHeaderRefreshing", @"MultiTouchBox", @"WebAndScript" ];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"Cell"];

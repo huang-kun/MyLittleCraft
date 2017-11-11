@@ -302,7 +302,7 @@ CGRect my_updatedBoxFrameFrom(CGRect fromFrame, CGPoint delta, MYTouchArea touch
 - (CGPoint)my_currentLocation {
     CGPoint location;
     
-    if ([self respondsToSelector:@selector(preciseLocationInView:)]) {
+    if (@available(iOS 9.1, *)) {
         location = [self preciseLocationInView:self.view];
     } else {
         location = [self locationInView:self.view];
@@ -314,7 +314,7 @@ CGRect my_updatedBoxFrameFrom(CGRect fromFrame, CGPoint delta, MYTouchArea touch
 - (CGPoint)my_previousLocation {
     CGPoint location;
     
-    if ([self respondsToSelector:@selector(precisePreviousLocationInView:)]) {
+    if (@available(iOS 9.1, *)) {
         location = [self precisePreviousLocationInView:self.view];
     } else {
         location = [self previousLocationInView:self.view];

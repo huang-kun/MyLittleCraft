@@ -182,12 +182,22 @@ MYBox my_boxFromFrame(CGRect frame) {
 MYTouchArea my_touchAreaForBoxFrame(CGRect frame, CGPoint location) {
     MYBox box = my_boxFromFrame(frame);
     
-    // Central region get hightest priority.
+    // When touch areas overlap, make priority as Central > Corners > Edges
+    // Exception: If only edges and central region overlap, make Edges > Central
+    if (CGRectIntersectsRect(box.centralRegion, box.topEdge) || CGRectIntersectsRect(box.centralRegion, box.leftEdge)) {
+        goto my_skipFirstCentralRegionChecking;
+    }
+    
+    // Check central region
+    
     if (CGRectContainsPoint(box.centralRegion, location)) {
         return MYTouchAreaCentralRegion;
     }
     
-    // Corners get higher priority.
+my_skipFirstCentralRegionChecking:
+    
+    // Check corner regions
+    
     if (CGRectContainsPoint(box.topLeftCorner, location)) {
         return MYTouchAreaTopLeftCorner;
     }
@@ -201,7 +211,8 @@ MYTouchArea my_touchAreaForBoxFrame(CGRect frame, CGPoint location) {
         return MYTouchAreaBottomRightCorner;
     }
     
-    // Edges get lower priority.
+    // Check edge regions
+    
     if (CGRectContainsPoint(box.topEdge, location)) {
         return MYTouchAreaTopEdge;
     }
@@ -214,6 +225,14 @@ MYTouchArea my_touchAreaForBoxFrame(CGRect frame, CGPoint location) {
     if (CGRectContainsPoint(box.rightEdge, location)) {
         return MYTouchAreaRightEdge;
     }
+    
+    // Check central region again!
+    
+    if (CGRectContainsPoint(box.centralRegion, location)) {
+        return MYTouchAreaCentralRegion;
+    }
+    
+    // No matched region
     
     return MYTouchAreaNone;
 };

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIDevice.h>
-#import <CoreGraphics/CGAffineTransform.h>
 #import <CoreMotion/CMAccelerometer.h>
 
 /// Calculate accelerometer data to new device orientation.

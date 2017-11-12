@@ -77,12 +77,12 @@
         _motionManager.accelerometerUpdateInterval = 0.1;
     }
     
+#endif
+    
     [NSNotificationCenter.defaultCenter addObserver:self
                                            selector:@selector(handleDeviceChange:)
                                                name:UIDeviceOrientationDidChangeNotification
                                              object:UIDevice.currentDevice];
-    
-#endif
     
     [self updateCameraUIFromOrientation:UIDeviceOrientationUnknown
                           toOrientation:UIDevice.currentDevice.orientation];
@@ -90,11 +90,7 @@
 }
 
 - (void)dealloc {
-    
-#if !TARGET_OS_SIMULATOR
     [NSNotificationCenter.defaultCenter removeObserver:self];
-#endif
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {

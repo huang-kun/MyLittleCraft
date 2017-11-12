@@ -7,6 +7,7 @@
 //
 
 #import "MotionCameraExt.h"
+#import <CoreGraphics/CGBase.h>
 
 CG_INLINE bool my_angleInRange(CGFloat angle, CGFloat expected, CGFloat deviation) {
     return angle > expected - deviation && angle < expected + deviation;

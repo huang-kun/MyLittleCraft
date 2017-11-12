@@ -64,7 +64,7 @@
     _switcherLabel = [UILabel new];
     _switcherLabel.numberOfLines = 1;
     _switcherLabel.textAlignment = NSTextAlignmentRight;
-    _switcherLabel.text = [self useSystemDetectionText];
+    _switcherLabel.text = [self changeToCustomDetectionText];
     _switcherLabel.textColor = UIColor.redColor;
     [_switcherLabel sizeToFit];
     [self.view addSubview:_switcherLabel];
@@ -161,12 +161,14 @@
     if (sender.tag == 0) {
         sender.tag = 1;
         self.useAccelerometer = YES;
-        self.switcherLabel.text = [self useCustomDetectionText];
+        self.switcherLabel.text = [self changeToSystemDetectionText];
+        self.switcherLabel.textColor = UIColor.blackColor;
         [self.switcherLabel sizeToFit];
     } else {
         sender.tag = 0;
         self.useAccelerometer = NO;
-        self.switcherLabel.text = [self useSystemDetectionText];
+        self.switcherLabel.text = [self changeToCustomDetectionText];
+        self.switcherLabel.textColor = UIColor.redColor;
         [self.switcherLabel sizeToFit];
     }
 }
@@ -239,12 +241,12 @@
     return @"Rotate Camera. It's stable.\nEven it lies down on the table";
 }
 
-- (NSString *)useSystemDetectionText {
-    return @"Change to custom detection. ↗";
+- (NSString *)changeToCustomDetectionText {
+    return @"Change it to custom detection. ↗";
 }
 
-- (NSString *)useCustomDetectionText {
-    return @"Change to system detection. ↗";
+- (NSString *)changeToSystemDetectionText {
+    return @"Back to default detection. ↗";
 }
 
 @end

@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     self.title = @"My little Craft";
-    _demo = @[ @"BelowHeaderRefreshing", @"MultiTouchBox", @"WebAndScript" ];
+    _demo = @[ @"BelowHeaderRefreshing", @"MultiTouchBox", @"MotionCamera", @"WebAndScript" ];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"Cell"];
@@ -53,6 +53,7 @@
     NSString *name = _demo[indexPath.row];
     Class cls = NSClassFromString(name);
     UIViewController *vc = [cls new];
+    vc.title = name;
     vc.view.backgroundColor = UIColor.whiteColor;
     [self.navigationController pushViewController:vc animated:YES];
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4269451FB6FB1C00C2B1C2 /* MotionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4269441FB6FB1C00C2B1C2 /* MotionCamera.m */; };
+		1A42694B1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A42694A1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m */; };
 		1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */; };
 		1A44AC921FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC771FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m */; };
 		1A44AC931FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC781FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m */; };
@@ -34,6 +36,7 @@
 		1A7CD9101FADB803002F3DB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD90F1FADB803002F3DB3 /* README.md */; };
 		1AB782EB1FB33D08005F915E /* MultiTouchBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782EA1FB33D08005F915E /* MultiTouchBox.m */; };
 		1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782ED1FB33DCA005F915E /* MYBoxView.m */; };
+		1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5A7401FB81F5F004CCFEB /* MotionCameraExt.m */; };
 		1AE086A51FB54E12005ACF58 /* MYBoxExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE086A41FB54E12005ACF58 /* MYBoxExt.m */; };
 		439201AF65F1BE1B9101A858 /* Pods_MyLittleCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7C7788819C07E13FC06325 /* Pods_MyLittleCraft.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A4269431FB6FB1C00C2B1C2 /* MotionCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionCamera.h; sourceTree = "<group>"; };
+		1A4269441FB6FB1C00C2B1C2 /* MotionCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionCamera.m; sourceTree = "<group>"; };
+		1A4269491FB6FCE600C2B1C2 /* MYCameraPreviewLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYCameraPreviewLayer.h; sourceTree = "<group>"; };
+		1A42694A1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYCameraPreviewLayer.m; sourceTree = "<group>"; };
 		1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJSInjectionDemoViewController.m; sourceTree = "<group>"; };
 		1A44AC771FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyJSHrefDemoViewController.m; sourceTree = "<group>"; };
 		1A44AC781FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDynamicScriptDemoViewController.m; sourceTree = "<group>"; };
@@ -107,6 +114,8 @@
 		1AB782EA1FB33D08005F915E /* MultiTouchBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTouchBox.m; sourceTree = "<group>"; };
 		1AB782EC1FB33DCA005F915E /* MYBoxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYBoxView.h; sourceTree = "<group>"; };
 		1AB782ED1FB33DCA005F915E /* MYBoxView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYBoxView.m; sourceTree = "<group>"; };
+		1AD5A73F1FB81F5F004CCFEB /* MotionCameraExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionCameraExt.h; sourceTree = "<group>"; };
+		1AD5A7401FB81F5F004CCFEB /* MotionCameraExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionCameraExt.m; sourceTree = "<group>"; };
 		1AE086A31FB54E12005ACF58 /* MYBoxExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYBoxExt.h; sourceTree = "<group>"; };
 		1AE086A41FB54E12005ACF58 /* MYBoxExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYBoxExt.m; sourceTree = "<group>"; };
 		1C7C7788819C07E13FC06325 /* Pods_MyLittleCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLittleCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +149,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A4269421FB6FAA000C2B1C2 /* MotionCamera */ = {
+			isa = PBXGroup;
+			children = (
+				1A4269431FB6FB1C00C2B1C2 /* MotionCamera.h */,
+				1A4269441FB6FB1C00C2B1C2 /* MotionCamera.m */,
+				1A4269491FB6FCE600C2B1C2 /* MYCameraPreviewLayer.h */,
+				1A42694A1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m */,
+				1AD5A73F1FB81F5F004CCFEB /* MotionCameraExt.h */,
+				1AD5A7401FB81F5F004CCFEB /* MotionCameraExt.m */,
+			);
+			path = MotionCamera;
+			sourceTree = "<group>";
+		};
 		1A44AC741FB6E3D100B5DAC6 /* WebAndScript */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +252,7 @@
 				1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */,
 				1A7CD8DC1FADB394002F3DB3 /* ViewController.h */,
 				1A7CD8DD1FADB394002F3DB3 /* ViewController.m */,
+				1A4269421FB6FAA000C2B1C2 /* MotionCamera */,
 				1A7CD90B1FADB3D3002F3DB3 /* BelowHeaderRefreshing */,
 				1AB782E81FB33CDF005F915E /* MultiTouchBox */,
 				1A44AC741FB6E3D100B5DAC6 /* WebAndScript */,
@@ -495,11 +518,14 @@
 				1AB782EB1FB33D08005F915E /* MultiTouchBox.m in Sources */,
 				1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */,
 				1A44AC991FB6E3D100B5DAC6 /* UIView+Pin.m in Sources */,
+				1A42694B1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m in Sources */,
 				1A44AC961FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m in Sources */,
 				1A44ACA41FB6E49700B5DAC6 /* WebDemoItem.m in Sources */,
+				1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */,
 				1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */,
 				1A44AC941FB6E3D100B5DAC6 /* MyWebBaseViewController.m in Sources */,
 				1A7CD90E1FADB3D3002F3DB3 /* BelowHeaderRefreshing.m in Sources */,
+				1A4269451FB6FB1C00C2B1C2 /* MotionCamera.m in Sources */,
 				1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */,
 				1A44AC9A1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m in Sources */,
 				1A7CD8E91FADB394002F3DB3 /* main.m in Sources */,

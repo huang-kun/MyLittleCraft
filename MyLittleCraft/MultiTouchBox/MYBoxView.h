@@ -13,6 +13,9 @@
 /// Set debug mode. Default is NO.
 @property (nonatomic, assign) BOOL debug;
 
+/// The color of box's border
+@property (nonatomic, strong) UIColor *boxColor;
+
 /// Reset box.
 - (void)resetBoxFrame;
 

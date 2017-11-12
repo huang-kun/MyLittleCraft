@@ -43,13 +43,14 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = UIColor.whiteColor;
+        self.backgroundColor = UIColor.clearColor;
         self.multipleTouchEnabled = YES;
+        self.boxColor = UIColor.grayColor;
         
         _allTouches = [NSMutableArray new];
         
         _borderLayer = [CAShapeLayer layer];
-        _borderLayer.strokeColor = UIColor.grayColor.CGColor;
+        _borderLayer.strokeColor = self.boxColor.CGColor;
         _borderLayer.fillColor = UIColor.clearColor.CGColor;
         _borderLayer.lineWidth = 2;
         _borderLayer.lineCap = kCALineCapButt;
@@ -84,7 +85,17 @@
     _storedBoxFrame.origin.x = frame.size.width / 2 - _storedBoxFrame.size.width / 2;
     _storedBoxFrame.origin.y = frame.size.height / 2 - _storedBoxFrame.size.height / 2;
     
-    [self updateBoxFrame:_storedBoxFrame];
+    [self updateLayerBlock:^{
+        [self updateBoxFrame:_storedBoxFrame];
+        [self debugUpdateLayersWithBox:my_boxFromFrame(_storedBoxFrame)];
+    }];
+}
+
+- (void)setBoxColor:(UIColor *)boxColor {
+    _boxColor = boxColor;
+    _borderLayer.strokeColor = _boxColor.CGColor;
+    
+    [self setNeedsDisplay];
 }
 
 #pragma mark - Touch Events

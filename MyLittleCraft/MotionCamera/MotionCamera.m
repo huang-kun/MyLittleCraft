@@ -19,7 +19,7 @@
 @property (nonatomic, strong) CMMotionManager *motionManager;
 
 @property (nonatomic, strong) MYCameraPreviewLayer *previewLayer;
-@property (nonatomic, strong) UIImageView *cameraButton;
+@property (nonatomic, strong) UIButton *cameraButton;
 @property (nonatomic, strong) UILabel *tipLabel;
 @property (nonatomic, strong) UISwitch *switcher;
 @property (nonatomic, strong) UILabel *switcherLabel;
@@ -41,8 +41,11 @@
     
     // Fake button
     UIImage *cameraIcon = [UIImage imageNamed:@"camera"];
-    _cameraButton = [[UIImageView alloc] initWithImage:cameraIcon];
-    _cameraButton.backgroundColor = UIColor.clearColor;
+    _cameraButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_cameraButton setImage:cameraIcon forState:UIControlStateNormal];
+    [_cameraButton setImage:cameraIcon forState:UIControlStateHighlighted];
+    [_cameraButton addTarget:self action:@selector(capture:) forControlEvents:UIControlEventTouchUpInside];
+    [_cameraButton sizeToFit];
     [self.view addSubview:_cameraButton];
     
     // Tip Label
@@ -121,7 +124,7 @@
     [super viewDidAppear:animated];
     
 #if TARGET_OS_SIMULATOR
-    [self popAlertWithTitle:@"Sorry" message:@"This demo is for real device only, not simulator!"];
+    [self popAlertWithTitle:@"Sorry" message:@"This demo is better testing on a real device, so you can see the device orientation changes drove by real accelerometer."];
 #endif
     
 }
@@ -155,7 +158,7 @@
     };
 }
 
-#pragma mark - Switcher Action
+#pragma mark - Target / Action
 
 - (void)handleSwitcher:(UISwitch *)sender {
     if (sender.tag == 0) {
@@ -171,6 +174,10 @@
         self.switcherLabel.textColor = UIColor.redColor;
         [self.switcherLabel sizeToFit];
     }
+}
+
+- (void)capture:(UIButton *)sender {
+    [self popAlertWithTitle:@"Oops" message:@"Sorry, this is not a real camera app, but for device orientation detection purpose only."];
 }
 
 #pragma mark - NSNotification

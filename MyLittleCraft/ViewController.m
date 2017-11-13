@@ -19,7 +19,11 @@
     [super viewDidLoad];
     
     self.title = @"My little Craft";
-    _demo = @[ @"BelowHeaderRefreshing", @"MultiTouchBox", @"MotionCamera", @"WebAndScript" ];
+    _demo = @[ @"BelowHeaderRefreshing",
+               @"SwipeToDismissKeyboard",
+               @"MultiTouchBox",
+               @"MotionCamera",
+               @"WebAndScript" ];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"Cell"];

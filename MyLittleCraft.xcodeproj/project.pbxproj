@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1C331E1FB9477100BFC66A /* SwipeToDismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C331D1FB9477100BFC66A /* SwipeToDismissKeyboard.m */; };
 		1A4269451FB6FB1C00C2B1C2 /* MotionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4269441FB6FB1C00C2B1C2 /* MotionCamera.m */; };
 		1A42694B1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A42694A1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m */; };
 		1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A1C331C1FB9477100BFC66A /* SwipeToDismissKeyboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeToDismissKeyboard.h; sourceTree = "<group>"; };
+		1A1C331D1FB9477100BFC66A /* SwipeToDismissKeyboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipeToDismissKeyboard.m; sourceTree = "<group>"; };
 		1A4269431FB6FB1C00C2B1C2 /* MotionCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionCamera.h; sourceTree = "<group>"; };
 		1A4269441FB6FB1C00C2B1C2 /* MotionCamera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionCamera.m; sourceTree = "<group>"; };
 		1A4269491FB6FCE600C2B1C2 /* MYCameraPreviewLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYCameraPreviewLayer.h; sourceTree = "<group>"; };
@@ -149,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1C331B1FB946F400BFC66A /* SwipeDownKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1A1C331C1FB9477100BFC66A /* SwipeToDismissKeyboard.h */,
+				1A1C331D1FB9477100BFC66A /* SwipeToDismissKeyboard.m */,
+			);
+			path = SwipeDownKeyboard;
+			sourceTree = "<group>";
+		};
 		1A4269421FB6FAA000C2B1C2 /* MotionCamera */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +264,7 @@
 				1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */,
 				1A7CD8DC1FADB394002F3DB3 /* ViewController.h */,
 				1A7CD8DD1FADB394002F3DB3 /* ViewController.m */,
+				1A1C331B1FB946F400BFC66A /* SwipeDownKeyboard */,
 				1A4269421FB6FAA000C2B1C2 /* MotionCamera */,
 				1A7CD90B1FADB3D3002F3DB3 /* BelowHeaderRefreshing */,
 				1AB782E81FB33CDF005F915E /* MultiTouchBox */,
@@ -532,6 +545,7 @@
 				1A44AC931FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m in Sources */,
 				1A44AC981FB6E3D100B5DAC6 /* UIViewController+ShowAlert.m in Sources */,
 				1A44AC921FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m in Sources */,
+				1A1C331E1FB9477100BFC66A /* SwipeToDismissKeyboard.m in Sources */,
 				1A44AC971FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.m in Sources */,
 				1A44AC951FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m in Sources */,
 				1A44ACA11FB6E41E00B5DAC6 /* WebAndScript.m in Sources */,

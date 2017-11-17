@@ -8,6 +8,7 @@
 
 #import "MYBoxView.h"
 #import "MYBoxExt.h"
+#import "UITouch+MYLocation.h"
 
 @interface MYBoxView ()
 

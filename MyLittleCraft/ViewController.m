@@ -19,11 +19,8 @@
     [super viewDidLoad];
     
     self.title = @"My little Craft";
-    _demo = @[ @"BelowHeaderRefreshing",
-               @"SwipeToDismissKeyboard",
-               @"MultiTouchBox",
-               @"MotionCamera",
-               @"WebAndScript" ];
+    
+    _demo = [self demoItems];
     
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"Cell"];
@@ -55,11 +52,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *name = _demo[indexPath.row];
-    Class cls = NSClassFromString(name);
+    NSString *trimmed = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
+    
+    Class cls = NSClassFromString(trimmed);
     UIViewController *vc = [cls new];
     vc.title = name;
-    vc.view.backgroundColor = UIColor.whiteColor;
     [self.navigationController pushViewController:vc animated:YES];
+    
+    // This will call -[UIViewController viewDidLoad:] for view creation
+    // So put this line of code after pushing to navigation stack is safer because the vc might use "self.navigationController" in viewDidLoad:
+    vc.view.backgroundColor = UIColor.whiteColor;
+}
+
+#pragma mark - Helper
+
+- (NSArray <NSString *> *)demoItems {
+    return @[ @"Below Header Refreshing",
+              @"Top Search Bar",
+              @"Swipe To Dismiss Keyboard",
+              @"Multi Touch Box",
+              @"Motion Camera",
+              @"Web And Script" ];
 }
 
 @end

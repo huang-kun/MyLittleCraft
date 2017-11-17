@@ -1,6 +1,6 @@
 //
 //  UIViewController+ShowAlert.m
-//  MyWebDemo
+//  MyLittleCraft
 //
 //  Created by huangkun on 2017/7/12.
 //  Copyright © 2017年 huangkun. All rights reserved.

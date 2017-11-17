@@ -51,14 +51,7 @@ MYTouchArea my_touchAreaForBoxFrame(CGRect frame, CGPoint location);
 CGRect my_updatedBoxFrameFrom(CGRect fromFrame, CGPoint delta, MYTouchArea touchArea);
 
 
-
 @interface UITouch (MYTouchTracking)
-
-/// Get current location
-@property (nonatomic, readonly) CGPoint my_currentLocation;
-
-/// Get previous location
-@property (nonatomic, readonly) CGPoint my_previousLocation;
 
 /// Store MYTouchArea value at touchesBegan state, so it will not change during touchesMoved because MYTouchArea may change depending on box size.
 @property (nonatomic, assign) MYTouchArea my_trackingTouchArea;

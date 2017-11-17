@@ -299,30 +299,6 @@ CGRect my_updatedBoxFrameFrom(CGRect fromFrame, CGPoint delta, MYTouchArea touch
 
 @implementation UITouch (MYTouchTracking)
 
-- (CGPoint)my_currentLocation {
-    CGPoint location;
-    
-    if (@available(iOS 9.1, *)) {
-        location = [self preciseLocationInView:self.view];
-    } else {
-        location = [self locationInView:self.view];
-    }
-    
-    return location;
-}
-
-- (CGPoint)my_previousLocation {
-    CGPoint location;
-    
-    if (@available(iOS 9.1, *)) {
-        location = [self precisePreviousLocationInView:self.view];
-    } else {
-        location = [self previousLocationInView:self.view];
-    }
-    
-    return location;
-}
-
 - (void)setMy_trackingTouchArea:(MYTouchArea)my_trackingTouchArea {
     objc_setAssociatedObject(self, @selector(my_trackingTouchArea), @(my_trackingTouchArea), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }

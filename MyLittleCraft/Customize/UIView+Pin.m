@@ -54,9 +54,13 @@
 }
 
 - (void)pinCenterToSuperview {
+    [self pinCenterToSuperviewWithOffset:UIOffsetZero];
+}
+
+- (void)pinCenterToSuperviewWithOffset:(UIOffset)offset {
     self.translatesAutoresizingMaskIntoConstraints = NO;
-    [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeCenterX constant:0];
-    [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeCenterY constant:0];
+    [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeCenterX constant:offset.horizontal];
+    [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeCenterY constant:offset.vertical];
 }
 
 - (void)my_setConstraintForAttribute:(NSLayoutAttribute)attribute constant:(CGFloat)constant {

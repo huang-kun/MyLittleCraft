@@ -23,6 +23,9 @@
 /// Add centerX and centerY constraints to self with superview.
 - (void)pinCenterToSuperview;
 
+/// Add centerX and centerY constraints to self with superview with offset.
+- (void)pinCenterToSuperviewWithOffset:(UIOffset)offset;
+
 /// Add specified edge and center constraints to self with superview.
 - (void)alignCenterToEdge:(UIRectEdge)edge constant:(CGFloat)constant;
 

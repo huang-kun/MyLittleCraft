@@ -1,21 +1,21 @@
 //
-//  WebAndScript.m
+//  WebAndScriptViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/11.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "WebAndScript.h"
+#import "WebAndScriptViewController.h"
 #import "WebDemoItem.h"
 #import "WebViewControllerProtocol.h"
 
-@interface WebAndScript () <UITableViewDelegate, UITableViewDataSource>
+@interface WebAndScriptViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray <WebDemoItem *> *demos;
 @end
 
-@implementation WebAndScript
+@implementation WebAndScriptViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

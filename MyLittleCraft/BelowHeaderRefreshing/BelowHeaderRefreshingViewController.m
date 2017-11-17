@@ -1,17 +1,17 @@
 //
-//  BelowHeaderRefreshing.m
+//  BelowHeaderRefreshingViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/4.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "BelowHeaderRefreshing.h"
+#import "BelowHeaderRefreshingViewController.h"
 #import <MJRefresh/MJRefresh.h>
 
 static NSString *const kBelowHeaderRefreshingCellReuseId = @"kBelowHeaderRefreshingCellReuseId";
 
-@interface BelowHeaderRefreshing () <UITableViewDelegate, UITableViewDataSource>
+@interface BelowHeaderRefreshingViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIView *tableHeaderContainerView;
 @property (nonatomic, strong) UIView *tableHeaderContentView;
@@ -20,13 +20,11 @@ static NSString *const kBelowHeaderRefreshingCellReuseId = @"kBelowHeaderRefresh
 @property (nonatomic, assign) BOOL didSetupMainFrames;
 @end
 
-@implementation BelowHeaderRefreshing
+@implementation BelowHeaderRefreshingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.title = NSStringFromClass(self.class);
-    
+        
     // Setup Table View
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [_tableView registerClass:UITableViewCell.class  forCellReuseIdentifier:kBelowHeaderRefreshingCellReuseId];

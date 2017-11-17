@@ -1,18 +1,18 @@
 //
-//  MotionCamera.m
+//  MotionCameraViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/11.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "MotionCamera.h"
+#import "MotionCameraViewController.h"
 #import <CoreMotion/CoreMotion.h>
 #import "MYCameraPreviewLayer.h"
 #import "MotionCameraExt.h"
 #import "UIViewController+ShowAlert.h"
 
-@interface MotionCamera ()
+@interface MotionCameraViewController ()
 
 @property (nonatomic, assign) UIDeviceOrientation deviceOrientation;
 @property (nonatomic, assign) CGAffineTransform cameraTransform;
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation MotionCamera
+@implementation MotionCameraViewController
 
 #pragma mark - UIViewController life cycles
 

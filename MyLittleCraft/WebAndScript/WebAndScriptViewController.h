@@ -1,5 +1,5 @@
 //
-//  WebAndScript.h
+//  WebAndScriptViewController.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WebAndScript : UIViewController
+@interface WebAndScriptViewController : UIViewController
 
 @end

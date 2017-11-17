@@ -1,14 +1,14 @@
 //
-//  SwipeToDismissKeyboard.m
+//  SwipeToDismissKeyboardViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/13.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "SwipeToDismissKeyboard.h"
+#import "SwipeToDismissKeyboardViewController.h"
 
-@interface SwipeToDismissKeyboard () <UIScrollViewDelegate>
+@interface SwipeToDismissKeyboardViewController () <UIScrollViewDelegate>
 @property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, strong) UIView *backgroundView; // for shadow effect
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -17,7 +17,7 @@
 @property (nonatomic, assign) BOOL fixed;
 @end
 
-@implementation SwipeToDismissKeyboard
+@implementation SwipeToDismissKeyboardViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

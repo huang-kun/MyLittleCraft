@@ -1,5 +1,5 @@
 //
-//  BelowHeaderRefreshing.h
+//  BelowHeaderRefreshingViewController.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/4.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BelowHeaderRefreshing : UIViewController
+@interface BelowHeaderRefreshingViewController : UIViewController
 
 @end

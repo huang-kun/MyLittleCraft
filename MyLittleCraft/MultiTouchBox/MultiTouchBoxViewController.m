@@ -1,21 +1,21 @@
 //
-//  MultiTouchBox.m
+//  MultiTouchBoxViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/8.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "MultiTouchBox.h"
+#import "MultiTouchBoxViewController.h"
 #import "MYBoxView.h"
 #import "MYNavigationController.h"
 
-@interface MultiTouchBox () <UINavigationControllerDelegate>
+@interface MultiTouchBoxViewController () <UINavigationControllerDelegate>
 @property (nonatomic, strong) MYBoxView *boxView;
 @property (nonatomic, strong) UITextView *textView;
 @end
 
-@implementation MultiTouchBox
+@implementation MultiTouchBoxViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -53,8 +53,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *name = _demo[indexPath.row];
     NSString *trimmed = [name stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSString *className = [trimmed stringByAppendingString:@"ViewController"];
     
-    Class cls = NSClassFromString(trimmed);
+    Class cls = NSClassFromString(className);
+    NSAssert(cls, @"The class named %@ is not exist!", className);
+    
     UIViewController *vc = [cls new];
     vc.title = name;
     [self.navigationController pushViewController:vc animated:YES];

@@ -1,12 +1,12 @@
 //
-//  TopSearchBar.m
+//  TopSearchBarViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/13.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "TopSearchBar.h"
+#import "TopSearchBarViewController.h"
 #import "MYSearchContainer.h"
 #import "MYSearchHeader.h"
 #import "MYSearchBar.h"
@@ -20,7 +20,7 @@
 static NSString * const kSearchBarDemoItemCellReuseId = @"kSearchBarDemoItemCellReuseId";
 static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSectionCellReuseId";
 
-@interface TopSearchBar () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate>
+@interface TopSearchBarViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MYSearchHeader *searchHeader;
@@ -34,7 +34,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 @end
 
-@implementation TopSearchBar
+@implementation TopSearchBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

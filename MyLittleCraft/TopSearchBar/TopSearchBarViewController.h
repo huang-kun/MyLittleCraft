@@ -1,5 +1,5 @@
 //
-//  TopSearchBar.h
+//  TopSearchBarViewController.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopSearchBar : UIViewController
+@interface TopSearchBarViewController : UIViewController
 
 @end

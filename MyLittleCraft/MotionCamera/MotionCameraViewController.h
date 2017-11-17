@@ -1,5 +1,5 @@
 //
-//  MotionCamera.h
+//  MotionCameraViewController.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MotionCamera : UIViewController
+@interface MotionCameraViewController : UIViewController
 
 @end

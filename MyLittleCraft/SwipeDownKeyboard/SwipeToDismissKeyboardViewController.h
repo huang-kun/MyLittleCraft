@@ -1,5 +1,5 @@
 //
-//  SwipeToDismissKeyboard.h
+//  SwipeToDismissKeyboardViewController.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SwipeToDismissKeyboard : UIViewController
+@interface SwipeToDismissKeyboardViewController : UIViewController
 
 @end

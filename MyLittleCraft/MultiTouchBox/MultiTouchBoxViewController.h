@@ -1,5 +1,5 @@
 //
-//  MultiTouchBox.h
+//  MultiTouchBoxViewController.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/8.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MultiTouchBox : UIViewController
+@interface MultiTouchBoxViewController : UIViewController
 
 @end

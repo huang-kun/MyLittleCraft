@@ -241,7 +241,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
     
-    _transitionAnimator.reversed = NO;
+    _transitionAnimator.presenting = YES;
     
     if ([source isKindOfClass:self.class]) {
         CGRect frame = [self.view convertRect:_searchHeader.searchBar.frame
@@ -264,7 +264,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
     
-    _transitionAnimator.reversed = YES;
+    _transitionAnimator.presenting = NO;
     
     if ([dismissed isKindOfClass:MYSearchViewController.class]) {
         MYSearchViewController *svc = (MYSearchViewController *)dismissed;

@@ -15,7 +15,7 @@
 @property (nonatomic, readonly, strong) UIView *backgroundView;
 @property (nonatomic, readonly, strong) MYSearchBar *searchBar;
 
-@property (nonatomic, assign) BOOL reversed;
+@property (nonatomic, assign) BOOL presenting;
 @property (nonatomic, assign) CGRect searchBarInitialFrame;
 @property (nonatomic, assign) CGRect searchBarFinalFrame;
 

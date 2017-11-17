@@ -38,7 +38,7 @@
     
     // Final state
     // Present
-    if (!_reversed) {
+    if (_presenting) {
         UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
         CGRect finalFrame = [transitionContext finalFrameForViewController:toVC];
         toVC.view.frame = finalFrame;

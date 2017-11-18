@@ -290,6 +290,8 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     NSRange recentRange;
     recentRange.location = 0;
     
+    // MYTableCellMapper has implemented -isEqual: method.
+    // So the convenience way is to create a target item for locating target index in array.
     MYTableCellMapper *hotSectionMapper = [MYTableCellMapper new];
     hotSectionMapper.elementType = MYTableElementTypeSection;
     hotSectionMapper.section = 1;

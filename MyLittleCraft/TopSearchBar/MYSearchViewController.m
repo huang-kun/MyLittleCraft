@@ -8,7 +8,6 @@
 
 #import "MYSearchViewController.h"
 #import "MYSearchContainer.h"
-#import "MYSearchBar.h"
 #import "UIView+Pin.h"
 
 @interface MYSearchViewController ()
@@ -45,6 +44,12 @@
         [_searchContainer.searchBar resignFirstResponder];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - MYSearchBarOwnerable
+
+- (MYSearchBar *)searchBar {
+    return _searchContainer.searchBar;
 }
 
 @end

@@ -12,7 +12,6 @@
 #import "UIView+Pin.h"
 
 @interface MYSearchContainer()
-@property (nonatomic, strong) UIStackView *stackView;
 @end
 
 @implementation MYSearchContainer
@@ -21,7 +20,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self buildInterface];
-        [self layoutInterface];
     }
     return self;
 }
@@ -29,36 +27,39 @@
 - (void)buildInterface {
     _searchBar = [MYSearchBar new];
     _searchBar.placeholder = @"Hello World";
+    [self addSubview:_searchBar];
     
     _cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _cancelButton.titleLabel.font = [UIFont systemFontOfSize:20];
     _cancelButton.tintColor = MY_SEARCH_TINT_COLOR;
     [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    
-    _stackView = [UIStackView new];
-    _stackView.axis = UILayoutConstraintAxisHorizontal;
-    _stackView.spacing = kMYSearchBarMargin;
-    _stackView.alignment = UIStackViewAlignmentCenter;
-    
-    [_stackView addArrangedSubview:_searchBar];
-    [_stackView addArrangedSubview:_cancelButton];
-    [self addSubview:_stackView];
+    [_cancelButton sizeToFit];
+    [self addSubview:_cancelButton];
 }
 
-- (void)layoutInterface {
-    [_searchBar pinSize:(CGSize){ INFINITY, kMYSearchBarHeight }];
+- (void)layoutSubviews {
+    [super layoutSubviews];
     
-    // Make sure when searchBar stretched, it will not compress cancelButton.
-    [_cancelButton setContentCompressionResistancePriority:UILayoutPriorityRequired
-                                                   forAxis:UILayoutConstraintAxisHorizontal];
+    CGFloat margin = kMYSearchBarMargin;
     
-    UIEdgeInsets insets;
-    insets.top = kMYSearchBarMargin * 2;
-    insets.left = kMYSearchBarMargin;
-    insets.bottom = kMYSearchBarMargin;
-    insets.right = kMYSearchBarMargin;
+    CGRect cancelButtonFrame = _cancelButton.frame;
+    cancelButtonFrame.size.height = kMYSearchBarHeight;
+    cancelButtonFrame.origin.x = self.bounds.size.width - cancelButtonFrame.size.width - margin;
+    cancelButtonFrame.origin.y = self.bounds.size.height - margin - cancelButtonFrame.size.height;
     
-    [_stackView pinEdgesToSuperviewWithInsets:insets];
+    _cancelButton.frame = cancelButtonFrame;
+    
+    CGRect searchBarFrame;
+    searchBarFrame.origin.x = margin;
+    searchBarFrame.origin.y = margin * 2;
+    searchBarFrame.size.width = self.bounds.size.width - cancelButtonFrame.size.width - margin * 3;
+    searchBarFrame.size.height = kMYSearchBarHeight;
+    
+    _searchBar.frame = searchBarFrame;
+}
+
+- (CGSize)intrinsicContentSize {
+    return (CGSize){ UIScreen.mainScreen.bounds.size.width, kMYSearchBarHeight + kMYSearchBarMargin * 3 };
 }
 
 @end

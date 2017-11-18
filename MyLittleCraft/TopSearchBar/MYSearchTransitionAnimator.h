@@ -7,16 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class MYSearchBar;
+#import "MYSearchBar.h"
 
 @interface MYSearchTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
-@property (nonatomic, readonly, strong) UIView *backgroundView;
-@property (nonatomic, readonly, strong) MYSearchBar *searchBar;
+@property (nonatomic, assign, getter=isPresenting) BOOL presenting;
 
-@property (nonatomic, assign) BOOL presenting;
-@property (nonatomic, assign) CGRect searchBarInitialFrame;
-@property (nonatomic, assign) CGRect searchBarFinalFrame;
+@property (nonatomic, weak) id <MYSearchBarOwnerable> sourceOwner;
+@property (nonatomic, weak) id <MYSearchBarOwnerable> presentedOwner;
 
 @end

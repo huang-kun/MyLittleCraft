@@ -9,7 +9,6 @@
 #import "TopSearchBarViewController.h"
 #import "MYSearchContainer.h"
 #import "MYSearchHeader.h"
-#import "MYSearchBar.h"
 #import "UIView+Pin.h"
 #import "MYSearchViewController.h"
 #import "MYSearchTransitionAnimator.h"
@@ -239,47 +238,26 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 #pragma mark - UIViewControllerTransitioningDelegate
 
-- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source {
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(id <MYSearchBarOwnerable>)presented presentingController:(UIViewController *)presenting sourceController:(id <MYSearchBarOwnerable>)source {
+    
+    NSAssert([presented conformsToProtocol:@protocol(MYSearchBarOwnerable)], @"%@ must conforms to MYSearchBarOwnerable.", presented);
+    NSAssert(source == self, @"%@ must identical to %@.", source, self);
     
     _transitionAnimator.presenting = YES;
-    
-    if ([source isKindOfClass:self.class]) {
-        CGRect frame = [self.view convertRect:_searchHeader.searchBar.frame
-                                     fromView:_searchHeader.searchBar.superview];
-        
-        _transitionAnimator.searchBarInitialFrame = frame;
-    }
-    
-    if ([presented isKindOfClass:MYSearchViewController.class]) {
-        MYSearchViewController *svc = (MYSearchViewController *)presented;
-        
-        CGRect frame = [self.view convertRect:svc.searchContainer.searchBar.frame
-                                     fromView:svc.searchContainer.searchBar.superview];
-        
-        _transitionAnimator.searchBarFinalFrame = frame;
-    }
-    
+    _transitionAnimator.sourceOwner = source;
+    _transitionAnimator.presentedOwner = presented;
+
     return _transitionAnimator;
 }
 
-- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(id <MYSearchBarOwnerable>)dismissed {
+    
+    NSAssert([dismissed conformsToProtocol:@protocol(MYSearchBarOwnerable)], @"%@ must conforms to MYSearchBarOwnerable.", dismissed);
     
     _transitionAnimator.presenting = NO;
-    
-    if ([dismissed isKindOfClass:MYSearchViewController.class]) {
-        MYSearchViewController *svc = (MYSearchViewController *)dismissed;
-        
-        CGRect frame1 = [self.view convertRect:svc.searchContainer.searchBar.frame
-                                      fromView:svc.searchContainer.searchBar.superview];
-        
-        _transitionAnimator.searchBarInitialFrame = frame1;
-        
-        CGRect frame2 = [self.view convertRect:_searchHeader.searchBar.frame
-                                      fromView:_searchHeader.searchBar.superview];
-        
-        _transitionAnimator.searchBarFinalFrame = frame2;
-    }
-    
+    _transitionAnimator.sourceOwner = self;
+    _transitionAnimator.presentedOwner = dismissed;
+
     return _transitionAnimator;
 }
 
@@ -298,6 +276,12 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
         [sheet addAction:cancel];
         [self presentViewController:sheet animated:YES completion:nil];
     }
+}
+
+#pragma mark - MYSearchBarOwnerable
+
+- (MYSearchBar *)searchBar {
+    return _searchHeader.searchBar;
 }
 
 #pragma mark -

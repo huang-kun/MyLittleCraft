@@ -7,9 +7,13 @@
 //
 
 #import "MYSearchTransitionAnimator.h"
-#import "MYSearchBar.h"
 
 @interface MYSearchTransitionAnimator()
+@property (nonatomic, strong) MYSearchBar *searchBar;
+@property (nonatomic, strong) UIView *sourceCoverView;
+@property (nonatomic, strong) UIView *presentedCoverView;
+@property (nonatomic, assign) NSTimeInterval normalTransitioningDuration;
+@property (nonatomic, assign) NSTimeInterval additionalTransitioningDuration;
 @end
 
 @implementation MYSearchTransitionAnimator
@@ -19,10 +23,15 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _backgroundView = [[UIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
-        _backgroundView.backgroundColor = UIColor.whiteColor;
-        
         _searchBar = [MYSearchBar new];
+        _normalTransitioningDuration = 0.5;
+        _additionalTransitioningDuration = 0.2;
+        
+        _sourceCoverView = [[UIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        _sourceCoverView.backgroundColor = UIColor.whiteColor;
+        
+        _presentedCoverView = [[UIView alloc] initWithFrame:UIScreen.mainScreen.bounds];
+        _presentedCoverView.backgroundColor = UIColor.whiteColor;
     }
     return self;
 }
@@ -30,60 +39,98 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext {
-    return 0.5;
+    if (self.isPresenting) {
+        return _normalTransitioningDuration + _additionalTransitioningDuration;
+    }
+    return _normalTransitioningDuration;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIView *container = transitionContext.containerView;
     
-    // Final state
-    // Present
-    if (_presenting) {
-        UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-        CGRect finalFrame = [transitionContext finalFrameForViewController:toVC];
-        toVC.view.frame = finalFrame;
+    // Note:
+    // 1. When presenting happens, UITransitionContextFromViewControllerKey is not sourceOwner, it's a navigation controller.
+    // 2. Don't add fromView to containerView, otherwise fromView will be out of original view hierarchy.
+    
+    [_sourceOwner.view addSubview:_sourceCoverView];
+    [_presentedOwner.view addSubview:_presentedCoverView];
+    
+    if (self.isPresenting) {
+        [container addSubview:_presentedOwner.view];
+    }
+    
+    [container addSubview:_searchBar];
+    
+    // Calculation
+    CGRect screenBounds = UIScreen.mainScreen.bounds;
+    CGRect offScreenFrame = CGRectOffset(screenBounds, screenBounds.size.width, 0);
+    
+    CGRect sourceSearchBarFrame = [_sourceOwner.view convertRect:_sourceOwner.searchBar.frame
+                                                        fromView:_sourceOwner.searchBar.superview];
+    
+    CGRect presentedSearchBarFrame = [_presentedOwner.view convertRect:_presentedOwner.searchBar.frame
+                                                              fromView:_presentedOwner.searchBar.superview];
+    
+    // Animation
+    _sourceOwner.searchBar.hidden = YES;
+    _presentedOwner.searchBar.hidden = YES;
+    
+    if (self.isPresenting) {
+        _searchBar.frame = sourceSearchBarFrame;
+        _presentedOwner.view.frame = offScreenFrame;
         
-        [container addSubview:toVC.view];
+        _searchBar.alpha = 1;
+        _sourceCoverView.alpha = 0;
+        _presentedCoverView.alpha = 1;
     }
     // Dismiss
     else {
-        UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-        CGRect finalFrame = [transitionContext finalFrameForViewController:fromVC];
-        fromVC.view.frame = finalFrame;
+        _searchBar.frame = presentedSearchBarFrame;
+        _presentedOwner.view.frame = offScreenFrame;
         
-        if ([container.subviews containsObject:fromVC.view]) {
-            fromVC.view.hidden = YES;
-        }
+        _searchBar.alpha = 1;
+        _sourceCoverView.alpha = 1;
     }
     
-    [container addSubview:_backgroundView];
-    [_backgroundView addSubview:_searchBar];
-    
-    // Animation
-    _searchBar.frame = _searchBarInitialFrame;
-    _searchBar.alpha = 1.0;
-    _backgroundView.alpha = 1.0;
-    
     NSTimeInterval duration = [self transitionDuration:transitionContext];
-    NSTimeInterval percent = 0.7;
-    UIViewKeyframeAnimationOptions options = UIViewKeyframeAnimationOptionCalculationModeLinear;
     
-    [UIView animateKeyframesWithDuration:duration delay:0 options:options animations:^{
+    [UIView animateWithDuration:(self.isPresenting ? _normalTransitioningDuration : duration) delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.8 options:0 animations:^{
         
-        [UIView addKeyframeWithRelativeStartTime:0 relativeDuration:percent animations:^{
-            _searchBar.frame = _searchBarFinalFrame;
-        }];
-        
-        [UIView addKeyframeWithRelativeStartTime:percent relativeDuration:(1 - percent) animations:^{
-            _searchBar.alpha = 0.0;
-            _backgroundView.alpha = 0.0;
-        }];
+        if (self.isPresenting) {
+            self.searchBar.frame = presentedSearchBarFrame;
+            self.sourceCoverView.alpha = 1;
+        } else {
+            self.searchBar.frame = sourceSearchBarFrame;
+            self.sourceCoverView.alpha = 0;
+        }
         
     } completion:^(BOOL finished) {
-        [_searchBar removeFromSuperview];
-        [_backgroundView removeFromSuperview];
-        [transitionContext completeTransition:finished];
+        
+        if (self.isPresenting) {
+            self.presentedOwner.view.frame = [transitionContext finalFrameForViewController:(id)_presentedOwner];
+            self.presentedCoverView.alpha = 1;
+
+            [UIView animateWithDuration:self.additionalTransitioningDuration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.5 options:0 animations:^{
+                self.presentedCoverView.alpha = 0;
+            } completion:^(BOOL finished) {
+                [self completeTransition:transitionContext];
+            }];
+            
+        } else {
+            [self completeTransition:transitionContext];
+        }
+        
     }];
+    
+}
+
+- (void)completeTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
+    self.sourceOwner.searchBar.hidden = NO;
+    self.presentedOwner.searchBar.hidden = NO;
+    [self.searchBar removeFromSuperview];
+    [self.sourceCoverView removeFromSuperview];
+    [self.presentedCoverView removeFromSuperview];
+    [transitionContext completeTransition:YES];
 }
 
 @end

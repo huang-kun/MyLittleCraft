@@ -15,3 +15,10 @@ UIKIT_EXTERN CGFloat const kMYSearchBarMargin;
 
 @end
 
+
+@protocol MYSearchBarOwnerable <NSObject>
+
+- (MYSearchBar *)searchBar;
+- (UIView *)view;
+
+@end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MYSearchBar.h"
 
-@interface TopSearchBarViewController : UIViewController
+@interface TopSearchBarViewController : UIViewController <MYSearchBarOwnerable>
 
 @end

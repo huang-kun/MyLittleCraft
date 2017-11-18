@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A01020E1FBC1E8600113309 /* MYSearchTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A01020D1FBC1E8600113309 /* MYSearchTransitionAnimator.m */; };
 		1A1C331E1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C331D1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m */; };
-		1A1C33221FB9807B00BFC66A /* TopSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C33211FB9807B00BFC66A /* TopSearchBarViewController.m */; };
-		1A1C33251FB9856C00BFC66A /* MYSearchHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C33241FB9856C00BFC66A /* MYSearchHeader.m */; };
-		1A1C33281FB9B09800BFC66A /* MYSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C33271FB9B09800BFC66A /* MYSearchBar.m */; };
-		1A1C332B1FB9B23500BFC66A /* MYSearchContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C332A1FB9B23500BFC66A /* MYSearchContainer.m */; };
-		1A1C332E1FB9B88800BFC66A /* MYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C332D1FB9B88800BFC66A /* MYSearchViewController.m */; };
 		1A4269451FB6FB1C00C2B1C2 /* MotionCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4269441FB6FB1C00C2B1C2 /* MotionCameraViewController.m */; };
 		1A42694B1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A42694A1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m */; };
 		1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */; };
@@ -39,6 +33,15 @@
 		1A7CD8FE1FADB394002F3DB3 /* MyLittleCraftUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8FD1FADB394002F3DB3 /* MyLittleCraftUITests.m */; };
 		1A7CD90E1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD90D1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m */; };
 		1A7CD9101FADB803002F3DB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD90F1FADB803002F3DB3 /* README.md */; };
+		1A93D01F1FC064C800C78AEB /* MYSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D00A1FC064C800C78AEB /* MYSearchBar.m */; };
+		1A93D0201FC064C800C78AEB /* MYSearchContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D00E1FC064C800C78AEB /* MYSearchContainer.m */; };
+		1A93D0211FC064C800C78AEB /* MYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D0101FC064C800C78AEB /* MYSearchViewController.m */; };
+		1A93D0221FC064C800C78AEB /* search_results.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A93D0151FC064C800C78AEB /* search_results.txt */; };
+		1A93D0231FC064C800C78AEB /* MYTableCellMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D0161FC064C800C78AEB /* MYTableCellMapper.m */; };
+		1A93D0241FC064C800C78AEB /* MYSearchTableViewComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D0181FC064C800C78AEB /* MYSearchTableViewComponents.m */; };
+		1A93D0251FC064C800C78AEB /* MYSearchHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D0191FC064C800C78AEB /* MYSearchHeader.m */; };
+		1A93D0261FC064C800C78AEB /* TopSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D01A1FC064C800C78AEB /* TopSearchBarViewController.m */; };
+		1A93D0271FC064C800C78AEB /* MYSearchTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D01E1FC064C800C78AEB /* MYSearchTransitionAnimator.m */; };
 		1AB782EB1FB33D08005F915E /* MultiTouchBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782EA1FB33D08005F915E /* MultiTouchBoxViewController.m */; };
 		1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782ED1FB33DCA005F915E /* MYBoxView.m */; };
 		1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5A7401FB81F5F004CCFEB /* MotionCameraExt.m */; };
@@ -48,9 +51,6 @@
 		1AEC86971FBE9C6200887777 /* UITouch+MYLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC86961FBE9C6200887777 /* UITouch+MYLocation.m */; };
 		1AEC869C1FBE9D1A00887777 /* UIView+Pin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC86991FBE9D1A00887777 /* UIView+Pin.m */; };
 		1AEC869D1FBE9D1A00887777 /* UIViewController+ShowAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC869A1FBE9D1A00887777 /* UIViewController+ShowAlert.m */; };
-		1AEC869F1FBEEE9D00887777 /* search_results.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1AEC869E1FBEEE9D00887777 /* search_results.txt */; };
-		1AED64031FBD4AB0007C2BE6 /* MYSearchTableViewComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AED64021FBD4AB0007C2BE6 /* MYSearchTableViewComponents.m */; };
-		1AED64071FBD8E9D007C2BE6 /* MYTableCellMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AED64061FBD8E9D007C2BE6 /* MYTableCellMapper.m */; };
 		439201AF65F1BE1B9101A858 /* Pods_MyLittleCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C7C7788819C07E13FC06325 /* Pods_MyLittleCraft.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,20 +72,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A01020C1FBC1E8600113309 /* MYSearchTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSearchTransitionAnimator.h; sourceTree = "<group>"; };
-		1A01020D1FBC1E8600113309 /* MYSearchTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYSearchTransitionAnimator.m; sourceTree = "<group>"; };
 		1A1C331C1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeToDismissKeyboardViewController.h; sourceTree = "<group>"; };
 		1A1C331D1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipeToDismissKeyboardViewController.m; sourceTree = "<group>"; };
-		1A1C33201FB9807B00BFC66A /* TopSearchBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopSearchBarViewController.h; sourceTree = "<group>"; };
-		1A1C33211FB9807B00BFC66A /* TopSearchBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopSearchBarViewController.m; sourceTree = "<group>"; };
-		1A1C33231FB9856C00BFC66A /* MYSearchHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSearchHeader.h; sourceTree = "<group>"; };
-		1A1C33241FB9856C00BFC66A /* MYSearchHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYSearchHeader.m; sourceTree = "<group>"; };
-		1A1C33261FB9B09800BFC66A /* MYSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSearchBar.h; sourceTree = "<group>"; };
-		1A1C33271FB9B09800BFC66A /* MYSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYSearchBar.m; sourceTree = "<group>"; };
-		1A1C33291FB9B23500BFC66A /* MYSearchContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSearchContainer.h; sourceTree = "<group>"; };
-		1A1C332A1FB9B23500BFC66A /* MYSearchContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYSearchContainer.m; sourceTree = "<group>"; };
-		1A1C332C1FB9B88800BFC66A /* MYSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSearchViewController.h; sourceTree = "<group>"; };
-		1A1C332D1FB9B88800BFC66A /* MYSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYSearchViewController.m; sourceTree = "<group>"; };
 		1A4269431FB6FB1C00C2B1C2 /* MotionCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionCameraViewController.h; sourceTree = "<group>"; };
 		1A4269441FB6FB1C00C2B1C2 /* MotionCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionCameraViewController.m; sourceTree = "<group>"; };
 		1A4269491FB6FCE600C2B1C2 /* MYCameraPreviewLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYCameraPreviewLayer.h; sourceTree = "<group>"; };
@@ -133,6 +121,24 @@
 		1A7CD90C1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BelowHeaderRefreshingViewController.h; sourceTree = "<group>"; };
 		1A7CD90D1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BelowHeaderRefreshingViewController.m; sourceTree = "<group>"; };
 		1A7CD90F1FADB803002F3DB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1A93D00A1FC064C800C78AEB /* MYSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchBar.m; sourceTree = "<group>"; };
+		1A93D00B1FC064C800C78AEB /* MYSearchConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchConsts.h; sourceTree = "<group>"; };
+		1A93D00C1FC064C800C78AEB /* MYSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchBar.h; sourceTree = "<group>"; };
+		1A93D00E1FC064C800C78AEB /* MYSearchContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchContainer.m; sourceTree = "<group>"; };
+		1A93D00F1FC064C800C78AEB /* MYSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchViewController.h; sourceTree = "<group>"; };
+		1A93D0101FC064C800C78AEB /* MYSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchViewController.m; sourceTree = "<group>"; };
+		1A93D0111FC064C800C78AEB /* MYSearchContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchContainer.h; sourceTree = "<group>"; };
+		1A93D0131FC064C800C78AEB /* MYSearchHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchHeader.h; sourceTree = "<group>"; };
+		1A93D0141FC064C800C78AEB /* MYSearchTableViewComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchTableViewComponents.h; sourceTree = "<group>"; };
+		1A93D0151FC064C800C78AEB /* search_results.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = search_results.txt; sourceTree = "<group>"; };
+		1A93D0161FC064C800C78AEB /* MYTableCellMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTableCellMapper.m; sourceTree = "<group>"; };
+		1A93D0171FC064C800C78AEB /* TopSearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopSearchBarViewController.h; sourceTree = "<group>"; };
+		1A93D0181FC064C800C78AEB /* MYSearchTableViewComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchTableViewComponents.m; sourceTree = "<group>"; };
+		1A93D0191FC064C800C78AEB /* MYSearchHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchHeader.m; sourceTree = "<group>"; };
+		1A93D01A1FC064C800C78AEB /* TopSearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopSearchBarViewController.m; sourceTree = "<group>"; };
+		1A93D01B1FC064C800C78AEB /* MYTableCellMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTableCellMapper.h; sourceTree = "<group>"; };
+		1A93D01D1FC064C800C78AEB /* MYSearchTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchTransitionAnimator.h; sourceTree = "<group>"; };
+		1A93D01E1FC064C800C78AEB /* MYSearchTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchTransitionAnimator.m; sourceTree = "<group>"; };
 		1AB782E91FB33D08005F915E /* MultiTouchBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiTouchBoxViewController.h; sourceTree = "<group>"; };
 		1AB782EA1FB33D08005F915E /* MultiTouchBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTouchBoxViewController.m; sourceTree = "<group>"; };
 		1AB782EC1FB33DCA005F915E /* MYBoxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYBoxView.h; sourceTree = "<group>"; };
@@ -151,12 +157,6 @@
 		1AEC86991FBE9D1A00887777 /* UIView+Pin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Pin.m"; sourceTree = "<group>"; };
 		1AEC869A1FBE9D1A00887777 /* UIViewController+ShowAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ShowAlert.m"; sourceTree = "<group>"; };
 		1AEC869B1FBE9D1A00887777 /* UIView+Pin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Pin.h"; sourceTree = "<group>"; };
-		1AEC869E1FBEEE9D00887777 /* search_results.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = search_results.txt; sourceTree = "<group>"; };
-		1AED64011FBD4AB0007C2BE6 /* MYSearchTableViewComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSearchTableViewComponents.h; sourceTree = "<group>"; };
-		1AED64021FBD4AB0007C2BE6 /* MYSearchTableViewComponents.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYSearchTableViewComponents.m; sourceTree = "<group>"; };
-		1AED64041FBD5B97007C2BE6 /* MYSearchConsts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYSearchConsts.h; sourceTree = "<group>"; };
-		1AED64051FBD8E9D007C2BE6 /* MYTableCellMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYTableCellMapper.h; sourceTree = "<group>"; };
-		1AED64061FBD8E9D007C2BE6 /* MYTableCellMapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYTableCellMapper.m; sourceTree = "<group>"; };
 		1C7C7788819C07E13FC06325 /* Pods_MyLittleCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyLittleCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A0FC391E89B7576C1E4EFF /* Pods-MyLittleCraft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleCraft.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyLittleCraft/Pods-MyLittleCraft.release.xcconfig"; sourceTree = "<group>"; };
 		FA94C94548872F443342CBE7 /* Pods-MyLittleCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyLittleCraft.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyLittleCraft/Pods-MyLittleCraft.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,24 +200,12 @@
 		1A1C331F1FB9802C00BFC66A /* TopSearchBar */ = {
 			isa = PBXGroup;
 			children = (
-				1AEC869E1FBEEE9D00887777 /* search_results.txt */,
-				1AED64041FBD5B97007C2BE6 /* MYSearchConsts.h */,
-				1A1C33201FB9807B00BFC66A /* TopSearchBarViewController.h */,
-				1A1C33211FB9807B00BFC66A /* TopSearchBarViewController.m */,
-				1AED64051FBD8E9D007C2BE6 /* MYTableCellMapper.h */,
-				1AED64061FBD8E9D007C2BE6 /* MYTableCellMapper.m */,
-				1AED64011FBD4AB0007C2BE6 /* MYSearchTableViewComponents.h */,
-				1AED64021FBD4AB0007C2BE6 /* MYSearchTableViewComponents.m */,
-				1A1C332C1FB9B88800BFC66A /* MYSearchViewController.h */,
-				1A1C332D1FB9B88800BFC66A /* MYSearchViewController.m */,
-				1A1C33231FB9856C00BFC66A /* MYSearchHeader.h */,
-				1A1C33241FB9856C00BFC66A /* MYSearchHeader.m */,
-				1A1C33291FB9B23500BFC66A /* MYSearchContainer.h */,
-				1A1C332A1FB9B23500BFC66A /* MYSearchContainer.m */,
-				1A1C33261FB9B09800BFC66A /* MYSearchBar.h */,
-				1A1C33271FB9B09800BFC66A /* MYSearchBar.m */,
-				1A01020C1FBC1E8600113309 /* MYSearchTransitionAnimator.h */,
-				1A01020D1FBC1E8600113309 /* MYSearchTransitionAnimator.m */,
+				1A93D00C1FC064C800C78AEB /* MYSearchBar.h */,
+				1A93D00A1FC064C800C78AEB /* MYSearchBar.m */,
+				1A93D00B1FC064C800C78AEB /* MYSearchConsts.h */,
+				1A93D0121FC064C800C78AEB /* MainPage */,
+				1A93D00D1FC064C800C78AEB /* SearchPage */,
+				1A93D01C1FC064C800C78AEB /* Transitions */,
 			);
 			path = TopSearchBar;
 			sourceTree = "<group>";
@@ -361,6 +349,42 @@
 				1A7CD90D1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m */,
 			);
 			path = BelowHeaderRefreshing;
+			sourceTree = "<group>";
+		};
+		1A93D00D1FC064C800C78AEB /* SearchPage */ = {
+			isa = PBXGroup;
+			children = (
+				1A93D00F1FC064C800C78AEB /* MYSearchViewController.h */,
+				1A93D0101FC064C800C78AEB /* MYSearchViewController.m */,
+				1A93D0111FC064C800C78AEB /* MYSearchContainer.h */,
+				1A93D00E1FC064C800C78AEB /* MYSearchContainer.m */,
+			);
+			path = SearchPage;
+			sourceTree = "<group>";
+		};
+		1A93D0121FC064C800C78AEB /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				1A93D0151FC064C800C78AEB /* search_results.txt */,
+				1A93D0171FC064C800C78AEB /* TopSearchBarViewController.h */,
+				1A93D01A1FC064C800C78AEB /* TopSearchBarViewController.m */,
+				1A93D0131FC064C800C78AEB /* MYSearchHeader.h */,
+				1A93D0191FC064C800C78AEB /* MYSearchHeader.m */,
+				1A93D0141FC064C800C78AEB /* MYSearchTableViewComponents.h */,
+				1A93D0181FC064C800C78AEB /* MYSearchTableViewComponents.m */,
+				1A93D01B1FC064C800C78AEB /* MYTableCellMapper.h */,
+				1A93D0161FC064C800C78AEB /* MYTableCellMapper.m */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		1A93D01C1FC064C800C78AEB /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				1A93D01D1FC064C800C78AEB /* MYSearchTransitionAnimator.h */,
+				1A93D01E1FC064C800C78AEB /* MYSearchTransitionAnimator.m */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		1AB782E81FB33CDF005F915E /* MultiTouchBox */ = {
@@ -526,7 +550,7 @@
 				1A44AC9C1FB6E3D100B5DAC6 /* js_href_demo.js in Resources */,
 				1A7CD8E61FADB394002F3DB3 /* LaunchScreen.storyboard in Resources */,
 				1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */,
-				1AEC869F1FBEEE9D00887777 /* search_results.txt in Resources */,
+				1A93D0221FC064C800C78AEB /* search_results.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,9 +630,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB782EB1FB33D08005F915E /* MultiTouchBoxViewController.m in Sources */,
-				1A01020E1FBC1E8600113309 /* MYSearchTransitionAnimator.m in Sources */,
-				1A1C33251FB9856C00BFC66A /* MYSearchHeader.m in Sources */,
-				1A1C332E1FB9B88800BFC66A /* MYSearchViewController.m in Sources */,
 				1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */,
 				1A42694B1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m in Sources */,
 				1A44AC961FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m in Sources */,
@@ -616,26 +637,29 @@
 				1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */,
 				1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */,
 				1A44AC941FB6E3D100B5DAC6 /* MyWebBaseViewController.m in Sources */,
+				1A93D01F1FC064C800C78AEB /* MYSearchBar.m in Sources */,
 				1A7CD90E1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m in Sources */,
 				1AEC868E1FBE991500887777 /* MYNavigationController.m in Sources */,
+				1A93D0261FC064C800C78AEB /* TopSearchBarViewController.m in Sources */,
+				1A93D0211FC064C800C78AEB /* MYSearchViewController.m in Sources */,
 				1AEC86941FBE9A5E00887777 /* MYFullScreenPanGestureRecognizer.m in Sources */,
+				1A93D0231FC064C800C78AEB /* MYTableCellMapper.m in Sources */,
 				1A4269451FB6FB1C00C2B1C2 /* MotionCameraViewController.m in Sources */,
-				1A1C332B1FB9B23500BFC66A /* MYSearchContainer.m in Sources */,
-				1AED64071FBD8E9D007C2BE6 /* MYTableCellMapper.m in Sources */,
+				1A93D0201FC064C800C78AEB /* MYSearchContainer.m in Sources */,
+				1A93D0251FC064C800C78AEB /* MYSearchHeader.m in Sources */,
 				1AEC86971FBE9C6200887777 /* UITouch+MYLocation.m in Sources */,
-				1AED64031FBD4AB0007C2BE6 /* MYSearchTableViewComponents.m in Sources */,
 				1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */,
-				1A1C33281FB9B09800BFC66A /* MYSearchBar.m in Sources */,
 				1A44AC9A1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m in Sources */,
+				1A93D0271FC064C800C78AEB /* MYSearchTransitionAnimator.m in Sources */,
 				1A7CD8E91FADB394002F3DB3 /* main.m in Sources */,
 				1A44AC931FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m in Sources */,
-				1A1C33221FB9807B00BFC66A /* TopSearchBarViewController.m in Sources */,
 				1A44AC921FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m in Sources */,
 				1A1C331E1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m in Sources */,
 				1A44AC971FB6E3D100B5DAC6 /* MyJSMessageDemoViewController.m in Sources */,
 				1A44AC951FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m in Sources */,
 				1AEC869C1FBE9D1A00887777 /* UIView+Pin.m in Sources */,
 				1A44ACA11FB6E41E00B5DAC6 /* WebAndScriptViewController.m in Sources */,
+				1A93D0241FC064C800C78AEB /* MYSearchTableViewComponents.m in Sources */,
 				1AE086A51FB54E12005ACF58 /* MYBoxExt.m in Sources */,
 				1AEC869D1FBE9D1A00887777 /* UIViewController+ShowAlert.m in Sources */,
 				1A7CD8DB1FADB394002F3DB3 /* AppDelegate.m in Sources */,

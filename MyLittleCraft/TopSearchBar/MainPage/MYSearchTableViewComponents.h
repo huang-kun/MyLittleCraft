@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MYTintLabel.h"
 
 UIKIT_EXTERN CGFloat const kMYSearchTableSectionCellHeight;
 UIKIT_EXTERN CGFloat const kMYSearchTableItemCellHeight;
 
-
-@interface MYTintLabel : UILabel
-
-@end
+@class MYSearchTableSectionCell;
 
 
 @interface MYTableViewCell : UITableViewCell
@@ -26,8 +24,6 @@ UIKIT_EXTERN CGFloat const kMYSearchTableItemCellHeight;
 
 #pragma mark - Table Section
 
-
-@class MYSearchTableSectionCell;
 
 @protocol MYSearchTableSectionCellDelegate <NSObject>
 @optional

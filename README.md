@@ -6,7 +6,7 @@
 This demo shows how refresh control displaying under table header view.
 
 
-### Top Search Bar
+### Music Search List
 
 This demonstrates:
 

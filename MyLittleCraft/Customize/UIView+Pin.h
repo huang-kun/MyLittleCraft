@@ -13,20 +13,23 @@
 /// Add width and height constraints to self. Use INFINITY for skipping.
 - (void)pinSize:(CGSize)size;
 
-/// Add top, leading, bottom and trailing constraints to self with it's superview.
-- (void)pinEdgesToSuperview;
+/// Add surrounding constraints from self to superview as you specified.
+- (void)pinEdges:(UIRectEdge)edges;
 
-/// Add top, leading, bottom and trailing constraints to self with superview. Use INFINITY for skipping.
+/// Add top, leading, bottom and trailing constraints from self to superview.
+- (void)pinAllEdges;
+
+/// Add top, leading, bottom and trailing constraints from self to superview with insets. Use INFINITY for skipping.
 /// The insets.left is for leading space and insets.right is for trailing space.
-- (void)pinEdgesToSuperviewWithInsets:(UIEdgeInsets)insets;
+- (void)pinEdgesWithInsets:(UIEdgeInsets)insets;
 
-/// Add centerX and centerY constraints to self with superview.
-- (void)pinCenterToSuperview;
+/// Add centerX and centerY constraints from self to superview.
+- (void)pinCenter;
 
-/// Add centerX and centerY constraints to self with superview with offset.
-- (void)pinCenterToSuperviewWithOffset:(UIOffset)offset;
+/// Add centerX and centerY constraints from self to superview with offset.
+- (void)pinCenterWithOffset:(UIOffset)offset;
 
-/// Add specified edge and center constraints to self with superview.
+/// Add specified edge and center constraints from self to superview.
 - (void)alignCenterToEdge:(UIRectEdge)edge constant:(CGFloat)constant;
 
 

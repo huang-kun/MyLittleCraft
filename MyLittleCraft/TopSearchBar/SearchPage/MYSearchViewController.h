@@ -7,11 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MYSearchBar.h"
 
 @class MYSearchContainer;
 
-@interface MYSearchViewController : UIViewController <MYSearchBarOwnerable>
+@interface MYSearchViewController : UIViewController
 
 @property (nonatomic, readonly, strong) MYSearchContainer *searchContainer;
 @property (nonatomic, readonly, strong) UILabel *tipLabel;

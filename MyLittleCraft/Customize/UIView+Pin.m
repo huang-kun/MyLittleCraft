@@ -41,11 +41,33 @@
     }
 }
 
-- (void)pinEdgesToSuperview {
-    [self pinEdgesToSuperviewWithInsets:UIEdgeInsetsZero];
+- (void)pinEdges:(UIRectEdge)edges {
+    self.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    if (edges == UIRectEdgeAll) {
+        [self pinAllEdges];
+        return;
+    }
+    
+    if (edges & UIRectEdgeTop) {
+        [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeTop constant:0];
+    }
+    if (edges & UIRectEdgeLeft) {
+        [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeLeading constant:0];
+    }
+    if (edges & UIRectEdgeBottom) {
+        [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeBottom constant:0];
+    }
+    if (edges & UIRectEdgeRight) {
+        [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeTrailing constant:0];
+    }
 }
 
-- (void)pinEdgesToSuperviewWithInsets:(UIEdgeInsets)insets {
+- (void)pinAllEdges {
+    [self pinEdgesWithInsets:UIEdgeInsetsZero];
+}
+
+- (void)pinEdgesWithInsets:(UIEdgeInsets)insets {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeTop constant:insets.top];
     [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeLeading constant:insets.left];
@@ -53,11 +75,11 @@
     [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeTrailing constant:-insets.right];
 }
 
-- (void)pinCenterToSuperview {
-    [self pinCenterToSuperviewWithOffset:UIOffsetZero];
+- (void)pinCenter {
+    [self pinCenterWithOffset:UIOffsetZero];
 }
 
-- (void)pinCenterToSuperviewWithOffset:(UIOffset)offset {
+- (void)pinCenterWithOffset:(UIOffset)offset {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeCenterX constant:offset.horizontal];
     [self my_setRelationshipConstraintForAttribute:NSLayoutAttributeCenterY constant:offset.vertical];

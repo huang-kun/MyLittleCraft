@@ -1,5 +1,5 @@
 //
-//  MYSearchTransitionAnimator.h
+//  MYSearchBarTransitionAnimator.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/15.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MYSearchBar.h"
 
-@interface MYSearchTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
+@interface MYSearchBarTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic, assign, getter=isPresenting) BOOL presenting;
 

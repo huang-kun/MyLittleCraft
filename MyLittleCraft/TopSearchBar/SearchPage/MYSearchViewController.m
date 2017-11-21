@@ -8,10 +8,11 @@
 
 #import "MYSearchViewController.h"
 #import "MYSearchContainer.h"
+#import "MYSearchConsts.h"
+#import "MYSearchBar.h"
 #import "UIView+Pin.h"
 
-@interface MYSearchViewController ()
-
+@interface MYSearchViewController () <MYSearchBarOwnerable>
 @end
 
 @implementation MYSearchViewController
@@ -30,8 +31,12 @@
     [_tipLabel sizeToFit];
     [self.view addSubview:_tipLabel];
     
-    [_searchContainer pinEdgesToSuperviewWithInsets:(UIEdgeInsets){ 0, 0, INFINITY, 0 }];
-    [_tipLabel pinCenterToSuperview];
+    UIEdgeInsets searchContainerInsets = UIEdgeInsetsZero;
+    searchContainerInsets.top = MY_SEARCH_BAR_TOP_INSET - kMYSearchBarMargin;
+    searchContainerInsets.bottom = INFINITY;
+    
+    [_searchContainer pinEdgesWithInsets:searchContainerInsets];
+    [_tipLabel pinCenter];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

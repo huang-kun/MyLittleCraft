@@ -24,6 +24,7 @@
 		1A44AC9E1FB6E3D100B5DAC6 /* js_injection_demo.js in Resources */ = {isa = PBXBuildFile; fileRef = 1A44AC901FB6E3D100B5DAC6 /* js_injection_demo.js */; };
 		1A44ACA11FB6E41E00B5DAC6 /* WebAndScriptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44ACA01FB6E41E00B5DAC6 /* WebAndScriptViewController.m */; };
 		1A44ACA41FB6E49700B5DAC6 /* WebDemoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44ACA31FB6E49700B5DAC6 /* WebDemoItem.m */; };
+		1A4B98681FC2C3B6001C2162 /* MusicSearchListViewController+Navigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4B98671FC2C3B6001C2162 /* MusicSearchListViewController+Navigation.m */; };
 		1A7CD8DB1FADB394002F3DB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */; };
 		1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DD1FADB394002F3DB3 /* ViewController.m */; };
 		1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD8E21FADB394002F3DB3 /* Assets.xcassets */; };
@@ -40,12 +41,20 @@
 		1A93D0231FC064C800C78AEB /* MYTableCellMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D0161FC064C800C78AEB /* MYTableCellMapper.m */; };
 		1A93D0241FC064C800C78AEB /* MYSearchTableViewComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D0181FC064C800C78AEB /* MYSearchTableViewComponents.m */; };
 		1A93D0251FC064C800C78AEB /* MYSearchHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D0191FC064C800C78AEB /* MYSearchHeader.m */; };
-		1A93D0261FC064C800C78AEB /* TopSearchBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D01A1FC064C800C78AEB /* TopSearchBarViewController.m */; };
-		1A93D0271FC064C800C78AEB /* MYSearchTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D01E1FC064C800C78AEB /* MYSearchTransitionAnimator.m */; };
+		1A93D0261FC064C800C78AEB /* MusicSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D01A1FC064C800C78AEB /* MusicSearchListViewController.m */; };
+		1A93D0271FC064C800C78AEB /* MYSearchBarTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D01E1FC064C800C78AEB /* MYSearchBarTransitionAnimator.m */; };
+		1A93D02B1FC065DE00C78AEB /* MYMusicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D02A1FC065DE00C78AEB /* MYMusicDetailViewController.m */; };
+		1A93D02E1FC0665000C78AEB /* MYMusicDetailTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A93D02D1FC0665000C78AEB /* MYMusicDetailTransitionAnimator.m */; };
 		1AB782EB1FB33D08005F915E /* MultiTouchBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782EA1FB33D08005F915E /* MultiTouchBoxViewController.m */; };
 		1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782ED1FB33DCA005F915E /* MYBoxView.m */; };
 		1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5A7401FB81F5F004CCFEB /* MotionCameraExt.m */; };
 		1AE086A51FB54E12005ACF58 /* MYBoxExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE086A41FB54E12005ACF58 /* MYBoxExt.m */; };
+		1AE0A54C1FC11D9E00A961E2 /* MYMusicBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A54B1FC11D9E00A961E2 /* MYMusicBar.m */; };
+		1AE0A54F1FC13A0300A961E2 /* MYArtworkCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A54E1FC13A0300A961E2 /* MYArtworkCardView.m */; };
+		1AE0A5531FC13E3900A961E2 /* UIColor+Random.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A5521FC13E3900A961E2 /* UIColor+Random.m */; };
+		1AE0A5591FC1681A00A961E2 /* UIImage+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A5581FC1681A00A961E2 /* UIImage+Draw.m */; };
+		1AE0A55C1FC171EA00A961E2 /* MYTintLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A55B1FC171EA00A961E2 /* MYTintLabel.m */; };
+		1AE0A55F1FC18CDC00A961E2 /* MusicSearchListViewController+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE0A55E1FC18CDC00A961E2 /* MusicSearchListViewController+Transition.m */; };
 		1AEC868E1FBE991500887777 /* MYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC868D1FBE991400887777 /* MYNavigationController.m */; };
 		1AEC86941FBE9A5E00887777 /* MYFullScreenPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC86931FBE9A5E00887777 /* MYFullScreenPanGestureRecognizer.m */; };
 		1AEC86971FBE9C6200887777 /* UITouch+MYLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC86961FBE9C6200887777 /* UITouch+MYLocation.m */; };
@@ -103,6 +112,8 @@
 		1A44ACA01FB6E41E00B5DAC6 /* WebAndScriptViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebAndScriptViewController.m; sourceTree = "<group>"; };
 		1A44ACA21FB6E49700B5DAC6 /* WebDemoItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebDemoItem.h; sourceTree = "<group>"; };
 		1A44ACA31FB6E49700B5DAC6 /* WebDemoItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebDemoItem.m; sourceTree = "<group>"; };
+		1A4B98661FC2C3B6001C2162 /* MusicSearchListViewController+Navigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicSearchListViewController+Navigation.h"; sourceTree = "<group>"; };
+		1A4B98671FC2C3B6001C2162 /* MusicSearchListViewController+Navigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MusicSearchListViewController+Navigation.m"; sourceTree = "<group>"; };
 		1A7CD8D61FADB394002F3DB3 /* MyLittleCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7CD8D91FADB394002F3DB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -132,13 +143,17 @@
 		1A93D0141FC064C800C78AEB /* MYSearchTableViewComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchTableViewComponents.h; sourceTree = "<group>"; };
 		1A93D0151FC064C800C78AEB /* search_results.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = search_results.txt; sourceTree = "<group>"; };
 		1A93D0161FC064C800C78AEB /* MYTableCellMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTableCellMapper.m; sourceTree = "<group>"; };
-		1A93D0171FC064C800C78AEB /* TopSearchBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopSearchBarViewController.h; sourceTree = "<group>"; };
+		1A93D0171FC064C800C78AEB /* MusicSearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchListViewController.h; sourceTree = "<group>"; };
 		1A93D0181FC064C800C78AEB /* MYSearchTableViewComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchTableViewComponents.m; sourceTree = "<group>"; };
 		1A93D0191FC064C800C78AEB /* MYSearchHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchHeader.m; sourceTree = "<group>"; };
-		1A93D01A1FC064C800C78AEB /* TopSearchBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopSearchBarViewController.m; sourceTree = "<group>"; };
+		1A93D01A1FC064C800C78AEB /* MusicSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchListViewController.m; sourceTree = "<group>"; };
 		1A93D01B1FC064C800C78AEB /* MYTableCellMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTableCellMapper.h; sourceTree = "<group>"; };
-		1A93D01D1FC064C800C78AEB /* MYSearchTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchTransitionAnimator.h; sourceTree = "<group>"; };
-		1A93D01E1FC064C800C78AEB /* MYSearchTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchTransitionAnimator.m; sourceTree = "<group>"; };
+		1A93D01D1FC064C800C78AEB /* MYSearchBarTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchBarTransitionAnimator.h; sourceTree = "<group>"; };
+		1A93D01E1FC064C800C78AEB /* MYSearchBarTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchBarTransitionAnimator.m; sourceTree = "<group>"; };
+		1A93D0291FC065DE00C78AEB /* MYMusicDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYMusicDetailViewController.h; sourceTree = "<group>"; };
+		1A93D02A1FC065DE00C78AEB /* MYMusicDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYMusicDetailViewController.m; sourceTree = "<group>"; };
+		1A93D02C1FC0665000C78AEB /* MYMusicDetailTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYMusicDetailTransitionAnimator.h; sourceTree = "<group>"; };
+		1A93D02D1FC0665000C78AEB /* MYMusicDetailTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYMusicDetailTransitionAnimator.m; sourceTree = "<group>"; };
 		1AB782E91FB33D08005F915E /* MultiTouchBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiTouchBoxViewController.h; sourceTree = "<group>"; };
 		1AB782EA1FB33D08005F915E /* MultiTouchBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTouchBoxViewController.m; sourceTree = "<group>"; };
 		1AB782EC1FB33DCA005F915E /* MYBoxView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYBoxView.h; sourceTree = "<group>"; };
@@ -147,6 +162,18 @@
 		1AD5A7401FB81F5F004CCFEB /* MotionCameraExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionCameraExt.m; sourceTree = "<group>"; };
 		1AE086A31FB54E12005ACF58 /* MYBoxExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYBoxExt.h; sourceTree = "<group>"; };
 		1AE086A41FB54E12005ACF58 /* MYBoxExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYBoxExt.m; sourceTree = "<group>"; };
+		1AE0A54A1FC11D9E00A961E2 /* MYMusicBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYMusicBar.h; sourceTree = "<group>"; };
+		1AE0A54B1FC11D9E00A961E2 /* MYMusicBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYMusicBar.m; sourceTree = "<group>"; };
+		1AE0A54D1FC13A0300A961E2 /* MYArtworkCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYArtworkCardView.h; sourceTree = "<group>"; };
+		1AE0A54E1FC13A0300A961E2 /* MYArtworkCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYArtworkCardView.m; sourceTree = "<group>"; };
+		1AE0A5511FC13E3900A961E2 /* UIColor+Random.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Random.h"; sourceTree = "<group>"; };
+		1AE0A5521FC13E3900A961E2 /* UIColor+Random.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Random.m"; sourceTree = "<group>"; };
+		1AE0A5571FC1681A00A961E2 /* UIImage+Draw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Draw.h"; sourceTree = "<group>"; };
+		1AE0A5581FC1681A00A961E2 /* UIImage+Draw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Draw.m"; sourceTree = "<group>"; };
+		1AE0A55A1FC171EA00A961E2 /* MYTintLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYTintLabel.h; sourceTree = "<group>"; };
+		1AE0A55B1FC171EA00A961E2 /* MYTintLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYTintLabel.m; sourceTree = "<group>"; };
+		1AE0A55D1FC18CDC00A961E2 /* MusicSearchListViewController+Transition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicSearchListViewController+Transition.h"; sourceTree = "<group>"; };
+		1AE0A55E1FC18CDC00A961E2 /* MusicSearchListViewController+Transition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MusicSearchListViewController+Transition.m"; sourceTree = "<group>"; };
 		1AEC868C1FBE991400887777 /* MYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYNavigationController.h; sourceTree = "<group>"; };
 		1AEC868D1FBE991400887777 /* MYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYNavigationController.m; sourceTree = "<group>"; };
 		1AEC86921FBE9A5E00887777 /* MYFullScreenPanGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYFullScreenPanGestureRecognizer.h; sourceTree = "<group>"; };
@@ -206,6 +233,7 @@
 				1A93D0121FC064C800C78AEB /* MainPage */,
 				1A93D00D1FC064C800C78AEB /* SearchPage */,
 				1A93D01C1FC064C800C78AEB /* Transitions */,
+				1A93D0281FC0657B00C78AEB /* CardPage */,
 			);
 			path = TopSearchBar;
 			sourceTree = "<group>";
@@ -366,14 +394,20 @@
 			isa = PBXGroup;
 			children = (
 				1A93D0151FC064C800C78AEB /* search_results.txt */,
-				1A93D0171FC064C800C78AEB /* TopSearchBarViewController.h */,
-				1A93D01A1FC064C800C78AEB /* TopSearchBarViewController.m */,
+				1A93D0171FC064C800C78AEB /* MusicSearchListViewController.h */,
+				1A93D01A1FC064C800C78AEB /* MusicSearchListViewController.m */,
+				1A4B98661FC2C3B6001C2162 /* MusicSearchListViewController+Navigation.h */,
+				1A4B98671FC2C3B6001C2162 /* MusicSearchListViewController+Navigation.m */,
+				1AE0A55D1FC18CDC00A961E2 /* MusicSearchListViewController+Transition.h */,
+				1AE0A55E1FC18CDC00A961E2 /* MusicSearchListViewController+Transition.m */,
 				1A93D0131FC064C800C78AEB /* MYSearchHeader.h */,
 				1A93D0191FC064C800C78AEB /* MYSearchHeader.m */,
 				1A93D0141FC064C800C78AEB /* MYSearchTableViewComponents.h */,
 				1A93D0181FC064C800C78AEB /* MYSearchTableViewComponents.m */,
 				1A93D01B1FC064C800C78AEB /* MYTableCellMapper.h */,
 				1A93D0161FC064C800C78AEB /* MYTableCellMapper.m */,
+				1AE0A54A1FC11D9E00A961E2 /* MYMusicBar.h */,
+				1AE0A54B1FC11D9E00A961E2 /* MYMusicBar.m */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -381,10 +415,23 @@
 		1A93D01C1FC064C800C78AEB /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				1A93D01D1FC064C800C78AEB /* MYSearchTransitionAnimator.h */,
-				1A93D01E1FC064C800C78AEB /* MYSearchTransitionAnimator.m */,
+				1A93D01D1FC064C800C78AEB /* MYSearchBarTransitionAnimator.h */,
+				1A93D01E1FC064C800C78AEB /* MYSearchBarTransitionAnimator.m */,
+				1A93D02C1FC0665000C78AEB /* MYMusicDetailTransitionAnimator.h */,
+				1A93D02D1FC0665000C78AEB /* MYMusicDetailTransitionAnimator.m */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		1A93D0281FC0657B00C78AEB /* CardPage */ = {
+			isa = PBXGroup;
+			children = (
+				1A93D0291FC065DE00C78AEB /* MYMusicDetailViewController.h */,
+				1A93D02A1FC065DE00C78AEB /* MYMusicDetailViewController.m */,
+				1AE0A54D1FC13A0300A961E2 /* MYArtworkCardView.h */,
+				1AE0A54E1FC13A0300A961E2 /* MYArtworkCardView.m */,
+			);
+			path = CardPage;
 			sourceTree = "<group>";
 		};
 		1AB782E81FB33CDF005F915E /* MultiTouchBox */ = {
@@ -413,6 +460,12 @@
 				1AEC86961FBE9C6200887777 /* UITouch+MYLocation.m */,
 				1AEC86921FBE9A5E00887777 /* MYFullScreenPanGestureRecognizer.h */,
 				1AEC86931FBE9A5E00887777 /* MYFullScreenPanGestureRecognizer.m */,
+				1AE0A5511FC13E3900A961E2 /* UIColor+Random.h */,
+				1AE0A5521FC13E3900A961E2 /* UIColor+Random.m */,
+				1AE0A5571FC1681A00A961E2 /* UIImage+Draw.h */,
+				1AE0A5581FC1681A00A961E2 /* UIImage+Draw.m */,
+				1AE0A55A1FC171EA00A961E2 /* MYTintLabel.h */,
+				1AE0A55B1FC171EA00A961E2 /* MYTintLabel.m */,
 			);
 			path = Customize;
 			sourceTree = "<group>";
@@ -635,23 +688,31 @@
 				1A44AC961FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m in Sources */,
 				1A44ACA41FB6E49700B5DAC6 /* WebDemoItem.m in Sources */,
 				1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */,
+				1A4B98681FC2C3B6001C2162 /* MusicSearchListViewController+Navigation.m in Sources */,
+				1AE0A54C1FC11D9E00A961E2 /* MYMusicBar.m in Sources */,
 				1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */,
 				1A44AC941FB6E3D100B5DAC6 /* MyWebBaseViewController.m in Sources */,
 				1A93D01F1FC064C800C78AEB /* MYSearchBar.m in Sources */,
 				1A7CD90E1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m in Sources */,
 				1AEC868E1FBE991500887777 /* MYNavigationController.m in Sources */,
-				1A93D0261FC064C800C78AEB /* TopSearchBarViewController.m in Sources */,
+				1A93D0261FC064C800C78AEB /* MusicSearchListViewController.m in Sources */,
+				1A93D02E1FC0665000C78AEB /* MYMusicDetailTransitionAnimator.m in Sources */,
 				1A93D0211FC064C800C78AEB /* MYSearchViewController.m in Sources */,
 				1AEC86941FBE9A5E00887777 /* MYFullScreenPanGestureRecognizer.m in Sources */,
+				1AE0A55C1FC171EA00A961E2 /* MYTintLabel.m in Sources */,
 				1A93D0231FC064C800C78AEB /* MYTableCellMapper.m in Sources */,
+				1AE0A54F1FC13A0300A961E2 /* MYArtworkCardView.m in Sources */,
 				1A4269451FB6FB1C00C2B1C2 /* MotionCameraViewController.m in Sources */,
+				1A93D02B1FC065DE00C78AEB /* MYMusicDetailViewController.m in Sources */,
 				1A93D0201FC064C800C78AEB /* MYSearchContainer.m in Sources */,
 				1A93D0251FC064C800C78AEB /* MYSearchHeader.m in Sources */,
 				1AEC86971FBE9C6200887777 /* UITouch+MYLocation.m in Sources */,
 				1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */,
 				1A44AC9A1FB6E3D100B5DAC6 /* WKUserScript+ScriptURL.m in Sources */,
-				1A93D0271FC064C800C78AEB /* MYSearchTransitionAnimator.m in Sources */,
+				1A93D0271FC064C800C78AEB /* MYSearchBarTransitionAnimator.m in Sources */,
 				1A7CD8E91FADB394002F3DB3 /* main.m in Sources */,
+				1AE0A5591FC1681A00A961E2 /* UIImage+Draw.m in Sources */,
+				1AE0A5531FC13E3900A961E2 /* UIColor+Random.m in Sources */,
 				1A44AC931FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m in Sources */,
 				1A44AC921FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m in Sources */,
 				1A1C331E1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m in Sources */,
@@ -659,6 +720,7 @@
 				1A44AC951FB6E3D100B5DAC6 /* MyJSInjectionTimeDemoViewController.m in Sources */,
 				1AEC869C1FBE9D1A00887777 /* UIView+Pin.m in Sources */,
 				1A44ACA11FB6E41E00B5DAC6 /* WebAndScriptViewController.m in Sources */,
+				1AE0A55F1FC18CDC00A961E2 /* MusicSearchListViewController+Transition.m in Sources */,
 				1A93D0241FC064C800C78AEB /* MYSearchTableViewComponents.m in Sources */,
 				1AE086A51FB54E12005ACF58 /* MYBoxExt.m in Sources */,
 				1AEC869D1FBE9D1A00887777 /* UIViewController+ShowAlert.m in Sources */,

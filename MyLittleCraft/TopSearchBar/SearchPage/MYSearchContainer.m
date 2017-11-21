@@ -45,13 +45,13 @@
     CGRect cancelButtonFrame = _cancelButton.frame;
     cancelButtonFrame.size.height = kMYSearchBarHeight;
     cancelButtonFrame.origin.x = self.bounds.size.width - cancelButtonFrame.size.width - margin;
-    cancelButtonFrame.origin.y = self.bounds.size.height - margin - cancelButtonFrame.size.height;
+    cancelButtonFrame.origin.y = margin;
     
     _cancelButton.frame = cancelButtonFrame;
     
     CGRect searchBarFrame;
     searchBarFrame.origin.x = margin;
-    searchBarFrame.origin.y = margin * 2;
+    searchBarFrame.origin.y = margin;
     searchBarFrame.size.width = self.bounds.size.width - cancelButtonFrame.size.width - margin * 3;
     searchBarFrame.size.height = kMYSearchBarHeight;
     
@@ -59,7 +59,7 @@
 }
 
 - (CGSize)intrinsicContentSize {
-    return (CGSize){ UIScreen.mainScreen.bounds.size.width, kMYSearchBarHeight + kMYSearchBarMargin * 3 };
+    return (CGSize){ UIScreen.mainScreen.bounds.size.width, kMYSearchBarHeight + kMYSearchBarMargin * 2 };
 }
 
 @end

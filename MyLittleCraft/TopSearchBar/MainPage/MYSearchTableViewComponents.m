@@ -14,15 +14,6 @@ CGFloat const kMYSearchTableSectionCellHeight = 62;
 CGFloat const kMYSearchTableItemCellHeight = 51;
 
 
-@implementation MYTintLabel
-
-- (void)tintColorDidChange {
-    self.textColor = self.tintColor;
-}
-
-@end
-
-
 @implementation MYTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -64,8 +55,8 @@ CGFloat const kMYSearchTableItemCellHeight = 51;
 }
 
 - (void)layoutInterface {
-    [_titleLabel pinEdgesToSuperviewWithInsets:(UIEdgeInsets){ INFINITY, 16, 8, INFINITY }];
-    [_cleanButton pinEdgesToSuperviewWithInsets:(UIEdgeInsets){ INFINITY, INFINITY, 8, 16 }];
+    [_titleLabel pinEdgesWithInsets:(UIEdgeInsets){ INFINITY, 16, 8, INFINITY }];
+    [_cleanButton pinEdgesWithInsets:(UIEdgeInsets){ INFINITY, INFINITY, 8, 16 }];
 }
 
 - (void)handleCleanButtonTap:(UIButton *)sender {
@@ -105,7 +96,7 @@ CGFloat const kMYSearchTableItemCellHeight = 51;
     
     CGFloat onePixel = 1 / UIScreen.mainScreen.scale;
     [_bottomSeparator pinSize:(CGSize){ INFINITY, onePixel }];
-    [_bottomSeparator pinEdgesToSuperviewWithInsets:(UIEdgeInsets){ INFINITY, 16, 0, 16 }];
+    [_bottomSeparator pinEdgesWithInsets:(UIEdgeInsets){ INFINITY, 16, 0, 16 }];
 }
 
 @end

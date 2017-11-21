@@ -71,7 +71,7 @@
 
 - (NSArray <NSString *> *)demoItems {
     return @[ @"Below Header Refreshing",
-              @"Top Search Bar",
+              @"Music Search List",
               @"Swipe To Dismiss Keyboard",
               @"Multi Touch Box",
               @"Motion Camera",

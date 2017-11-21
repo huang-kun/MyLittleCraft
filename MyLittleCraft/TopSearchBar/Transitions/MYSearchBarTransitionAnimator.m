@@ -1,14 +1,14 @@
 //
-//  MYSearchTransitionAnimator.m
+//  MYSearchBarTransitionAnimator.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/15.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "MYSearchTransitionAnimator.h"
+#import "MYSearchBarTransitionAnimator.h"
 
-@interface MYSearchTransitionAnimator()
+@interface MYSearchBarTransitionAnimator()
 @property (nonatomic, strong) MYSearchBar *searchBar;
 @property (nonatomic, strong) UIView *sourceCoverView;
 @property (nonatomic, strong) UIView *presentedCoverView;
@@ -16,7 +16,7 @@
 @property (nonatomic, assign) NSTimeInterval additionalTransitioningDuration;
 @end
 
-@implementation MYSearchTransitionAnimator
+@implementation MYSearchBarTransitionAnimator
 
 #pragma mark -
 

@@ -9,12 +9,13 @@
 #import "MYSearchHeader.h"
 #import "MYSearchBar.h"
 #import "UIView+Pin.h"
+#import "MYSearchConsts.h"
 
 CGFloat const kMYSearchHeaderHeight = 177;
 CGFloat const kMYSearchTitleBottomSpace = 12;
 
 @interface MYSearchHeader()
-@property (nonatomic, assign) CGFloat scrollDownThreshold;
+@property (nonatomic, assign) CGFloat scrollingThreshold;
 @property (nonatomic, assign) CGRect storedTitleFrame;
 @end
 
@@ -59,13 +60,13 @@ CGFloat const kMYSearchTitleBottomSpace = 12;
     _titleLabel.frame = titleLabelFrame;
     
     _storedTitleFrame = titleLabelFrame;
-    _scrollDownThreshold = searchBarFrame.origin.y - margin * 2;
+    _scrollingThreshold = searchBarFrame.origin.y - MY_SEARCH_BAR_TOP_INSET;
 }
 
 - (void)adjustPositionByContentOffset:(CGPoint)contentOffset {
     
     CGFloat offsetY = contentOffset.y;
-    CGFloat threshold = _scrollDownThreshold;
+    CGFloat threshold = _scrollingThreshold;
     
     // Adjust search bar position to stick on top
     CGRect frame = self.frame;
@@ -82,7 +83,7 @@ CGFloat const kMYSearchTitleBottomSpace = 12;
     
     // Adjust title position to scroll alongside with scrollView
     CGRect titleFrame = _storedTitleFrame;
-    CGFloat increment = offsetY - _scrollDownThreshold;
+    CGFloat increment = offsetY - _scrollingThreshold;
     
     if (increment > 0) {
         titleFrame.origin.y -= increment;
@@ -90,6 +91,24 @@ CGFloat const kMYSearchTitleBottomSpace = 12;
 
     if (_titleLabel.frame.origin.y != titleFrame.origin.y) {
         _titleLabel.frame = titleFrame;
+    }
+    
+    // Scale title if possible
+    if (offsetY < 0) {
+        CGFloat scale = 1 + ABS(offsetY / 600);
+        
+        if (scale < 1) {
+            scale = 1;
+        }
+        if (scale > 1.2) {
+            scale = 1.2;
+        }
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(scale, scale);
+        
+        if (!CGAffineTransformEqualToTransform(_titleLabel.transform, transform)) {
+            _titleLabel.transform = transform;
+        }
     }
 }
 

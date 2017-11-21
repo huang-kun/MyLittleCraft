@@ -1,29 +1,42 @@
 //
-//  TopSearchBarViewController.m
+//  MusicSearchListViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/13.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "TopSearchBarViewController.h"
+#import "MusicSearchListViewController.h"
+#import "MYMusicDetailViewController.h"
+#import "MYSearchViewController.h"
+
+#import "MYSearchBarTransitionAnimator.h"
+#import "MYMusicDetailTransitionAnimator.h"
+
 #import "MYSearchContainer.h"
 #import "MYSearchHeader.h"
+#import "MYSearchBar.h"
+
+#import "MYMusicBar.h"
+#import "MYArtworkCardView.h"
+
 #import "UIView+Pin.h"
-#import "MYSearchViewController.h"
-#import "MYSearchTransitionAnimator.h"
+
 #import "MYSearchTableViewComponents.h"
 #import "MYTableCellMapper.h"
-#import "MYNavigationController.h"
+#import "MYSearchConsts.h"
 
 static NSString * const kSearchBarDemoItemCellReuseId = @"kSearchBarDemoItemCellReuseId";
 static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSectionCellReuseId";
 
-@interface TopSearchBarViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate>
+@interface MusicSearchListViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate, MYMusicBarDelegate, MYSearchBarOwnerable, MYArtworkCardOwnerable>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MYSearchHeader *searchHeader;
-@property (nonatomic, strong) MYSearchTransitionAnimator *transitionAnimator;
+@property (nonatomic, strong) MYMusicBar *musicBar;
+
+@property (nonatomic, strong) MYSearchBarTransitionAnimator *searchBarTransitionAnimator;
+@property (nonatomic, strong) MYMusicDetailTransitionAnimator *musicDetailTransitionAnimator;
 
 @property (nonatomic, strong) NSArray <NSString *> *recentSearchItems;
 @property (nonatomic, strong) NSArray <NSString *> *hotSearchItems;
@@ -33,7 +46,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 @end
 
-@implementation TopSearchBarViewController
+@implementation MusicSearchListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +54,24 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     
     [self setupModel];
     [self setupInterface];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
+#pragma mark - status bar
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    if (self.musicDetailTransitionAnimator.isPresenting) {
+        return UIStatusBarStyleLightContent;
+    } else {
+        return UIStatusBarStyleDefault;
+    }
 }
 
 #pragma mark - initialize
@@ -54,13 +85,28 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     _hotSearchItems = [list subarrayWithRange:NSMakeRange(0, list.count / 2)];
     _recentSearchItems = [list subarrayWithRange:NSMakeRange(list.count / 2, list.count / 2)];
 
-    // Make table cell mapper
+    // Create table view cell mapper
     _mappers = [NSMutableArray new];
+    // Add recent search results as 1st table section
     [_mappers addObjectsFromArray:[self mappersForNumberOfItems:_recentSearchItems.count inSection:0]];
+    // Add hot search results as 2nd table section
     [_mappers addObjectsFromArray:[self mappersForNumberOfItems:_hotSearchItems.count inSection:1]];
+}
 
-    // Add transitioning
-    _transitionAnimator = [MYSearchTransitionAnimator new];
+// lazy init, create when in use
+- (MYSearchBarTransitionAnimator *)searchBarTransitionAnimator {
+    if (!_searchBarTransitionAnimator) {
+        _searchBarTransitionAnimator = [MYSearchBarTransitionAnimator new];
+    }
+    return _searchBarTransitionAnimator;
+}
+
+- (MYMusicDetailTransitionAnimator *)musicDetailTransitionAnimator {
+    if (!_musicDetailTransitionAnimator) {
+        _musicDetailTransitionAnimator = [MYMusicDetailTransitionAnimator new];
+        [_musicDetailTransitionAnimator.backgroundTapGestureRecognizer addTarget:self action:@selector(dismiss)];
+    }
+    return _musicDetailTransitionAnimator;
 }
 
 - (void)setupInterface {
@@ -86,12 +132,10 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     }
     
     // Add constraints
-    [_tableView pinEdgesToSuperview];
+    [_tableView pinAllEdges];
     
     // Add search header directly as self.view's subview
-    CGRect searchHeaderFrame;
-    searchHeaderFrame.origin.x = 0;
-    searchHeaderFrame.origin.y = 0;
+    CGRect searchHeaderFrame = CGRectZero;
     searchHeaderFrame.size.width = UIScreen.mainScreen.bounds.size.width;
     searchHeaderFrame.size.height = kMYSearchHeaderHeight;
     
@@ -104,6 +148,27 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     // When calling `tableView.tableHeaderView = someView` and someView's frame or constraint is not set yet, the table header shows nothing.
     UIView *realHeader = [[UIView alloc] initWithFrame:(CGRect){ CGPointZero, searchHeaderFrame.size }];
     _tableView.tableHeaderView = realHeader;
+    
+    // Setup music bar
+    _musicBar = [MYMusicBar new];
+    _musicBar.delegate = self;
+    [self.view addSubview:_musicBar];
+    
+    // iPhone X adapting
+    if (iPhoneX) {
+        [_musicBar extendBarHeight];
+    }
+    
+    [_musicBar pinEdges:UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight];
+    [_musicBar layoutIfNeeded];
+    
+    [_musicBar.artworkCardView setRandomImage];
+    _musicBar.titleLabel.text = _hotSearchItems.firstObject;
+    
+    // Adjust table contentInset for music bar
+    UIEdgeInsets contentInset = _tableView.contentInset;
+    contentInset.bottom = _musicBar.frame.size.height;
+    _tableView.contentInset = contentInset;
 }
 
 #pragma mark - UITableViewDataSource
@@ -117,49 +182,43 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     MYTableCellMapper *mapper = _mappers[indexPath.row];
     
     // Section
-    if (mapper.elementType == MYTableElementTypeSection) {
+    if (mapper.elementType == MYTableElementTypeSectionHeader) {
         cell = [tableView dequeueReusableCellWithIdentifier:kSearchBarDemoSectionCellReuseId forIndexPath:indexPath];
-        MYSearchTableSectionCell *sectionCell = (MYSearchTableSectionCell *)cell;
-        sectionCell.currentIndexPath = indexPath;
-        sectionCell.delegate = self;
+        MYSearchTableSectionCell *sectionHeaderCell = (MYSearchTableSectionCell *)cell;
+        sectionHeaderCell.currentIndexPath = indexPath;
+        sectionHeaderCell.delegate = self;
         
         // Recent
         if (mapper.section == 0) {
-            sectionCell.titleLabel.text = @"Recent";
-            sectionCell.cleanButton.hidden = NO;
+            sectionHeaderCell.titleLabel.text = @"Recent";
+            sectionHeaderCell.cleanButton.hidden = NO;
         }
         // Hot
         else if (mapper.section == 1) {
-            sectionCell.titleLabel.text = @"Hot";
-            sectionCell.cleanButton.hidden = YES;
+            sectionHeaderCell.titleLabel.text = @"Hot";
+            sectionHeaderCell.cleanButton.hidden = YES;
         }
     }
     // Cell
     else if (mapper.elementType == MYTableElementTypeCell) {
+        NSArray <NSString *> *items = nil;
+        switch (mapper.section) {
+            case 0: items = _recentSearchItems; break;
+            case 1: items = _hotSearchItems; break;
+        }
+        
         cell = [tableView dequeueReusableCellWithIdentifier:kSearchBarDemoItemCellReuseId forIndexPath:indexPath];
         MYSearchTableItemCell *itemCell = (MYSearchTableItemCell *)cell;
         itemCell.currentIndexPath = indexPath;
         itemCell.bottomSeparator.hidden = NO;
-        
-        // Recent
-        if (mapper.section == 0) {
-            itemCell.titleLabel.text = _recentSearchItems[mapper.itemIndex];
-            // Last recent item
-            if (mapper.itemIndex == _recentSearchItems.count - 1) {
-                itemCell.bottomSeparator.hidden = YES;
-            }
-        }
-        // Hot
-        else if (mapper.section == 1) {
-            itemCell.titleLabel.text = _hotSearchItems[mapper.itemIndex];
-            // Last hot item
-            if (mapper.itemIndex == _hotSearchItems.count - 1) {
-                itemCell.bottomSeparator.hidden = YES;
-            }
+        itemCell.titleLabel.text = items[mapper.row];
+        // Last item in section
+        if (mapper.row == items.count - 1) {
+            itemCell.bottomSeparator.hidden = YES;
         }
     }
     
-    NSAssert(cell != nil, @"[%@] Can not return nil at row (%@) in %@", self.class, @(indexPath.row), NSStringFromSelector(_cmd));
+    NSAssert(cell != nil, @"[%@] Can not return nil for mapper %@ from %@", self.class, mapper, NSStringFromSelector(_cmd));
     return cell;
 }
 
@@ -168,7 +227,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     MYTableCellMapper *mapper = _mappers[indexPath.row];
     switch (mapper.elementType) {
-        case MYTableElementTypeSection:
+        case MYTableElementTypeSectionHeader:
             return kMYSearchTableSectionCellHeight;
         case MYTableElementTypeCell:
             return kMYSearchTableItemCellHeight;
@@ -179,8 +238,10 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     MYTableCellMapper *mapper = _mappers[indexPath.row];
     if (mapper.elementType == MYTableElementTypeCell) {
         NSArray <NSString *> *items = (mapper.section == 0 ? _recentSearchItems : _hotSearchItems);
-        NSString *item = items[mapper.itemIndex];
-        NSLog(@"Select item: %@", item);
+        NSString *item = items[mapper.row];
+        
+        _musicBar.titleLabel.text = item;
+        [_musicBar.artworkCardView setRandomImage];
     }
 }
 
@@ -193,29 +254,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     }
     // Make search bar stick at top
     [_searchHeader adjustPositionByContentOffset:scrollView.contentOffset];
-}
-
-#pragma mark - UINavigationControllerDelegate
-
-- (void)navigationController:(MYNavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
-    // Hide navigation bar in self
-    BOOL showSelf = [viewController isKindOfClass:self.class];
-    [navigationController setNavigationBarHidden:showSelf animated:animated];
-}
-
-- (void)navigationController:(MYNavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
-    NSAssert([navigationController isKindOfClass:MYNavigationController.class], @"Must initialize %@ class inside of MYNavigationController.", self.class);
-    
-    // Change default edge distance from pop gesture
-    MYFullScreenPanGestureRecognizer *popGesture = navigationController.my_interactivePopGestureRecognizer;
-    popGesture.interactiveDistanceFromEdge = UIScreen.mainScreen.bounds.size.width / 2;
-    
-    BOOL showSelf = [viewController isKindOfClass:self.class];
-    if (!showSelf) {
-        popGesture.interactiveDistanceFromEdge = MYFullScreenInteractiveDistanceDefault;
-    }
 }
 
 #pragma mark - UITextFieldDelegate
@@ -232,40 +270,32 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     searchVC.modalPresentationStyle = UIModalPresentationCustom;
     searchVC.transitioningDelegate = self;
     
+    // Make constraints effect now, the search bar frame value will be used in transition animation later.
     [searchVC.view layoutIfNeeded];
+    
     [self presentViewController:searchVC animated:YES completion:nil];
 }
 
-#pragma mark - UIViewControllerTransitioningDelegate
+#pragma mark - MYMusicBarDelegate
 
-- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(id <MYSearchBarOwnerable>)presented presentingController:(UIViewController *)presenting sourceController:(id <MYSearchBarOwnerable>)source {
+- (void)musicBarDidTap:(MYMusicBar *)musicBar {
+    MYMusicDetailViewController *dvc = [MYMusicDetailViewController new];
+    dvc.artworkImage = musicBar.artworkCardView.image;
     
-    NSAssert([presented conformsToProtocol:@protocol(MYSearchBarOwnerable)], @"%@ must conforms to MYSearchBarOwnerable.", presented);
-    NSAssert(source == self, @"%@ must identical to %@.", source, self);
+    dvc.modalPresentationStyle = UIModalPresentationCustom;
+    dvc.transitioningDelegate = self;
     
-    _transitionAnimator.presenting = YES;
-    _transitionAnimator.sourceOwner = source;
-    _transitionAnimator.presentedOwner = presented;
-
-    return _transitionAnimator;
-}
-
-- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(id <MYSearchBarOwnerable>)dismissed {
+    // Make constraints effect now, the artwork image view frame value will be used in transition animation later.
+    [dvc.view layoutIfNeeded];
     
-    NSAssert([dismissed conformsToProtocol:@protocol(MYSearchBarOwnerable)], @"%@ must conforms to MYSearchBarOwnerable.", dismissed);
-    
-    _transitionAnimator.presenting = NO;
-    _transitionAnimator.sourceOwner = self;
-    _transitionAnimator.presentedOwner = dismissed;
-
-    return _transitionAnimator;
+    [self presentViewController:dvc animated:YES completion:nil];
 }
 
 #pragma mark - MYSearchTableSectionCellDelegate
 
 - (void)searchTableSectionCell:(MYSearchTableSectionCell *)searchTableSectionCell didTapCleanButton:(UIButton *)cleanButton {
     MYTableCellMapper *mapper = _mappers[searchTableSectionCell.currentIndexPath.row];
-    if (mapper.elementType == MYTableElementTypeSection && mapper.section == 0) {
+    if (mapper.elementType == MYTableElementTypeSectionHeader && mapper.section == 0) {
         // Pop sheet
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *clean = [UIAlertAction actionWithTitle:@"Clean Recents" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
@@ -284,26 +314,35 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     return _searchHeader.searchBar;
 }
 
-#pragma mark -
+#pragma mark - MYArtworkCardOwnerable
+
+- (MYArtworkCardView *)artworkCardView {
+    return _musicBar.artworkCardView;
+}
+
+#pragma mark - Helper
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)deleteRecentSearchResults {
+    // delete items from array
     NSRange recentRange;
     recentRange.location = 0;
     
     // MYTableCellMapper has implemented -isEqual: method.
     // So the convenience way is to create a target item for locating target index in array.
-    MYTableCellMapper *hotSectionMapper = [MYTableCellMapper new];
-    hotSectionMapper.elementType = MYTableElementTypeSection;
-    hotSectionMapper.section = 1;
+    MYTableCellMapper *hotSectionMapper = [MYTableCellMapper mapViewForHeaderInSection:1];
     
-    NSInteger index = [_mappers indexOfObject:hotSectionMapper];
-    recentRange.length = index;
+    NSInteger targetIndex = [_mappers indexOfObject:hotSectionMapper];
+    recentRange.length = targetIndex;
     
     [_mappers removeObjectsInRange:recentRange];
     
-    
+    // delete cells from table view
     NSMutableArray *indexPaths = [NSMutableArray array];
-    for (NSInteger i = 0; i < index; i++) {
+    for (NSInteger i = 0; i < targetIndex; i++) {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
         [indexPaths addObject:indexPath];
     }
@@ -313,19 +352,14 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 - (NSArray <MYTableCellMapper *> *)mappersForNumberOfItems:(NSInteger)numberOfItems inSection:(NSInteger)section {
     NSMutableArray <MYTableCellMapper *> *mappers = [NSMutableArray arrayWithCapacity:numberOfItems + 1];
     
-    // Add section
-    MYTableCellMapper *mapperForSection = [MYTableCellMapper new];
-    mapperForSection.elementType = MYTableElementTypeSection;
-    mapperForSection.section = section;
-    [mappers addObject:mapperForSection];
+    // Add section header mapper
+    MYTableCellMapper *sectionHeaderMapper = [MYTableCellMapper mapViewForHeaderInSection:section];
+    [mappers addObject:sectionHeaderMapper];
     
-    // Add cell
+    // Add cell mapper
     for (NSInteger i = 0; i < numberOfItems; i++) {
-        MYTableCellMapper *mapperForCell = [MYTableCellMapper new];
-        mapperForCell.elementType = MYTableElementTypeCell;
-        mapperForCell.section = section;
-        mapperForCell.itemIndex = i;
-        [mappers addObject:mapperForCell];
+        MYTableCellMapper *cellMapper = [MYTableCellMapper mapCellForRow:i inSection:section];
+        [mappers addObject:cellMapper];
     }
     
     return mappers;

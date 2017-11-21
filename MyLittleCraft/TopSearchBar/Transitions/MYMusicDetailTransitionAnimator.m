@@ -71,8 +71,8 @@ static CGFloat const kMYMusicCardCornerRadius = 8;
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     
     CGRect screenBounds = UIScreen.mainScreen.bounds;
-    CGRect offsetScreenFrame = CGRectOffset(screenBounds, 0, _presentationTopInset);
-    CGRect underScreenFrame = CGRectOffset(screenBounds, 0, screenBounds.size.height);
+    CGRect screenFrameWithTopInset = CGRectOffset(screenBounds, 0, _presentationTopInset);
+    CGRect screenFrameWithLargeOffset = CGRectOffset(screenBounds, 0, screenBounds.size.height - _initialPresentationDistanceFromBottom);
     
     UIView *container = transitionContext.containerView;
     
@@ -106,7 +106,7 @@ static CGFloat const kMYMusicCardCornerRadius = 8;
     if (self.isPresenting) {
         _window.backgroundColor = UIColor.clearColor;
         _dimmingView.alpha = 0;
-        _presentedOwner.view.frame = underScreenFrame;
+        _presentedOwner.view.frame = screenFrameWithLargeOffset;
         _artworkCardView.frame = _sourceArtworkCardFrame;
         _sourceOwner.view.layer.mask = _sourceCornerLayer;
         _presentedOwner.view.layer.mask = _presentedCornerLayer;
@@ -121,12 +121,12 @@ static CGFloat const kMYMusicCardCornerRadius = 8;
         
         if (self.isPresenting) {
             self.dimmingView.alpha = 0.4;
-            self.presentedOwner.view.frame = offsetScreenFrame;
+            self.presentedOwner.view.frame = screenFrameWithTopInset;
             self.artworkCardView.frame = _presentedArtworkCardFrame;
             self.sourceOwner.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
         } else {
             self.dimmingView.alpha = 0;
-            self.presentedOwner.view.frame = underScreenFrame;
+            self.presentedOwner.view.frame = screenFrameWithLargeOffset;
             self.artworkCardView.frame = _sourceArtworkCardFrame;
             self.sourceOwner.view.transform = CGAffineTransformIdentity;
         }

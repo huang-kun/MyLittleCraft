@@ -12,6 +12,7 @@
 #import "MYSearchBarTransitionAnimator.h"
 #import "MYMusicDetailTransitionAnimator.h"
 #import "MYSearchBar.h"
+#import "MYMusicBar.h"
 #import "MYArtworkCardView.h"
 
 @implementation MusicSearchListViewController (Transition)
@@ -39,6 +40,7 @@
         self.musicDetailTransitionAnimator.presenting = YES;
         self.musicDetailTransitionAnimator.sourceOwner = (id)self;
         self.musicDetailTransitionAnimator.presentedOwner = (id)presented;
+        self.musicDetailTransitionAnimator.initialPresentationDistanceFromBottom = self.musicBar.frame.size.height;
         
         return self.musicDetailTransitionAnimator;
     }

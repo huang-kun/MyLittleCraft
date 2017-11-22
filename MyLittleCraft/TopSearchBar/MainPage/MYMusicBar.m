@@ -14,7 +14,6 @@ static CGFloat const kMYMusicBarHeightStandard = 64;
 static CGFloat const kMYMusicBarHeightExtended = 64 + 34;
 
 @interface MYMusicBar()
-@property (nonatomic, strong) UIVisualEffectView *blurView;
 @property (nonatomic, strong) NSLayoutConstraint *heightConstraint;
 @end
 
@@ -33,21 +32,16 @@ static CGFloat const kMYMusicBarHeightExtended = 64 + 34;
 - (void)buildInterface {
     self.backgroundColor = UIColor.clearColor;
     
-    UIBlurEffectStyle style = UIBlurEffectStyleLight;
-    if (@available(iOS 10, *)) {
-        style = UIBlurEffectStyleRegular;
-    }
-    
-    _blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:style]];
+    _blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
     [self addSubview:_blurView];
     
     _artworkCardView = [MYArtworkCardView new];
-    [self addSubview:_artworkCardView];
+    [_blurView.contentView addSubview:_artworkCardView];
     
     _titleLabel = [UILabel new];
     _titleLabel.font = [UIFont systemFontOfSize:17];
     _titleLabel.numberOfLines = 1;
-    [self addSubview:_titleLabel];
+    [_blurView.contentView addSubview:_titleLabel];
 }
 
 - (void)layoutInterface {

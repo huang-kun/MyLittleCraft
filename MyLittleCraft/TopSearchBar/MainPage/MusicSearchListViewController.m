@@ -29,7 +29,7 @@
 static NSString * const kSearchBarDemoItemCellReuseId = @"kSearchBarDemoItemCellReuseId";
 static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSectionCellReuseId";
 
-@interface MusicSearchListViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate, MYMusicBarDelegate, MYSearchBarOwnerable, MYArtworkCardOwnerable>
+@interface MusicSearchListViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate, MYMusicBarDelegate, MYSearchBarOwnerable, MYArtworkCardOwnerable, MYMusicBarOwnerable>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MYSearchHeader *searchHeader;
@@ -67,7 +67,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 #pragma mark - status bar
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    if (self.musicDetailTransitionAnimator.isPresenting) {
+    if (self.musicDetailTransitionAnimator.isPresentation) {
         return UIStatusBarStyleLightContent;
     } else {
         return UIStatusBarStyleDefault;

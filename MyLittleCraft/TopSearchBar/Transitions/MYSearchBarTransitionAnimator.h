@@ -11,7 +11,7 @@
 
 @interface MYSearchBarTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
-@property (nonatomic, assign, getter=isPresenting) BOOL presenting;
+@property (nonatomic, assign, getter=isPresentation) BOOL presentation;
 
 @property (nonatomic, weak) id <MYSearchBarOwnerable> sourceOwner;
 @property (nonatomic, weak) id <MYSearchBarOwnerable> presentedOwner;

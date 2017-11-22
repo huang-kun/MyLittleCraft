@@ -18,10 +18,20 @@
 
 @interface MYMusicBar : UIView
 
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) MYArtworkCardView *artworkCardView;
+@property (nonatomic, readonly, strong) UILabel *titleLabel;
+@property (nonatomic, readonly, strong) MYArtworkCardView *artworkCardView;
+@property (nonatomic, readonly, strong) UIVisualEffectView *blurView;
+
 @property (nonatomic, weak) id <MYMusicBarDelegate> delegate;
 
 - (void)extendBarHeight;
+
+@end
+
+
+@protocol MYMusicBarOwnerable <NSObject>
+
+- (MYMusicBar *)musicBar;
+- (UIView *)view;
 
 @end

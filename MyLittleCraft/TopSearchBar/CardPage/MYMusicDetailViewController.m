@@ -16,6 +16,7 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
 
 @interface MYMusicDetailViewController () <UIScrollViewDelegate, MYArtworkCardOwnerable>
 @property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIVisualEffectView *blurView;
 @property (nonatomic, strong) MYArtworkCardView *artworkCardView;
 @property (nonatomic, strong) MYTintLabel *contentLabel;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
@@ -30,6 +31,14 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
     
     [self buildInterface];
     [self layoutInterface];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
+        self.view.backgroundColor = UIColor.whiteColor;
+    } completion:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -54,17 +63,19 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
     _scrollView.frame = scrollViewFrame;
 
     [self.transitionCoordinator animateAlongsideTransition:^(id<UIViewControllerTransitionCoordinatorContext>  _Nonnull context) {
-        // It seems transform animations are not suitable here
+        self.view.backgroundColor = UIColor.clearColor;
     } completion:nil];
 }
 
 #pragma mark - init
 
 - (void)buildInterface {
-    self.view.backgroundColor = UIColor.whiteColor;
     
     // Later for clipping the transformed subview whoever out of bounds.
     self.view.clipsToBounds = YES;
+    
+    _blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight]];
+    [self.view addSubview:_blurView];
 
     _scrollView = [UIScrollView new];
     _scrollView.backgroundColor = UIColor.clearColor;
@@ -77,7 +88,7 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
         _scrollView.contentInset = contentInset;
     }
     
-    [self.view addSubview:_scrollView];
+    [_blurView.contentView addSubview:_scrollView];
     
     _artworkCardView = [MYArtworkCardView new];
     _artworkCardView.image = _artworkImage;
@@ -99,6 +110,7 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
     }
     
     [_scrollView pinAllEdges];
+    [_blurView pinAllEdges];
     
     [_artworkCardView pinSize:(CGSize){ maxCardWidth, maxCardWidth }];
     [_artworkCardView alignCenterToEdge:UIRectEdgeTop constant:margin];

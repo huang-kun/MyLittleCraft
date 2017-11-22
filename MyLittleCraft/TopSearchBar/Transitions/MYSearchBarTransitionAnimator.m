@@ -39,7 +39,7 @@
 #pragma mark - UIViewControllerAnimatedTransitioning
 
 - (NSTimeInterval)transitionDuration:(nullable id <UIViewControllerContextTransitioning>)transitionContext {
-    if (self.isPresenting) {
+    if (self.isPresentation) {
         return _normalTransitioningDuration + _additionalTransitioningDuration;
     }
     return _normalTransitioningDuration;
@@ -55,7 +55,7 @@
     [_sourceOwner.view addSubview:_sourceCoverView];
     [_presentedOwner.view addSubview:_presentedCoverView];
     
-    if (self.isPresenting) {
+    if (self.isPresentation) {
         [container addSubview:_presentedOwner.view];
     }
     
@@ -75,7 +75,7 @@
     _sourceOwner.searchBar.hidden = YES;
     _presentedOwner.searchBar.hidden = YES;
     
-    if (self.isPresenting) {
+    if (self.isPresentation) {
         _searchBar.frame = sourceSearchBarFrame;
         _presentedOwner.view.frame = offScreenFrame;
         
@@ -94,9 +94,9 @@
     
     NSTimeInterval duration = [self transitionDuration:transitionContext];
     
-    [UIView animateWithDuration:(self.isPresenting ? _normalTransitioningDuration : duration) delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.8 options:0 animations:^{
+    [UIView animateWithDuration:(self.isPresentation ? _normalTransitioningDuration : duration) delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.8 options:0 animations:^{
         
-        if (self.isPresenting) {
+        if (self.isPresentation) {
             self.searchBar.frame = presentedSearchBarFrame;
             self.sourceCoverView.alpha = 1;
         } else {
@@ -106,7 +106,7 @@
         
     } completion:^(BOOL finished) {
         
-        if (self.isPresenting) {
+        if (self.isPresentation) {
             self.presentedOwner.view.frame = [transitionContext finalFrameForViewController:(id)_presentedOwner];
             self.presentedCoverView.alpha = 1;
 

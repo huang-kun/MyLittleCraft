@@ -26,7 +26,7 @@
         [self checkIf:source conformsTo:@protocol(MYSearchBarOwnerable)];
         [self checkIf:presented conformsTo:@protocol(MYSearchBarOwnerable)];
         
-        self.searchBarTransitionAnimator.presenting = YES;
+        self.searchBarTransitionAnimator.presentation = YES;
         self.searchBarTransitionAnimator.sourceOwner = (id)source;
         self.searchBarTransitionAnimator.presentedOwner = (id)presented;
         
@@ -37,7 +37,7 @@
         [self checkIf:source conformsTo:@protocol(MYArtworkCardOwnerable)];
         [self checkIf:presented conformsTo:@protocol(MYArtworkCardOwnerable)];
 
-        self.musicDetailTransitionAnimator.presenting = YES;
+        self.musicDetailTransitionAnimator.presentation = YES;
         self.musicDetailTransitionAnimator.sourceOwner = (id)self;
         self.musicDetailTransitionAnimator.presentedOwner = (id)presented;
         self.musicDetailTransitionAnimator.initialPresentationDistanceFromBottom = self.musicBar.frame.size.height;
@@ -52,12 +52,12 @@
     
     // dismiss from search bar vc
     if ([dismissed isKindOfClass:MYSearchViewController.class]) {
-        self.searchBarTransitionAnimator.presenting = NO;
+        self.searchBarTransitionAnimator.presentation = NO;
         return self.searchBarTransitionAnimator;
     }
     // dismiss from music card vc
     else if ([dismissed isKindOfClass:MYMusicDetailViewController.class]) {
-        self.musicDetailTransitionAnimator.presenting = NO;
+        self.musicDetailTransitionAnimator.presentation = NO;
         return self.musicDetailTransitionAnimator;
     }
     

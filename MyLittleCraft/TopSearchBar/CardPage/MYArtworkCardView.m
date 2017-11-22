@@ -20,26 +20,15 @@ static CGFloat const kMYArtworkCardCornerRadius = 4;
         self.backgroundColor = UIColor.clearColor;
         self.contentMode = UIViewContentModeScaleAspectFill;
         self.layer.cornerRadius = kMYArtworkCardCornerRadius;
-        self.clipsToBounds = NO;
-        
-        self.layer.shadowOffset = (CGSize){ 0, 6 };
-        self.layer.shadowRadius = 8;
-        self.layer.shadowOpacity = 0.2;
+        self.clipsToBounds = YES;
     }
     return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    CGFloat width = self.bounds.size.width;
-    self.layer.shadowRadius = width / 6;
 }
 
 - (void)setRandomImage {
     CGSize size = self.bounds.size;
     UIColor *color = [UIColor randomColor];
-    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:kMYArtworkCardCornerRadius];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:self.bounds];
     
     UIImage *image = [UIImage drawInSize:size context:^(CGContextRef context) {
         [color setFill];

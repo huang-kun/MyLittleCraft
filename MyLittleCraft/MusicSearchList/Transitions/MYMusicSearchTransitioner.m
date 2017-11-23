@@ -40,7 +40,7 @@
     self.source = source;
     self.presented = presented;
     
-    // Make constraints effect now, the frame will be used in transition animation later.
+    // Make constraints effective now, the frame will be used in transition animation later.
     [presented.view layoutIfNeeded];
     
     // present search bar vc
@@ -48,11 +48,12 @@
         [self checkIf:source conformsTo:@protocol(MYSearchBarOwnerable)];
         [self checkIf:presented conformsTo:@protocol(MYSearchBarOwnerable)];
         
-        self.searchBarTransitionAnimator.presentation = YES;
-        self.searchBarTransitionAnimator.sourceOwner = (id)source;
-        self.searchBarTransitionAnimator.presentedOwner = (id)presented;
+        MYSearchBarTransitionAnimator *animator = self.searchBarTransitionAnimator;
+        animator.presentation = YES;
+        animator.sourceOwner = (id)source;
+        animator.presentedOwner = (id)presented;
         
-        return self.searchBarTransitionAnimator;
+        return animator;
     }
     // present music card vc
     else if ([presented isKindOfClass:MYMusicDetailViewController.class]) {
@@ -60,13 +61,14 @@
         [self checkIf:presented conformsTo:@protocol(MYArtworkCardOwnerable)];
         
         id <MYMusicBarOwnerable> musicBarOwner = (id)source;
+        MYMusicDetailTransitionAnimator *animator = self.musicDetailTransitionAnimator;
+
+        animator.presentation = YES;
+        animator.sourceOwner = (id)musicBarOwner;
+        animator.presentedOwner = (id)presented;
+        animator.initialPresentationDistanceFromBottom = musicBarOwner.musicBar.frame.size.height;
         
-        self.musicDetailTransitionAnimator.presentation = YES;
-        self.musicDetailTransitionAnimator.sourceOwner = (id)musicBarOwner;
-        self.musicDetailTransitionAnimator.presentedOwner = (id)presented;
-        self.musicDetailTransitionAnimator.initialPresentationDistanceFromBottom = musicBarOwner.musicBar.frame.size.height;
-        
-        return self.musicDetailTransitionAnimator;
+        return animator;
     }
     
     return nil;

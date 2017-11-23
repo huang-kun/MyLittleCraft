@@ -9,6 +9,7 @@
 #import "MusicSearchListViewController.h"
 #import "MYMusicCardViewController.h"
 #import "MYSearchViewController.h"
+#import "MYMusicSearchDetailViewController.h"
 
 #import "MYMusicSearchTransitioner.h"
 #import "MYSearchBarTransitionAnimator.h"
@@ -20,17 +21,18 @@
 
 #import "MYMusicBar.h"
 #import "MYArtworkCardView.h"
+#import "MYTitleLabelOwnerable.h"
 
 #import "UIView+Pin.h"
 
 #import "MYSearchTableViewComponents.h"
 #import "MYTableCellMapper.h"
-#import "MYSearchConsts.h"
+#import "MYMusicSearchConsts.h"
 
 static NSString * const kSearchBarDemoItemCellReuseId = @"kSearchBarDemoItemCellReuseId";
 static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSectionCellReuseId";
 
-@interface MusicSearchListViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate, MYMusicBarDelegate, MYSearchBarOwnerable, MYArtworkCardOwnerable, MYMusicBarOwnerable>
+@interface MusicSearchListViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, MYSearchTableSectionCellDelegate, MYMusicBarDelegate, MYSearchBarOwnerable, MYArtworkCardOwnerable, MYMusicBarOwnerable, MYTitleLabelOwnerable>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) MYSearchHeader *searchHeader;
@@ -49,7 +51,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.delegate = self;
     
     [self setupModel];
     [self setupInterface];
@@ -86,6 +87,9 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     // Create transition delegate
     _transitioner = [MYMusicSearchTransitioner new];
     [_transitioner.musicCardTransitionAnimator.backgroundTapGestureRecognizer addTarget:self action:@selector(dismiss)];
+    
+    // Set navigation delegate
+    self.navigationController.delegate = _transitioner;
 }
 
 - (void)setupInterface {
@@ -219,8 +223,8 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
         NSArray <NSString *> *items = (mapper.section == 0 ? _recentSearchItems : _hotSearchItems);
         NSString *item = items[mapper.row];
         
-        _musicBar.titleLabel.text = item;
-        [_musicBar.artworkCardView setRandomImage];
+        MYMusicSearchDetailViewController *dvc = [MYMusicSearchDetailViewController new];
+        [self.navigationController pushViewController:dvc animated:YES];
     }
 }
 
@@ -291,6 +295,12 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 - (MYArtworkCardView *)artworkCardView {
     return _musicBar.artworkCardView;
+}
+
+#pragma mark - MYTitleLabelOwnerable
+
+- (UILabel *)titleLabel {
+    return _searchHeader.titleLabel;
 }
 
 #pragma mark - Helper

@@ -8,7 +8,7 @@
 
 #import "MYMusicCardViewController.h"
 #import "MYArtworkCardView.h"
-#import "MYSearchConsts.h"
+#import "MYMusicSearchConsts.h"
 #import "MYTintLabel.h"
 #import "UIView+Pin.h"
 
@@ -97,7 +97,7 @@ static CGFloat const kMYMusicCardPullDownThreshold = 83;
     _contentLabel = [MYTintLabel new];
     _contentLabel.numberOfLines = 0;
     _contentLabel.font = [UIFont systemFontOfSize:19];
-    _contentLabel.tintColor = MY_SEARCH_TINT_COLOR;
+    _contentLabel.tintColor = MY_MUSIC_TINT_COLOR;
     _contentLabel.text = [self demoContent];
     [_scrollView addSubview:_contentLabel];
 }

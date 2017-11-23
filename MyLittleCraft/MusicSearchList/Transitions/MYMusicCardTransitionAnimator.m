@@ -7,6 +7,7 @@
 //
 
 #import "MYMusicCardTransitionAnimator.h"
+#import "MYMusicSearchConsts.h"
 #import "UIView+Pin.h"
 
 static CGFloat const kMYMusicCardCornerRadius = 4;
@@ -41,6 +42,10 @@ static CGFloat const kMYMusicCardCornerRadius = 4;
     self = [super init];
     if (self) {
         _presentationTopInset = 40;
+        
+        if (iPhoneX) {
+            _presentationTopInset += 20;
+        }
         
         _window = UIApplication.sharedApplication.keyWindow;
         _defaultWindowColor = _window.backgroundColor;

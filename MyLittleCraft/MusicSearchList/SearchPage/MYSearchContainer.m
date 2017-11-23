@@ -7,7 +7,7 @@
 //
 
 #import "MYSearchContainer.h"
-#import "MYSearchConsts.h"
+#import "MYMusicSearchConsts.h"
 #import "MYSearchBar.h"
 #import "UIView+Pin.h"
 
@@ -31,7 +31,7 @@
     
     _cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _cancelButton.titleLabel.font = [UIFont systemFontOfSize:20];
-    _cancelButton.tintColor = MY_SEARCH_TINT_COLOR;
+    _cancelButton.tintColor = MY_MUSIC_TINT_COLOR;
     [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
     [_cancelButton sizeToFit];
     [self addSubview:_cancelButton];

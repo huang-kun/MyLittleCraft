@@ -9,7 +9,7 @@
 #import "MYSearchHeader.h"
 #import "MYSearchBar.h"
 #import "UIView+Pin.h"
-#import "MYSearchConsts.h"
+#import "MYMusicSearchConsts.h"
 
 CGFloat const kMYSearchHeaderHeight = 177;
 CGFloat const kMYSearchTitleBottomSpace = 12;

@@ -7,17 +7,23 @@
 //
 
 #import "MYMusicSearchTransitioner.h"
+#import "MYNavigationController.h"
+
+#import "MusicSearchListViewController.h"
 #import "MYSearchViewController.h"
 #import "MYMusicCardViewController.h"
+#import "MYMusicSearchDetailViewController.h"
+
 #import "MYSearchBarTransitionAnimator.h"
 #import "MYMusicCardTransitionAnimator.h"
+#import "MYMusicDetailTransitionAnimator.h"
+
 #import "MYSearchBar.h"
 #import "MYMusicBar.h"
 #import "MYArtworkCardView.h"
+#import "MYTitleLabelOwnerable.h"
 
 @interface MYMusicSearchTransitioner()
-@property (nonatomic, strong) MYSearchBarTransitionAnimator *searchBarTransitionAnimator;
-@property (nonatomic, strong) MYMusicCardTransitionAnimator *musicCardTransitionAnimator;
 @property (nonatomic, weak) UIViewController *source;
 @property (nonatomic, weak) UIViewController *presented;
 @end
@@ -29,8 +35,77 @@
     if (self) {
         _searchBarTransitionAnimator = [MYSearchBarTransitionAnimator new];
         _musicCardTransitionAnimator = [MYMusicCardTransitionAnimator new];
+        _musicDetailTransitionAnimator = [MYMusicDetailTransitionAnimator new];
     }
     return self;
+}
+
+#pragma mark - UINavigationControllerDelegate
+
+- (void)navigationController:(MYNavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    // Hide navigation bar in music list vc
+    BOOL showMusicList = [viewController isKindOfClass:MusicSearchListViewController.class];
+    [navigationController setNavigationBarHidden:showMusicList animated:animated];
+    
+    // Hide title and back button
+    if (showMusicList) {
+        // Hide title during dismissal transition animation.
+        viewController.title = nil;
+        
+        // Set empty back button instead of nil, otherwise navigation bar will use
+        // the default one during dismissal transition animation.
+        UIBarButtonItem *emptyBackButton = [[UIBarButtonItem alloc] initWithCustomView:[UIView new]];
+        viewController.navigationItem.leftBarButtonItem = emptyBackButton;
+    }
+}
+
+- (void)navigationController:(MYNavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    NSAssert([navigationController isKindOfClass:MYNavigationController.class], @"Must initialize %@ class inside of MYNavigationController.", self.class);
+    
+    // Change default edge distance from pop gesture
+    MYFullScreenPanGestureRecognizer *popGesture = navigationController.my_interactivePopGestureRecognizer;
+    popGesture.interactiveDistanceFromEdge = UIScreen.mainScreen.bounds.size.width / 2;
+    
+    BOOL showMusicList = [viewController isKindOfClass:MusicSearchListViewController.class];
+    if (!showMusicList) {
+        popGesture.interactiveDistanceFromEdge = MYFullScreenInteractiveDistanceDefault;
+    }
+}
+
+- (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    
+    if (operation == UINavigationControllerOperationPush) {
+        if ([fromVC isKindOfClass:MusicSearchListViewController.class] &&
+            [toVC isKindOfClass:MYMusicSearchDetailViewController.class]) {
+            
+            [self checkIf:fromVC conformsTo:@protocol(MYTitleLabelOwnerable)];
+            [self checkIf:toVC conformsTo:@protocol(MYTitleLabelOwnerable)];
+            
+            MYMusicDetailTransitionAnimator *animator = self.musicDetailTransitionAnimator;
+            animator.presentation = YES;
+            animator.sourceOwner = (id)fromVC;
+            animator.presentedOwner = (id)toVC;
+            return animator;
+        }
+    }
+    
+    else if (operation == UINavigationControllerOperationPop) {
+        if ([fromVC isKindOfClass:MYMusicSearchDetailViewController.class] &&
+            [toVC isKindOfClass:MusicSearchListViewController.class]) {
+            
+            MYMusicDetailTransitionAnimator *animator = self.musicDetailTransitionAnimator;
+            animator.presentation = NO;
+            return animator;
+        }
+    }
+    
+    return nil;
+}
+
+- (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
+    return nil;
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

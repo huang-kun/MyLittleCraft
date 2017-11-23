@@ -8,7 +8,7 @@
 
 #import "MYSearchViewController.h"
 #import "MYSearchContainer.h"
-#import "MYSearchConsts.h"
+#import "MYMusicSearchConsts.h"
 #import "MYSearchBar.h"
 #import "UIView+Pin.h"
 

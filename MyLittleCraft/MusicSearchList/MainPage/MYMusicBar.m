@@ -47,6 +47,7 @@ static CGFloat const kMYMusicBarHeightExtended = 64 + 34;
 - (void)layoutInterface {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     _heightConstraint = [self.heightAnchor constraintEqualToConstant:kMYMusicBarHeightStandard];
+    _heightConstraint.priority = 999;
     _heightConstraint.active = YES;
     
     [_blurView pinAllEdges];

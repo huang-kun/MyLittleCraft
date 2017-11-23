@@ -7,7 +7,7 @@
 //
 
 #import "MYSearchTableViewComponents.h"
-#import "MYSearchConsts.h"
+#import "MYMusicSearchConsts.h"
 #import "UIView+Pin.h"
 
 CGFloat const kMYSearchTableSectionCellHeight = 62;
@@ -47,7 +47,7 @@ CGFloat const kMYSearchTableItemCellHeight = 51;
     
     _cleanButton = [UIButton buttonWithType:UIButtonTypeSystem];
     _cleanButton.titleLabel.font = [UIFont systemFontOfSize:17];
-    _cleanButton.tintColor = MY_SEARCH_TINT_COLOR;
+    _cleanButton.tintColor = MY_MUSIC_TINT_COLOR;
     _cleanButton.titleEdgeInsets = UIEdgeInsetsZero;
     [_cleanButton setTitle:@"Clean" forState:UIControlStateNormal];
     [_cleanButton addTarget:self action:@selector(handleCleanButtonTap:) forControlEvents:UIControlEventTouchUpInside];
@@ -83,7 +83,7 @@ CGFloat const kMYSearchTableItemCellHeight = 51;
     _titleLabel = [MYTintLabel new];
     _titleLabel.numberOfLines = 1;
     _titleLabel.font = [UIFont systemFontOfSize:20];
-    _titleLabel.tintColor = MY_SEARCH_TINT_COLOR;
+    _titleLabel.tintColor = MY_MUSIC_TINT_COLOR;
     [self.contentView addSubview:_titleLabel];
     
     _bottomSeparator = [UIView new];

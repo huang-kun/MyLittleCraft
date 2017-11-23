@@ -60,10 +60,11 @@
 // Drag down to interactively dismiss
 - (void)handlePanGesture:(UIPanGestureRecognizer *)pan {
     CGPoint translation = [pan translationInView:pan.view];
-    if (translation.y < 0)
-        return;
-    
     CGFloat progress = translation.y / (pan.view.bounds.size.height / 4);
+    
+    if (progress < 0) {
+        progress = 0;
+    }
     if (progress > 1) {
         progress = 1;
     }
@@ -88,7 +89,7 @@
             break;
     }
     
-    NSLog(@"progress = %@", @(progress));
+    NSLog(@"progress = %@, in state: %@", @(progress), @(pan.state));
 }
 
 #pragma mark - MYSearchBarOwnerable

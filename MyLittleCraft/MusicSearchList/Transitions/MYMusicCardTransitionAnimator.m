@@ -83,8 +83,8 @@ static CGFloat const kMYMusicCardCornerRadius = 4;
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     
-    if ([self.delegate respondsToSelector:@selector(musicDetailTransitionAnimatorWillBeginAnimation:)]) {
-        [self.delegate musicDetailTransitionAnimatorWillBeginAnimation:self];
+    if ([self.delegate respondsToSelector:@selector(musicCardTransitionAnimatorWillBeginAnimation:)]) {
+        [self.delegate musicCardTransitionAnimatorWillBeginAnimation:self];
     }
     
     CGRect screenBounds = UIScreen.mainScreen.bounds;
@@ -209,8 +209,8 @@ static CGFloat const kMYMusicCardCornerRadius = 4;
         [transitionContext completeTransition:completed];
         
         if (completed) {
-            if ([self.delegate respondsToSelector:@selector(musicDetailTransitionAnimatorDidCompleteAnimation:)]) {
-                [self.delegate musicDetailTransitionAnimatorDidCompleteAnimation:self];
+            if ([self.delegate respondsToSelector:@selector(musicCardTransitionAnimatorDidCompleteAnimation:)]) {
+                [self.delegate musicCardTransitionAnimatorDidCompleteAnimation:self];
             }
         }
     }];

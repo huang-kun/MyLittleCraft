@@ -12,7 +12,7 @@
 #import "MYTintLabel.h"
 #import "UIView+Pin.h"
 
-static CGFloat const kMYMusicDetailPullDownThreshold = 83;
+static CGFloat const kMYMusicCardPullDownThreshold = 83;
 
 @interface MYMusicCardViewController () <UIScrollViewDelegate, MYArtworkCardOwnerable>
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -128,7 +128,7 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
     };
     
     UIEdgeInsets contentInset = _scrollView.contentInset;
-    contentInset.bottom = kMYMusicDetailPullDownThreshold;
+    contentInset.bottom = kMYMusicCardPullDownThreshold;
     _scrollView.contentInset = contentInset;
 }
 
@@ -149,7 +149,7 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
         scrollView.transform = CGAffineTransformMakeTranslation(0, -translation);
         
         // dismiss self if possible
-        if (translation > kMYMusicDetailPullDownThreshold) {
+        if (translation > kMYMusicCardPullDownThreshold) {
             [self dismiss];
         }
         

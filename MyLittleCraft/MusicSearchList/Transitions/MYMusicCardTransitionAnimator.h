@@ -18,14 +18,14 @@
  the source vc will not get -[UIViewController viewWillDisappear:] callback,
  because the root view of source vc is not removed from view hierarchy.
  
- Using MYMusicDetailTransitionAnimatorDelegate can track the presenting
+ Using MYMusicCardTransitionAnimatorDelegate can track the presenting
  animation state if needed.
  
  */
-@protocol MYMusicDetailTransitionAnimatorDelegate <NSObject>
+@protocol MYMusicCardTransitionAnimatorDelegate <NSObject>
 @optional
-- (void)musicDetailTransitionAnimatorWillBeginAnimation:(MYMusicCardTransitionAnimator *)animator;
-- (void)musicDetailTransitionAnimatorDidCompleteAnimation:(MYMusicCardTransitionAnimator *)animator;
+- (void)musicCardTransitionAnimatorWillBeginAnimation:(MYMusicCardTransitionAnimator *)animator;
+- (void)musicCardTransitionAnimatorDidCompleteAnimation:(MYMusicCardTransitionAnimator *)animator;
 @end
 
 
@@ -36,7 +36,7 @@
 
 @property (nonatomic, weak) id <MYMusicBarOwnerable> sourceOwner;
 @property (nonatomic, weak) id <MYArtworkCardOwnerable> presentedOwner;
-@property (nonatomic, weak) id <MYMusicDetailTransitionAnimatorDelegate> delegate;
+@property (nonatomic, weak) id <MYMusicCardTransitionAnimatorDelegate> delegate;
 
 /// The initial vertical distance from screen bottom for starting presentation.
 @property (nonatomic, assign) CGFloat initialPresentationDistanceFromBottom;

@@ -13,6 +13,7 @@ This demonstrates:
 1. How search bar sticks on top of screen while user scrolling the list.
 2. Customized animated transition.
 3. Customized screen edge pan gesture / pop gesture.
+4. Add UIPercentDrivenInteractiveTransition on search bar dismissal.
 
 
 ### Swipe To Dismiss Keyboard

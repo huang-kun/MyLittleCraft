@@ -127,10 +127,16 @@
 - (void)completeTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     self.sourceOwner.searchBar.hidden = NO;
     self.presentedOwner.searchBar.hidden = NO;
+    
     [self.searchBar removeFromSuperview];
     [self.sourceCoverView removeFromSuperview];
     [self.presentedCoverView removeFromSuperview];
-    [transitionContext completeTransition:YES];
+    
+    if (!self.isPresentation && transitionContext.transitionWasCancelled) {
+        self.presentedOwner.view.frame = UIScreen.mainScreen.bounds;
+    }
+    
+    [transitionContext completeTransition:!transitionContext.transitionWasCancelled];
 }
 
 @end

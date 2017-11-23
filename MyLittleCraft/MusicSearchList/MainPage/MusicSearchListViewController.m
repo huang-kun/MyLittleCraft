@@ -10,6 +10,7 @@
 #import "MYMusicDetailViewController.h"
 #import "MYSearchViewController.h"
 
+#import "MYMusicSearchTransitioner.h"
 #import "MYSearchBarTransitionAnimator.h"
 #import "MYMusicDetailTransitionAnimator.h"
 
@@ -35,9 +36,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 @property (nonatomic, strong) MYSearchHeader *searchHeader;
 @property (nonatomic, strong) MYMusicBar *musicBar;
 
-@property (nonatomic, strong) MYSearchBarTransitionAnimator *searchBarTransitionAnimator;
-@property (nonatomic, strong) MYMusicDetailTransitionAnimator *musicDetailTransitionAnimator;
-
+@property (nonatomic, strong) MYMusicSearchTransitioner *transitioner;
 @property (nonatomic, strong) NSArray <NSString *> *recentSearchItems;
 @property (nonatomic, strong) NSArray <NSString *> *hotSearchItems;
 
@@ -67,7 +66,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 #pragma mark - status bar
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    if (self.musicDetailTransitionAnimator.isPresentation) {
+    if (self.transitioner.musicDetailTransitionAnimator.isPresentation) {
         return UIStatusBarStyleLightContent;
     } else {
         return UIStatusBarStyleDefault;
@@ -91,22 +90,10 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     [_mappers addObjectsFromArray:[self mappersForNumberOfItems:_recentSearchItems.count inSection:0]];
     // Add hot search results as 2nd table section
     [_mappers addObjectsFromArray:[self mappersForNumberOfItems:_hotSearchItems.count inSection:1]];
-}
-
-// lazy init, create when in use
-- (MYSearchBarTransitionAnimator *)searchBarTransitionAnimator {
-    if (!_searchBarTransitionAnimator) {
-        _searchBarTransitionAnimator = [MYSearchBarTransitionAnimator new];
-    }
-    return _searchBarTransitionAnimator;
-}
-
-- (MYMusicDetailTransitionAnimator *)musicDetailTransitionAnimator {
-    if (!_musicDetailTransitionAnimator) {
-        _musicDetailTransitionAnimator = [MYMusicDetailTransitionAnimator new];
-        [_musicDetailTransitionAnimator.backgroundTapGestureRecognizer addTarget:self action:@selector(dismiss)];
-    }
-    return _musicDetailTransitionAnimator;
+    
+    // Create transition delegate
+    _transitioner = [MYMusicSearchTransitioner new];
+    [_transitioner.musicDetailTransitionAnimator.backgroundTapGestureRecognizer addTarget:self action:@selector(dismiss)];
 }
 
 - (void)setupInterface {
@@ -268,10 +255,10 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     searchVC.searchContainer.searchBar.placeholder = _searchHeader.searchBar.placeholder;
     
     searchVC.modalPresentationStyle = UIModalPresentationCustom;
-    searchVC.transitioningDelegate = self;
+    searchVC.transitioningDelegate = self.transitioner;
     
-    // Make constraints effect now, the search bar frame value will be used in transition animation later.
-    [searchVC.view layoutIfNeeded];
+//    // Make constraints effect now, the search bar frame value will be used in transition animation later.
+//    [searchVC.view layoutIfNeeded];
     
     [self presentViewController:searchVC animated:YES completion:nil];
 }
@@ -283,10 +270,10 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     dvc.artworkImage = musicBar.artworkCardView.image;
     
     dvc.modalPresentationStyle = UIModalPresentationCustom;
-    dvc.transitioningDelegate = self;
+    dvc.transitioningDelegate = self.transitioner;
     
     // Make constraints effect now, the artwork image view frame value will be used in transition animation later.
-    [dvc.view layoutIfNeeded];
+//    [dvc.view layoutIfNeeded];
     
     [self presentViewController:dvc animated:YES completion:nil];
 }

@@ -14,5 +14,6 @@
 
 @property (nonatomic, readonly, strong) MYSearchContainer *searchContainer;
 @property (nonatomic, readonly, strong) UILabel *tipLabel;
+@property (nonatomic, readonly, strong) UIPercentDrivenInteractiveTransition *searchBarDismissalInteractor;
 
 @end

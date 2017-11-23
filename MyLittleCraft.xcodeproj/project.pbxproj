@@ -33,12 +33,12 @@
 		1A4FA0001FC674F6001C5EDB /* MusicSearchListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FE81FC674F6001C5EDB /* MusicSearchListViewController.m */; };
 		1A4FA0011FC674F6001C5EDB /* search_results.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1A4F9FE91FC674F6001C5EDB /* search_results.txt */; };
 		1A4FA0021FC674F6001C5EDB /* MYTableCellMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FEA1FC674F6001C5EDB /* MYTableCellMapper.m */; };
-		1A4FA0031FC674F6001C5EDB /* MusicSearchListViewController+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FEB1FC674F6001C5EDB /* MusicSearchListViewController+Transition.m */; };
 		1A4FA0041FC674F6001C5EDB /* MYSearchTableViewComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FEE1FC674F6001C5EDB /* MYSearchTableViewComponents.m */; };
 		1A4FA0051FC674F6001C5EDB /* MYSearchHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FF01FC674F6001C5EDB /* MYSearchHeader.m */; };
 		1A4FA0061FC674F6001C5EDB /* MYSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FF41FC674F6001C5EDB /* MYSearchBar.m */; };
 		1A4FA0071FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FF61FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.m */; };
 		1A4FA0081FC674F6001C5EDB /* MYSearchBarTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F9FF91FC674F6001C5EDB /* MYSearchBarTransitionAnimator.m */; };
+		1A4FA00B1FC67D11001C5EDB /* MYMusicSearchTransitioner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4FA00A1FC67D11001C5EDB /* MYMusicSearchTransitioner.m */; };
 		1A7CD8DB1FADB394002F3DB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */; };
 		1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD8DD1FADB394002F3DB3 /* ViewController.m */; };
 		1A7CD8E31FADB394002F3DB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD8E21FADB394002F3DB3 /* Assets.xcassets */; };
@@ -128,13 +128,11 @@
 		1A4F9FE81FC674F6001C5EDB /* MusicSearchListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicSearchListViewController.m; sourceTree = "<group>"; };
 		1A4F9FE91FC674F6001C5EDB /* search_results.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = search_results.txt; sourceTree = "<group>"; };
 		1A4F9FEA1FC674F6001C5EDB /* MYTableCellMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYTableCellMapper.m; sourceTree = "<group>"; };
-		1A4F9FEB1FC674F6001C5EDB /* MusicSearchListViewController+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MusicSearchListViewController+Transition.m"; sourceTree = "<group>"; };
 		1A4F9FEC1FC674F6001C5EDB /* MusicSearchListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicSearchListViewController.h; sourceTree = "<group>"; };
 		1A4F9FED1FC674F6001C5EDB /* MusicSearchListViewController+Navigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicSearchListViewController+Navigation.h"; sourceTree = "<group>"; };
 		1A4F9FEE1FC674F6001C5EDB /* MYSearchTableViewComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchTableViewComponents.m; sourceTree = "<group>"; };
 		1A4F9FEF1FC674F6001C5EDB /* MYMusicBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMusicBar.h; sourceTree = "<group>"; };
 		1A4F9FF01FC674F6001C5EDB /* MYSearchHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchHeader.m; sourceTree = "<group>"; };
-		1A4F9FF11FC674F6001C5EDB /* MusicSearchListViewController+Transition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MusicSearchListViewController+Transition.h"; sourceTree = "<group>"; };
 		1A4F9FF21FC674F6001C5EDB /* MYTableCellMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYTableCellMapper.h; sourceTree = "<group>"; };
 		1A4F9FF31FC674F6001C5EDB /* MYSearchConsts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchConsts.h; sourceTree = "<group>"; };
 		1A4F9FF41FC674F6001C5EDB /* MYSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchBar.m; sourceTree = "<group>"; };
@@ -142,6 +140,8 @@
 		1A4F9FF71FC674F6001C5EDB /* MYSearchBarTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYSearchBarTransitionAnimator.h; sourceTree = "<group>"; };
 		1A4F9FF81FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYMusicDetailTransitionAnimator.h; sourceTree = "<group>"; };
 		1A4F9FF91FC674F6001C5EDB /* MYSearchBarTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYSearchBarTransitionAnimator.m; sourceTree = "<group>"; };
+		1A4FA0091FC67D11001C5EDB /* MYMusicSearchTransitioner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYMusicSearchTransitioner.h; sourceTree = "<group>"; };
+		1A4FA00A1FC67D11001C5EDB /* MYMusicSearchTransitioner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYMusicSearchTransitioner.m; sourceTree = "<group>"; };
 		1A7CD8D61FADB394002F3DB3 /* MyLittleCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLittleCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A7CD8D91FADB394002F3DB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1A7CD8DA1FADB394002F3DB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -310,10 +310,10 @@
 		1A4F9FD81FC674F6001C5EDB /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
-				1A4F9FDC1FC674F6001C5EDB /* MYSearchContainer.h */,
-				1A4F9FD91FC674F6001C5EDB /* MYSearchContainer.m */,
 				1A4F9FDA1FC674F6001C5EDB /* MYSearchViewController.h */,
 				1A4F9FDB1FC674F6001C5EDB /* MYSearchViewController.m */,
+				1A4F9FDC1FC674F6001C5EDB /* MYSearchContainer.h */,
+				1A4F9FD91FC674F6001C5EDB /* MYSearchContainer.m */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -336,8 +336,6 @@
 				1A4F9FE81FC674F6001C5EDB /* MusicSearchListViewController.m */,
 				1A4F9FED1FC674F6001C5EDB /* MusicSearchListViewController+Navigation.h */,
 				1A4F9FE71FC674F6001C5EDB /* MusicSearchListViewController+Navigation.m */,
-				1A4F9FF11FC674F6001C5EDB /* MusicSearchListViewController+Transition.h */,
-				1A4F9FEB1FC674F6001C5EDB /* MusicSearchListViewController+Transition.m */,
 				1A4F9FEF1FC674F6001C5EDB /* MYMusicBar.h */,
 				1A4F9FE51FC674F6001C5EDB /* MYMusicBar.m */,
 				1A4F9FE41FC674F6001C5EDB /* MYSearchHeader.h */,
@@ -354,6 +352,8 @@
 		1A4F9FF51FC674F6001C5EDB /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				1A4FA0091FC67D11001C5EDB /* MYMusicSearchTransitioner.h */,
+				1A4FA00A1FC67D11001C5EDB /* MYMusicSearchTransitioner.m */,
 				1A4F9FF71FC674F6001C5EDB /* MYSearchBarTransitionAnimator.h */,
 				1A4F9FF91FC674F6001C5EDB /* MYSearchBarTransitionAnimator.m */,
 				1A4F9FF81FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.h */,
@@ -687,6 +687,7 @@
 				1A7CD8DE1FADB394002F3DB3 /* ViewController.m in Sources */,
 				1A4F9FFB1FC674F6001C5EDB /* MYSearchViewController.m in Sources */,
 				1A42694B1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m in Sources */,
+				1A4FA00B1FC67D11001C5EDB /* MYMusicSearchTransitioner.m in Sources */,
 				1A44AC961FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m in Sources */,
 				1A44ACA41FB6E49700B5DAC6 /* WebDemoItem.m in Sources */,
 				1A4F9FFE1FC674F6001C5EDB /* MYMusicBar.m in Sources */,
@@ -701,7 +702,6 @@
 				1A4FA0051FC674F6001C5EDB /* MYSearchHeader.m in Sources */,
 				1A4FA0081FC674F6001C5EDB /* MYSearchBarTransitionAnimator.m in Sources */,
 				1A4269451FB6FB1C00C2B1C2 /* MotionCameraViewController.m in Sources */,
-				1A4FA0031FC674F6001C5EDB /* MusicSearchListViewController+Transition.m in Sources */,
 				1A4FA0041FC674F6001C5EDB /* MYSearchTableViewComponents.m in Sources */,
 				1AEC86971FBE9C6200887777 /* UITouch+MYLocation.m in Sources */,
 				1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */,

@@ -8,16 +8,16 @@
 
 #import "MYMusicSearchTransitioner.h"
 #import "MYSearchViewController.h"
-#import "MYMusicDetailViewController.h"
+#import "MYMusicCardViewController.h"
 #import "MYSearchBarTransitionAnimator.h"
-#import "MYMusicDetailTransitionAnimator.h"
+#import "MYMusicCardTransitionAnimator.h"
 #import "MYSearchBar.h"
 #import "MYMusicBar.h"
 #import "MYArtworkCardView.h"
 
 @interface MYMusicSearchTransitioner()
 @property (nonatomic, strong) MYSearchBarTransitionAnimator *searchBarTransitionAnimator;
-@property (nonatomic, strong) MYMusicDetailTransitionAnimator *musicDetailTransitionAnimator;
+@property (nonatomic, strong) MYMusicCardTransitionAnimator *musicCardTransitionAnimator;
 @property (nonatomic, weak) UIViewController *source;
 @property (nonatomic, weak) UIViewController *presented;
 @end
@@ -28,7 +28,7 @@
     self = [super init];
     if (self) {
         _searchBarTransitionAnimator = [MYSearchBarTransitionAnimator new];
-        _musicDetailTransitionAnimator = [MYMusicDetailTransitionAnimator new];
+        _musicCardTransitionAnimator = [MYMusicCardTransitionAnimator new];
     }
     return self;
 }
@@ -56,12 +56,12 @@
         return animator;
     }
     // present music card vc
-    else if ([presented isKindOfClass:MYMusicDetailViewController.class]) {
+    else if ([presented isKindOfClass:MYMusicCardViewController.class]) {
         [self checkIf:source conformsTo:@protocol(MYMusicBarOwnerable)];
         [self checkIf:presented conformsTo:@protocol(MYArtworkCardOwnerable)];
         
         id <MYMusicBarOwnerable> musicBarOwner = (id)source;
-        MYMusicDetailTransitionAnimator *animator = self.musicDetailTransitionAnimator;
+        MYMusicCardTransitionAnimator *animator = self.musicCardTransitionAnimator;
 
         animator.presentation = YES;
         animator.sourceOwner = (id)musicBarOwner;
@@ -82,9 +82,9 @@
         return self.searchBarTransitionAnimator;
     }
     // dismiss from music card vc
-    else if ([dismissed isKindOfClass:MYMusicDetailViewController.class]) {
-        self.musicDetailTransitionAnimator.presentation = NO;
-        return self.musicDetailTransitionAnimator;
+    else if ([dismissed isKindOfClass:MYMusicCardViewController.class]) {
+        self.musicCardTransitionAnimator.presentation = NO;
+        return self.musicCardTransitionAnimator;
     }
     
     return nil;

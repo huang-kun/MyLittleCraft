@@ -1,12 +1,12 @@
 //
-//  MYMusicDetailViewController.m
+//  MYMusicCardViewController.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/18.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "MYMusicDetailViewController.h"
+#import "MYMusicCardViewController.h"
 #import "MYArtworkCardView.h"
 #import "MYSearchConsts.h"
 #import "MYTintLabel.h"
@@ -14,7 +14,7 @@
 
 static CGFloat const kMYMusicDetailPullDownThreshold = 83;
 
-@interface MYMusicDetailViewController () <UIScrollViewDelegate, MYArtworkCardOwnerable>
+@interface MYMusicCardViewController () <UIScrollViewDelegate, MYArtworkCardOwnerable>
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIVisualEffectView *blurView;
 @property (nonatomic, strong) MYArtworkCardView *artworkCardView;
@@ -22,7 +22,7 @@ static CGFloat const kMYMusicDetailPullDownThreshold = 83;
 @property (nonatomic, strong) UIPanGestureRecognizer *panGesture;
 @end
 
-@implementation MYMusicDetailViewController
+@implementation MYMusicCardViewController
 
 #pragma mark - life cycle
 

@@ -1,5 +1,5 @@
 //
-//  MYMusicDetailViewController.h
+//  MYMusicCardViewController.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/18.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MYMusicDetailViewController : UIViewController
+@interface MYMusicCardViewController : UIViewController
 
 @property (nonatomic, strong) UIImage *artworkImage;
 

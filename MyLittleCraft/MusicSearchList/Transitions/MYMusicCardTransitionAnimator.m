@@ -1,17 +1,17 @@
 //
-//  MYMusicDetailTransitionAnimator.m
+//  MYMusicCardTransitionAnimator.m
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/18.
 //  Copyright © 2017年 huangkun. All rights reserved.
 //
 
-#import "MYMusicDetailTransitionAnimator.h"
+#import "MYMusicCardTransitionAnimator.h"
 #import "UIView+Pin.h"
 
 static CGFloat const kMYMusicCardCornerRadius = 4;
 
-@interface MYMusicDetailTransitionAnimator()
+@interface MYMusicCardTransitionAnimator()
 
 @property (nonatomic, assign) CGFloat presentationTopInset;
 @property (nonatomic, assign, getter=isAnimating) BOOL animating;
@@ -35,7 +35,7 @@ static CGFloat const kMYMusicCardCornerRadius = 4;
 
 @end
 
-@implementation MYMusicDetailTransitionAnimator
+@implementation MYMusicCardTransitionAnimator
 
 - (instancetype)init {
     self = [super init];

@@ -7,12 +7,12 @@
 //
 
 #import "MusicSearchListViewController.h"
-#import "MYMusicDetailViewController.h"
+#import "MYMusicCardViewController.h"
 #import "MYSearchViewController.h"
 
 #import "MYMusicSearchTransitioner.h"
 #import "MYSearchBarTransitionAnimator.h"
-#import "MYMusicDetailTransitionAnimator.h"
+#import "MYMusicCardTransitionAnimator.h"
 
 #import "MYSearchContainer.h"
 #import "MYSearchHeader.h"
@@ -58,7 +58,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 #pragma mark - status bar
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    if (self.transitioner.musicDetailTransitionAnimator.isPresentation) {
+    if (self.transitioner.musicCardTransitionAnimator.isPresentation) {
         return UIStatusBarStyleLightContent;
     } else {
         return UIStatusBarStyleDefault;
@@ -85,7 +85,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     
     // Create transition delegate
     _transitioner = [MYMusicSearchTransitioner new];
-    [_transitioner.musicDetailTransitionAnimator.backgroundTapGestureRecognizer addTarget:self action:@selector(dismiss)];
+    [_transitioner.musicCardTransitionAnimator.backgroundTapGestureRecognizer addTarget:self action:@selector(dismiss)];
 }
 
 - (void)setupInterface {
@@ -255,7 +255,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 #pragma mark - MYMusicBarDelegate
 
 - (void)musicBarDidTap:(MYMusicBar *)musicBar {
-    MYMusicDetailViewController *dvc = [MYMusicDetailViewController new];
+    MYMusicCardViewController *dvc = [MYMusicCardViewController new];
     dvc.artworkImage = musicBar.artworkCardView.image;
     
     dvc.modalPresentationStyle = UIModalPresentationCustom;

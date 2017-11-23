@@ -1,5 +1,5 @@
 //
-//  MYMusicDetailTransitionAnimator.h
+//  MYMusicCardTransitionAnimator.h
 //  MyLittleCraft
 //
 //  Created by huangkun on 2017/11/18.
@@ -10,7 +10,7 @@
 #import "MYArtworkCardView.h"
 #import "MYMusicBar.h"
 
-@class MYMusicDetailTransitionAnimator;
+@class MYMusicCardTransitionAnimator;
 
 /**
  
@@ -24,12 +24,12 @@
  */
 @protocol MYMusicDetailTransitionAnimatorDelegate <NSObject>
 @optional
-- (void)musicDetailTransitionAnimatorWillBeginAnimation:(MYMusicDetailTransitionAnimator *)animator;
-- (void)musicDetailTransitionAnimatorDidCompleteAnimation:(MYMusicDetailTransitionAnimator *)animator;
+- (void)musicDetailTransitionAnimatorWillBeginAnimation:(MYMusicCardTransitionAnimator *)animator;
+- (void)musicDetailTransitionAnimatorDidCompleteAnimation:(MYMusicCardTransitionAnimator *)animator;
 @end
 
 
-@interface MYMusicDetailTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
+@interface MYMusicCardTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 
 @property (nonatomic, assign, getter=isPresentation) BOOL presentation;
 @property (nonatomic, readonly, getter=isAnimating) BOOL animating;

@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class MYSearchBarTransitionAnimator, MYMusicDetailTransitionAnimator;
+@class MYSearchBarTransitionAnimator, MYMusicCardTransitionAnimator;
 
 @interface MYMusicSearchTransitioner : NSObject <UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, readonly, strong) MYSearchBarTransitionAnimator *searchBarTransitionAnimator;
-@property (nonatomic, readonly, strong) MYMusicDetailTransitionAnimator *musicDetailTransitionAnimator;
+@property (nonatomic, readonly, strong) MYMusicCardTransitionAnimator *musicCardTransitionAnimator;
 
 @end

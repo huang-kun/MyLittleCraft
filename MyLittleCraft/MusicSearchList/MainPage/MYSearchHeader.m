@@ -17,6 +17,7 @@ CGFloat const kMYSearchTitleBottomSpace = 12;
 @interface MYSearchHeader()
 @property (nonatomic, assign) CGFloat scrollingThreshold;
 @property (nonatomic, assign) CGRect storedTitleFrame;
+@property (nonatomic, assign) BOOL shouldChangeTitleFrame;
 @end
 
 @implementation MYSearchHeader
@@ -57,7 +58,13 @@ CGFloat const kMYSearchTitleBottomSpace = 12;
     CGRect titleLabelFrame = _titleLabel.frame;
     titleLabelFrame.origin.x = margin;
     titleLabelFrame.origin.y = searchBarFrame.origin.y - margin / 2 - titleLabelFrame.size.height;
-    _titleLabel.frame = titleLabelFrame;
+    
+    // When its superview is applied new transform value,
+    // -[UIView layoutSubviews] will be called again.
+    // The title frame should not be reset during transform.
+    if (!_shouldChangeTitleFrame) {
+        _titleLabel.frame = titleLabelFrame;
+    }
     
     _storedTitleFrame = titleLabelFrame;
     _scrollingThreshold = searchBarFrame.origin.y - MY_SEARCH_BAR_TOP_INSET;
@@ -87,6 +94,9 @@ CGFloat const kMYSearchTitleBottomSpace = 12;
     
     if (increment > 0) {
         titleFrame.origin.y -= increment;
+        _shouldChangeTitleFrame = YES;
+    } else {
+        _shouldChangeTitleFrame = NO;
     }
 
     if (_titleLabel.frame.origin.y != titleFrame.origin.y) {

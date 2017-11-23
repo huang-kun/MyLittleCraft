@@ -89,7 +89,6 @@
             break;
     }
     
-    NSLog(@"progress = %@, in state: %@", @(progress), @(pan.state));
 }
 
 #pragma mark - MYSearchBarOwnerable

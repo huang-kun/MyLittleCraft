@@ -55,14 +55,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     [self setupInterface];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-
 #pragma mark - status bar
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -257,9 +249,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     searchVC.modalPresentationStyle = UIModalPresentationCustom;
     searchVC.transitioningDelegate = self.transitioner;
     
-//    // Make constraints effect now, the search bar frame value will be used in transition animation later.
-//    [searchVC.view layoutIfNeeded];
-    
     [self presentViewController:searchVC animated:YES completion:nil];
 }
 
@@ -272,9 +261,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     dvc.modalPresentationStyle = UIModalPresentationCustom;
     dvc.transitioningDelegate = self.transitioner;
     
-    // Make constraints effect now, the artwork image view frame value will be used in transition animation later.
-//    [dvc.view layoutIfNeeded];
-    
     [self presentViewController:dvc animated:YES completion:nil];
 }
 
@@ -283,7 +269,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 - (void)searchTableSectionCell:(MYSearchTableSectionCell *)searchTableSectionCell didTapCleanButton:(UIButton *)cleanButton {
     MYTableCellMapper *mapper = _mappers[searchTableSectionCell.currentIndexPath.row];
     if (mapper.elementType == MYTableElementTypeSectionHeader && mapper.section == 0) {
-        // Pop sheet
+        // Present sheet
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *clean = [UIAlertAction actionWithTitle:@"Clean Recents" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
             [self deleteRecentSearchResults];
@@ -350,6 +336,13 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     }
     
     return mappers;
+}
+
+- (BOOL)isSearchTitleOnScreen {
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGRect screenBounds = UIScreen.mainScreen.bounds;
+    CGRect searchTitleFrame = [window convertRect:_searchHeader.titleLabel.frame fromView:_searchHeader];
+    return (CGRectContainsRect(screenBounds, searchTitleFrame));
 }
 
 @end

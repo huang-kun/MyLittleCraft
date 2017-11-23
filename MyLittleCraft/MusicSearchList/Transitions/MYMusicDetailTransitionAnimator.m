@@ -83,6 +83,10 @@ static CGFloat const kMYMusicCardCornerRadius = 4;
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     
+    if ([self.delegate respondsToSelector:@selector(musicDetailTransitionAnimatorWillBeginAnimation:)]) {
+        [self.delegate musicDetailTransitionAnimatorWillBeginAnimation:self];
+    }
+    
     CGRect screenBounds = UIScreen.mainScreen.bounds;
     CGRect screenFrameWithTopInset = CGRectOffset(screenBounds, 0, _presentationTopInset);
     CGRect screenFrameWithLargeOffset = CGRectOffset(screenBounds, 0, screenBounds.size.height - _initialPresentationDistanceFromBottom);
@@ -164,9 +168,7 @@ static CGFloat const kMYMusicCardCornerRadius = 4;
             self.musicBar.alpha = 1;
         }
         
-    } completion:^(BOOL finished) {
-        
-    }];
+    } completion:nil];
     
     [UIView animateWithDuration:duration delay:0 usingSpringWithDamping:1 initialSpringVelocity:0.7 options:0 animations:^{
         
@@ -202,7 +204,15 @@ static CGFloat const kMYMusicCardCornerRadius = 4;
             self.presentedOwner.view.layer.mask = nil;
         }
         
-        [transitionContext completeTransition:YES];
+        BOOL completed = !transitionContext.transitionWasCancelled;
+        
+        [transitionContext completeTransition:completed];
+        
+        if (completed) {
+            if ([self.delegate respondsToSelector:@selector(musicDetailTransitionAnimatorDidCompleteAnimation:)]) {
+                [self.delegate musicDetailTransitionAnimatorDidCompleteAnimation:self];
+            }
+        }
     }];
 }
 

@@ -296,10 +296,10 @@
 		1A4F9FD71FC674F6001C5EDB /* MusicSearchList */ = {
 			isa = PBXGroup;
 			children = (
+				1A4F9FE31FC674F6001C5EDB /* MainPage */,
 				1A4F9FD81FC674F6001C5EDB /* SearchPage */,
 				1A4F9FDD1FC674F6001C5EDB /* CardPage */,
 				1A4F9FE21FC674F6001C5EDB /* MYSearchBar.h */,
-				1A4F9FE31FC674F6001C5EDB /* MainPage */,
 				1A4F9FF31FC674F6001C5EDB /* MYSearchConsts.h */,
 				1A4F9FF41FC674F6001C5EDB /* MYSearchBar.m */,
 				1A4F9FF51FC674F6001C5EDB /* Transitions */,
@@ -310,10 +310,10 @@
 		1A4F9FD81FC674F6001C5EDB /* SearchPage */ = {
 			isa = PBXGroup;
 			children = (
+				1A4F9FDC1FC674F6001C5EDB /* MYSearchContainer.h */,
 				1A4F9FD91FC674F6001C5EDB /* MYSearchContainer.m */,
 				1A4F9FDA1FC674F6001C5EDB /* MYSearchViewController.h */,
 				1A4F9FDB1FC674F6001C5EDB /* MYSearchViewController.m */,
-				1A4F9FDC1FC674F6001C5EDB /* MYSearchContainer.h */,
 			);
 			path = SearchPage;
 			sourceTree = "<group>";
@@ -321,10 +321,10 @@
 		1A4F9FDD1FC674F6001C5EDB /* CardPage */ = {
 			isa = PBXGroup;
 			children = (
-				1A4F9FDE1FC674F6001C5EDB /* MYMusicDetailViewController.m */,
-				1A4F9FDF1FC674F6001C5EDB /* MYArtworkCardView.m */,
 				1A4F9FE01FC674F6001C5EDB /* MYMusicDetailViewController.h */,
+				1A4F9FDE1FC674F6001C5EDB /* MYMusicDetailViewController.m */,
 				1A4F9FE11FC674F6001C5EDB /* MYArtworkCardView.h */,
+				1A4F9FDF1FC674F6001C5EDB /* MYArtworkCardView.m */,
 			);
 			path = CardPage;
 			sourceTree = "<group>";
@@ -332,21 +332,21 @@
 		1A4F9FE31FC674F6001C5EDB /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				1A4F9FE41FC674F6001C5EDB /* MYSearchHeader.h */,
-				1A4F9FE51FC674F6001C5EDB /* MYMusicBar.m */,
-				1A4F9FE61FC674F6001C5EDB /* MYSearchTableViewComponents.h */,
-				1A4F9FE71FC674F6001C5EDB /* MusicSearchListViewController+Navigation.m */,
-				1A4F9FE81FC674F6001C5EDB /* MusicSearchListViewController.m */,
-				1A4F9FE91FC674F6001C5EDB /* search_results.txt */,
-				1A4F9FEA1FC674F6001C5EDB /* MYTableCellMapper.m */,
-				1A4F9FEB1FC674F6001C5EDB /* MusicSearchListViewController+Transition.m */,
 				1A4F9FEC1FC674F6001C5EDB /* MusicSearchListViewController.h */,
+				1A4F9FE81FC674F6001C5EDB /* MusicSearchListViewController.m */,
 				1A4F9FED1FC674F6001C5EDB /* MusicSearchListViewController+Navigation.h */,
-				1A4F9FEE1FC674F6001C5EDB /* MYSearchTableViewComponents.m */,
-				1A4F9FEF1FC674F6001C5EDB /* MYMusicBar.h */,
-				1A4F9FF01FC674F6001C5EDB /* MYSearchHeader.m */,
+				1A4F9FE71FC674F6001C5EDB /* MusicSearchListViewController+Navigation.m */,
 				1A4F9FF11FC674F6001C5EDB /* MusicSearchListViewController+Transition.h */,
+				1A4F9FEB1FC674F6001C5EDB /* MusicSearchListViewController+Transition.m */,
+				1A4F9FEF1FC674F6001C5EDB /* MYMusicBar.h */,
+				1A4F9FE51FC674F6001C5EDB /* MYMusicBar.m */,
+				1A4F9FE41FC674F6001C5EDB /* MYSearchHeader.h */,
+				1A4F9FF01FC674F6001C5EDB /* MYSearchHeader.m */,
+				1A4F9FE61FC674F6001C5EDB /* MYSearchTableViewComponents.h */,
+				1A4F9FEE1FC674F6001C5EDB /* MYSearchTableViewComponents.m */,
 				1A4F9FF21FC674F6001C5EDB /* MYTableCellMapper.h */,
+				1A4F9FEA1FC674F6001C5EDB /* MYTableCellMapper.m */,
+				1A4F9FE91FC674F6001C5EDB /* search_results.txt */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -354,10 +354,10 @@
 		1A4F9FF51FC674F6001C5EDB /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
-				1A4F9FF61FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.m */,
 				1A4F9FF71FC674F6001C5EDB /* MYSearchBarTransitionAnimator.h */,
-				1A4F9FF81FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.h */,
 				1A4F9FF91FC674F6001C5EDB /* MYSearchBarTransitionAnimator.m */,
+				1A4F9FF81FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.h */,
+				1A4F9FF61FC674F6001C5EDB /* MYMusicDetailTransitionAnimator.m */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";

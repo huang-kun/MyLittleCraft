@@ -9,7 +9,9 @@
 #import "MYNavigationController.h"
 
 @interface MYNavigationController () <UIGestureRecognizerDelegate>
-@property (nonatomic, readwrite, strong) MYFullScreenPanGestureRecognizer *my_interactivePopGestureRecognizer;
+@property (nonatomic, strong) MYFullScreenPanGestureRecognizer *my_interactivePopGestureRecognizer;
+@property (nonatomic, strong) id defaultPopGestureTarget;
+@property (nonatomic, assign) SEL defaultPopGestureAction;
 @end
 
 @implementation MYNavigationController
@@ -23,11 +25,11 @@
     self.interactivePopGestureRecognizer.enabled = NO;
     
     // Retrieve the default pop gesture target and handling action
-    id defaultTarget = self.interactivePopGestureRecognizer.delegate;
-    SEL defaultAction = NSSelectorFromString(@"handleNavigationTransition:");
+    _defaultPopGestureTarget = self.interactivePopGestureRecognizer.delegate;
+    _defaultPopGestureAction = NSSelectorFromString(@"handleNavigationTransition:");
     
     // Add custom pop gesture
-    self.my_interactivePopGestureRecognizer = [[MYFullScreenPanGestureRecognizer alloc] initWithTarget:defaultTarget action:defaultAction];
+    self.my_interactivePopGestureRecognizer = [[MYFullScreenPanGestureRecognizer alloc] initWithTarget:_defaultPopGestureTarget action:_defaultPopGestureAction];
     self.my_interactivePopGestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:self.my_interactivePopGestureRecognizer];
 }
@@ -36,6 +38,26 @@
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return self.viewControllers.count > 1;
+}
+
+#pragma mark - Public
+
+- (void)replacePopGestureTarget:(id)target action:(SEL)action {
+    // remove all target and actions
+    [self.my_interactivePopGestureRecognizer removeTarget:nil
+                                                   action:nil];
+    // add new target and action
+    [self.my_interactivePopGestureRecognizer addTarget:target
+                                                action:action];
+}
+
+- (void)resetPopGestureDefaultTargetWithAction {
+    // remove all target and actions
+    [self.my_interactivePopGestureRecognizer removeTarget:nil
+                                                   action:nil];
+    // add default target and action
+    [self.my_interactivePopGestureRecognizer addTarget:_defaultPopGestureTarget
+                                                action:_defaultPopGestureAction];
 }
 
 @end

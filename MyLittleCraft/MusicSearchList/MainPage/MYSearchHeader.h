@@ -10,12 +10,12 @@
 
 UIKIT_EXTERN CGFloat const kMYSearchHeaderHeight;
 
-@class MYSearchBar;
+@class MYSearchBar, MYTintLabel;
 
 @interface MYSearchHeader : UIView
 
 @property (nonatomic, readonly, strong) MYSearchBar *searchBar;
-@property (nonatomic, readonly, strong) UILabel *titleLabel;
+@property (nonatomic, readonly, strong) MYTintLabel *titleLabel;
 
 - (void)adjustPositionByContentOffset:(CGPoint)contentOffset;
 

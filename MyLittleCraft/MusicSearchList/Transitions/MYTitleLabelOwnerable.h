@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class MYTintLabel;
+
 @protocol MYTitleLabelOwnerable <NSObject>
 
-- (UILabel *)titleLabel;
+- (MYTintLabel *)titleLabel;
 - (UIView *)view;
 
 @end

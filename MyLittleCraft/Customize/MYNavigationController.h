@@ -13,4 +13,10 @@
 
 @property (nonatomic, readonly, strong) MYFullScreenPanGestureRecognizer *my_interactivePopGestureRecognizer;
 
+/// Replace default target and action of pop gesture.
+- (void)replacePopGestureTarget:(id)target action:(SEL)action;
+
+/// Reset default target and action of pop gesture.
+- (void)resetPopGestureDefaultTargetWithAction;
+
 @end

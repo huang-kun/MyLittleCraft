@@ -56,6 +56,10 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     [self setupInterface];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 #pragma mark - status bar
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -299,7 +303,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 
 #pragma mark - MYTitleLabelOwnerable
 
-- (UILabel *)titleLabel {
+- (MYTintLabel *)titleLabel {
     return _searchHeader.titleLabel;
 }
 
@@ -346,13 +350,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     }
     
     return mappers;
-}
-
-- (BOOL)isSearchTitleOnScreen {
-    UIWindow *window = UIApplication.sharedApplication.keyWindow;
-    CGRect screenBounds = UIScreen.mainScreen.bounds;
-    CGRect searchTitleFrame = [window convertRect:_searchHeader.titleLabel.frame fromView:_searchHeader];
-    return (CGRectContainsRect(screenBounds, searchTitleFrame));
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A1C331E1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1C331D1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m */; };
+		1A26E9381FC7D69300E55897 /* MYBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A26E9371FC7D69300E55897 /* MYBackButton.m */; };
 		1A4269451FB6FB1C00C2B1C2 /* MotionCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A4269441FB6FB1C00C2B1C2 /* MotionCameraViewController.m */; };
 		1A42694B1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A42694A1FB6FCE600C2B1C2 /* MYCameraPreviewLayer.m */; };
 		1A44AC911FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A44AC761FB6E3D100B5DAC6 /* MyJSInjectionDemoViewController.m */; };
@@ -48,7 +49,7 @@
 		1A7CD90E1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A7CD90D1FADB3D3002F3DB3 /* BelowHeaderRefreshingViewController.m */; };
 		1A7CD9101FADB803002F3DB3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1A7CD90F1FADB803002F3DB3 /* README.md */; };
 		1AAB1D591FC6B9F70033F84B /* MYMusicSearchDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB1D581FC6B9F70033F84B /* MYMusicSearchDetailViewController.m */; };
-		1AAB1D5C1FC6C0220033F84B /* MYMusicDetailTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB1D5B1FC6C0220033F84B /* MYMusicDetailTransitionAnimator.m */; };
+		1AAB1D5C1FC6C0220033F84B /* MYMusicTitleTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB1D5B1FC6C0220033F84B /* MYMusicTitleTransitionAnimator.m */; };
 		1AB782EB1FB33D08005F915E /* MultiTouchBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782EA1FB33D08005F915E /* MultiTouchBoxViewController.m */; };
 		1AB782EE1FB33DCA005F915E /* MYBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AB782ED1FB33DCA005F915E /* MYBoxView.m */; };
 		1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD5A7401FB81F5F004CCFEB /* MotionCameraExt.m */; };
@@ -84,6 +85,8 @@
 /* Begin PBXFileReference section */
 		1A1C331C1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeToDismissKeyboardViewController.h; sourceTree = "<group>"; };
 		1A1C331D1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipeToDismissKeyboardViewController.m; sourceTree = "<group>"; };
+		1A26E9361FC7D69300E55897 /* MYBackButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYBackButton.h; sourceTree = "<group>"; };
+		1A26E9371FC7D69300E55897 /* MYBackButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYBackButton.m; sourceTree = "<group>"; };
 		1A4269431FB6FB1C00C2B1C2 /* MotionCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MotionCameraViewController.h; sourceTree = "<group>"; };
 		1A4269441FB6FB1C00C2B1C2 /* MotionCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MotionCameraViewController.m; sourceTree = "<group>"; };
 		1A4269491FB6FCE600C2B1C2 /* MYCameraPreviewLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYCameraPreviewLayer.h; sourceTree = "<group>"; };
@@ -161,8 +164,8 @@
 		1A7CD90F1FADB803002F3DB3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1AAB1D571FC6B9F70033F84B /* MYMusicSearchDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYMusicSearchDetailViewController.h; sourceTree = "<group>"; };
 		1AAB1D581FC6B9F70033F84B /* MYMusicSearchDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYMusicSearchDetailViewController.m; sourceTree = "<group>"; };
-		1AAB1D5A1FC6C0220033F84B /* MYMusicDetailTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYMusicDetailTransitionAnimator.h; sourceTree = "<group>"; };
-		1AAB1D5B1FC6C0220033F84B /* MYMusicDetailTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYMusicDetailTransitionAnimator.m; sourceTree = "<group>"; };
+		1AAB1D5A1FC6C0220033F84B /* MYMusicTitleTransitionAnimator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYMusicTitleTransitionAnimator.h; sourceTree = "<group>"; };
+		1AAB1D5B1FC6C0220033F84B /* MYMusicTitleTransitionAnimator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYMusicTitleTransitionAnimator.m; sourceTree = "<group>"; };
 		1AAB1D631FC6D2090033F84B /* MYTitleLabelOwnerable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYTitleLabelOwnerable.h; sourceTree = "<group>"; };
 		1AB782E91FB33D08005F915E /* MultiTouchBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiTouchBoxViewController.h; sourceTree = "<group>"; };
 		1AB782EA1FB33D08005F915E /* MultiTouchBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiTouchBoxViewController.m; sourceTree = "<group>"; };
@@ -361,8 +364,8 @@
 				1A4F9FF91FC674F6001C5EDB /* MYSearchBarTransitionAnimator.m */,
 				1A4F9FF81FC674F6001C5EDB /* MYMusicCardTransitionAnimator.h */,
 				1A4F9FF61FC674F6001C5EDB /* MYMusicCardTransitionAnimator.m */,
-				1AAB1D5A1FC6C0220033F84B /* MYMusicDetailTransitionAnimator.h */,
-				1AAB1D5B1FC6C0220033F84B /* MYMusicDetailTransitionAnimator.m */,
+				1AAB1D5A1FC6C0220033F84B /* MYMusicTitleTransitionAnimator.h */,
+				1AAB1D5B1FC6C0220033F84B /* MYMusicTitleTransitionAnimator.m */,
 				1AAB1D631FC6D2090033F84B /* MYTitleLabelOwnerable.h */,
 			);
 			path = Transitions;
@@ -481,6 +484,8 @@
 				1AE0A5581FC1681A00A961E2 /* UIImage+Draw.m */,
 				1AE0A55A1FC171EA00A961E2 /* MYTintLabel.h */,
 				1AE0A55B1FC171EA00A961E2 /* MYTintLabel.m */,
+				1A26E9361FC7D69300E55897 /* MYBackButton.h */,
+				1A26E9371FC7D69300E55897 /* MYBackButton.m */,
 			);
 			path = Customize;
 			sourceTree = "<group>";
@@ -705,7 +710,7 @@
 				1AAB1D591FC6B9F70033F84B /* MYMusicSearchDetailViewController.m in Sources */,
 				1A4FA00B1FC67D11001C5EDB /* MYMusicSearchTransitioner.m in Sources */,
 				1A44AC961FB6E3D100B5DAC6 /* MyJSFunctionDemoViewController.m in Sources */,
-				1AAB1D5C1FC6C0220033F84B /* MYMusicDetailTransitionAnimator.m in Sources */,
+				1AAB1D5C1FC6C0220033F84B /* MYMusicTitleTransitionAnimator.m in Sources */,
 				1A44ACA41FB6E49700B5DAC6 /* WebDemoItem.m in Sources */,
 				1A4F9FFE1FC674F6001C5EDB /* MYMusicBar.m in Sources */,
 				1AD5A7411FB81F5F004CCFEB /* MotionCameraExt.m in Sources */,
@@ -730,6 +735,7 @@
 				1A4FA0001FC674F6001C5EDB /* MusicSearchListViewController.m in Sources */,
 				1AE0A5531FC13E3900A961E2 /* UIColor+Random.m in Sources */,
 				1A4FA0071FC674F6001C5EDB /* MYMusicCardTransitionAnimator.m in Sources */,
+				1A26E9381FC7D69300E55897 /* MYBackButton.m in Sources */,
 				1A44AC931FB6E3D100B5DAC6 /* MyDynamicScriptDemoViewController.m in Sources */,
 				1A44AC921FB6E3D100B5DAC6 /* MyJSHrefDemoViewController.m in Sources */,
 				1A1C331E1FB9477100BFC66A /* SwipeToDismissKeyboardViewController.m in Sources */,

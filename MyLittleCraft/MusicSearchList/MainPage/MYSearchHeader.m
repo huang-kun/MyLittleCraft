@@ -10,6 +10,7 @@
 #import "MYSearchBar.h"
 #import "UIView+Pin.h"
 #import "MYMusicSearchConsts.h"
+#import "MYTintLabel.h"
 
 CGFloat const kMYSearchHeaderHeight = 177;
 CGFloat const kMYSearchTitleBottomSpace = 12;
@@ -32,10 +33,11 @@ CGFloat const kMYSearchTitleBottomSpace = 12;
 }
 
 - (void)buildInterface {
-    _titleLabel = [UILabel new];
+    _titleLabel = [MYTintLabel new];
     _titleLabel.numberOfLines = 1;
     _titleLabel.text = @"Search";
     _titleLabel.font = [UIFont boldSystemFontOfSize:33];
+    _titleLabel.tintColor = UIColor.blackColor;
     [_titleLabel sizeToFit];
     [self addSubview:_titleLabel];
     

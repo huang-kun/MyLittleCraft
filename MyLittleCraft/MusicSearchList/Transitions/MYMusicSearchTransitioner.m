@@ -16,12 +16,13 @@
 
 #import "MYSearchBarTransitionAnimator.h"
 #import "MYMusicCardTransitionAnimator.h"
-#import "MYMusicDetailTransitionAnimator.h"
+#import "MYMusicTitleTransitionAnimator.h"
 
 #import "MYSearchBar.h"
 #import "MYMusicBar.h"
 #import "MYArtworkCardView.h"
 #import "MYTitleLabelOwnerable.h"
+#import "MYTintLabel.h"
 
 @interface MYMusicSearchTransitioner()
 @property (nonatomic, weak) UIViewController *source;
@@ -35,7 +36,7 @@
     if (self) {
         _searchBarTransitionAnimator = [MYSearchBarTransitionAnimator new];
         _musicCardTransitionAnimator = [MYMusicCardTransitionAnimator new];
-        _musicDetailTransitionAnimator = [MYMusicDetailTransitionAnimator new];
+        _musicTitleTransitionAnimator = [MYMusicTitleTransitionAnimator new];
     }
     return self;
 }
@@ -83,10 +84,21 @@
             [self checkIf:fromVC conformsTo:@protocol(MYTitleLabelOwnerable)];
             [self checkIf:toVC conformsTo:@protocol(MYTitleLabelOwnerable)];
             
-            MYMusicDetailTransitionAnimator *animator = self.musicDetailTransitionAnimator;
+            id <MYTitleLabelOwnerable> sourceOwner = (id)fromVC;
+            id <MYTitleLabelOwnerable> presentedOwner = (id)toVC;
+            
+            if (![self isViewOnScreen:sourceOwner.titleLabel]) {
+                MYMusicSearchDetailViewController *dvc = (id)toVC;
+                dvc.customTransitionFailed = YES;
+                return nil;
+            }
+            
+            MYMusicTitleTransitionAnimator *animator = self.musicTitleTransitionAnimator;
+            
             animator.presentation = YES;
-            animator.sourceOwner = (id)fromVC;
-            animator.presentedOwner = (id)toVC;
+            animator.sourceOwner = sourceOwner;
+            animator.presentedOwner = presentedOwner;
+            
             return animator;
         }
     }
@@ -95,8 +107,13 @@
         if ([fromVC isKindOfClass:MYMusicSearchDetailViewController.class] &&
             [toVC isKindOfClass:MusicSearchListViewController.class]) {
             
-            MYMusicDetailTransitionAnimator *animator = self.musicDetailTransitionAnimator;
+            MYMusicTitleTransitionAnimator *animator = self.musicTitleTransitionAnimator;
             animator.presentation = NO;
+            
+            if (!animator.sourceOwner || !animator.presentedOwner) {
+                return nil;
+            }
+            
             return animator;
         }
     }
@@ -105,6 +122,17 @@
 }
 
 - (nullable id <UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id <UIViewControllerAnimatedTransitioning>) animationController {
+    
+    if (animationController == self.musicTitleTransitionAnimator) {
+        MYMusicTitleTransitionAnimator *animator = (MYMusicTitleTransitionAnimator *)animationController;
+        if (!animator.isPresentation) {
+            if ([animator.presentedOwner isKindOfClass:MYMusicSearchDetailViewController.class]) {
+                MYMusicSearchDetailViewController *dvc = (id)animator.presentedOwner;
+                return dvc.dismissalInteractor;
+            }
+        }
+    }
+    
     return nil;
 }
 
@@ -180,6 +208,13 @@
 - (BOOL)checkIf:(UIViewController *)vc conformsTo:(Protocol *)protocol {
     NSAssert([vc conformsToProtocol:protocol], @"%@ must conforms to %@.", vc, NSStringFromProtocol(protocol));
     return YES;
+}
+
+- (BOOL)isViewOnScreen:(UIView *)view {
+    UIWindow *window = UIApplication.sharedApplication.keyWindow;
+    CGRect screenBounds = UIScreen.mainScreen.bounds;
+    CGRect viewFrame = [window convertRect:view.frame fromView:view.superview];
+    return (CGRectContainsRect(screenBounds, viewFrame));
 }
 
 @end

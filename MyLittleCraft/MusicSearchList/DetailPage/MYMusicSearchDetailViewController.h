@@ -10,4 +10,7 @@
 
 @interface MYMusicSearchDetailViewController : UIViewController
 
+@property (nonatomic, readonly, strong) UIPercentDrivenInteractiveTransition *dismissalInteractor;
+@property (nonatomic, assign) BOOL customTransitionFailed;
+
 @end

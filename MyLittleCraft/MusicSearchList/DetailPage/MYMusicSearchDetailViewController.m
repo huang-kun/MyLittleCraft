@@ -34,8 +34,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.navigationController.navigationBar.translucent = NO;
-    
     if (!self.customTransitionFailed) {
         if ([self.navigationController isKindOfClass:MYNavigationController.class]) {
             // Having a weak reference for navigation controller, so when we can still track navigation controller

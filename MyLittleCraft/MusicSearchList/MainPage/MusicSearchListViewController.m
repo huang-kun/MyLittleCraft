@@ -226,6 +226,7 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     if (mapper.elementType == MYTableElementTypeCell) {
         NSArray <NSString *> *items = (mapper.section == 0 ? _recentSearchItems : _hotSearchItems);
         NSString *item = items[mapper.row];
+        NSLog(@"%@", item);
         
         MYMusicSearchDetailViewController *dvc = [MYMusicSearchDetailViewController new];
         [self.navigationController pushViewController:dvc animated:YES];

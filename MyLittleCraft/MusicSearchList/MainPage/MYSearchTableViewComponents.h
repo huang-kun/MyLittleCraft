@@ -17,8 +17,6 @@ UIKIT_EXTERN CGFloat const kMYSearchTableItemCellHeight;
 
 @interface MYTableViewCell : UITableViewCell
 
-@property (nonatomic, copy) NSIndexPath *currentIndexPath;
-
 @end
 
 

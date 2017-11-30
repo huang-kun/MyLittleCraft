@@ -172,7 +172,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
     if (mapper.elementType == MYTableElementTypeSectionHeader) {
         cell = [tableView dequeueReusableCellWithIdentifier:kSearchBarDemoSectionCellReuseId forIndexPath:indexPath];
         MYSearchTableSectionCell *sectionHeaderCell = (MYSearchTableSectionCell *)cell;
-        sectionHeaderCell.currentIndexPath = indexPath;
         sectionHeaderCell.delegate = self;
         
         // Recent
@@ -196,7 +195,6 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
         
         cell = [tableView dequeueReusableCellWithIdentifier:kSearchBarDemoItemCellReuseId forIndexPath:indexPath];
         MYSearchTableItemCell *itemCell = (MYSearchTableItemCell *)cell;
-        itemCell.currentIndexPath = indexPath;
         itemCell.bottomSeparator.hidden = NO;
         itemCell.titleLabel.text = items[mapper.row];
         // Last item in section
@@ -276,7 +274,9 @@ static NSString * const kSearchBarDemoSectionCellReuseId = @"kSearchBarDemoSecti
 #pragma mark - MYSearchTableSectionCellDelegate
 
 - (void)searchTableSectionCell:(MYSearchTableSectionCell *)searchTableSectionCell didTapCleanButton:(UIButton *)cleanButton {
-    MYTableCellMapper *mapper = _mappers[searchTableSectionCell.currentIndexPath.row];
+    
+    NSIndexPath *indexPath = [_tableView indexPathForCell:searchTableSectionCell];
+    MYTableCellMapper *mapper = _mappers[indexPath.row];
     if (mapper.elementType == MYTableElementTypeSectionHeader && mapper.section == 0) {
         // Present sheet
         UIAlertController *sheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
